@@ -1,0 +1,247 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://dryasserkotb.com
+display_url: https://dryasserkotb.com
+locale: ar
+
+# الملفات التي ترفعها من اللوحة (PDF وصور) تُحفظ هنا وتُنشر مع الموقع
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: site
+    label: محتوى الموقع
+    icon: cog
+    files:
+      - name: content
+        label: كل محتوى الموقع
+        file: src/data/content.json
+        fields:
+          - label: الملف الشخصي والإحصاءات
+            name: profile
+            widget: object
+            collapsed: true
+            fields:
+              - { label: الاسم بالعربية, name: name, widget: string }
+              - { label: الاسم بالإنجليزية, name: nameEn, widget: string }
+              - label: الألقاب والأدوار (سطر لكل دور)
+                name: titles
+                widget: list
+                field: { label: الدور, name: title, widget: string }
+              - label: فقرات النبذة
+                name: bio
+                widget: list
+                field: { label: فقرة, name: paragraph, widget: text }
+              - label: الأرقام والإحصاءات (عدّادات الصفحة الرئيسية)
+                name: stats
+                widget: list
+                summary: '{{fields.value}} — {{fields.label}}'
+                fields:
+                  - { label: الرقم, name: value, widget: string, hint: 'مثال: 13 أو +25' }
+                  - { label: الوصف, name: label, widget: string }
+
+          - label: الأبحاث العلمية وأوراق المؤتمرات
+            name: research
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: عنوان البحث, name: title, widget: string }
+              - { label: النوع, name: type, widget: string, hint: 'بحث منشور في مجلة علمية / ورقة مؤتمر / رسالة دكتوراه / بحث تحت النشر...' }
+              - { label: جهة النشر (المجلة/المؤتمر), name: venue, widget: text, required: false }
+              - { label: سنة النشر, name: year, widget: string, required: false }
+              - { label: ملف PDF, name: file, widget: file, hint: 'ارفع ملف PDF من جهازك أو اختر من المكتبة' }
+
+          - label: المقالات
+            name: articles
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: عنوان المقال, name: title, widget: string }
+              - { label: المجال / جهة النشر, name: field, widget: string }
+              - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
+
+          - label: سلاسل المحاضرات (دبلومات وبرامج)
+            name: lectureSeries
+            widget: list
+            summary: '{{fields.program}}'
+            collapsed: true
+            fields:
+              - { label: اسم البرنامج/الدبلوم, name: program, widget: string }
+              - { label: الجهة, name: org, widget: string }
+              - label: محاضرات السلسلة
+                name: lectures
+                widget: list
+                summary: '{{fields.num}} — {{fields.title}}'
+                fields:
+                  - { label: رقم المحاضرة, name: num, widget: string, hint: 'الافتتاحية / الثانية / الثالثة...' }
+                  - { label: العنوان, name: title, widget: string }
+                  - { label: ملف PDF, name: file, widget: file }
+              - label: رابط خارجي (اختياري)
+                name: link
+                widget: object
+                required: false
+                fields:
+                  - { label: الرابط, name: url, widget: string }
+                  - { label: نص الزر, name: label, widget: string }
+              - { label: ملاحظة (اختياري), name: note, widget: text, required: false }
+
+          - label: الفيديو المميز (يوتيوب)
+            name: featuredVideo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: العنوان, name: title, widget: string }
+              - { label: الوصف, name: desc, widget: string }
+              - { label: رابط يوتيوب, name: url, widget: string }
+
+          - label: الندوات وورش العمل
+            name: seminars
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: العنوان, name: title, widget: string }
+              - label: النوع
+                name: kind
+                widget: select
+                options: ['ندوة', 'ورشة عمل', 'ملتقى', 'ندوة توعوية', 'محاضرة']
+                default: 'ندوة'
+              - { label: الموضوع, name: topic, widget: text }
+              - { label: ملف PDF, name: file, widget: file }
+
+          - label: محاضرات مختارة (بدون ملفات)
+            name: lectures
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: العنوان, name: title, widget: string }
+              - { label: المحور, name: axis, widget: string }
+
+          - label: العروض التقديمية للمؤتمرات
+            name: presentations
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: العنوان, name: title, widget: string }
+              - { label: الوصف, name: desc, widget: text }
+              - { label: ملف PDF, name: file, widget: file }
+
+          - label: الكتب والسلاسل التأليفية
+            name: books
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: العنوان, name: title, widget: string }
+              - { label: الموضوع, name: topic, widget: text }
+              - { label: الحالة, name: status, widget: string, hint: 'صادر / قيد الإصدار / مراجعة نهائية...' }
+
+          - label: الأطر والنماذج الفكرية
+            name: frameworks
+            widget: list
+            summary: '{{fields.name}}'
+            collapsed: true
+            fields:
+              - { label: الاسم, name: name, widget: string }
+              - { label: الوصف, name: desc, widget: text }
+
+          - label: النماذج القابلة للتحميل
+            name: models
+            widget: list
+            summary: '{{fields.name}}'
+            collapsed: true
+            fields:
+              - { label: الاسم, name: name, widget: string }
+              - { label: الوصف, name: desc, widget: text }
+              - { label: الملف (PDF أو صورة), name: file, widget: file }
+
+          - label: صور المكتبة
+            name: photos
+            widget: list
+            summary: '{{fields.alt}}'
+            collapsed: true
+            fields:
+              - { label: الصورة, name: src, widget: image }
+              - { label: وصف الصورة, name: alt, widget: string }
+
+          - label: المؤهلات العلمية
+            name: qualifications
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: المؤهل, name: title, widget: string }
+              - { label: التفاصيل, name: detail, widget: text }
+
+          - label: المناصب
+            name: positions
+            widget: list
+            summary: '{{fields.org}}'
+            collapsed: true
+            fields:
+              - { label: الجهة, name: org, widget: string }
+              - { label: الدور, name: role, widget: string }
+
+          - label: العضويات والزمالات
+            name: memberships
+            widget: list
+            summary: '{{fields.org}}'
+            collapsed: true
+            fields:
+              - { label: الجهة, name: org, widget: string }
+              - { label: الصفة, name: role, widget: string }
+
+          - label: مجالات الخبرة
+            name: expertise
+            widget: list
+            summary: '{{fields.area}}'
+            collapsed: true
+            fields:
+              - { label: المجال, name: area, widget: string }
+              - { label: الوصف, name: detail, widget: text }
+              - label: الأيقونة
+                name: icon
+                widget: select
+                options: ['BrainCircuit', 'BadgeCheck', 'Building2', 'Pill', 'Megaphone', 'Users', 'Radar', 'HeartPulse', 'Scale']
+                default: 'BrainCircuit'
+
+          - label: البرامج العلمية
+            name: programs
+            widget: list
+            summary: '{{fields.name}}'
+            collapsed: true
+            fields:
+              - { label: اسم البرنامج, name: name, widget: string }
+              - { label: الجهة, name: org, widget: text }
+
+          - label: بيانات التواصل
+            name: contact
+            widget: object
+            collapsed: true
+            fields:
+              - { label: البريد الإلكتروني, name: email, widget: string }
+              - { label: الهاتف (صيغة دولية), name: phone, widget: string }
+              - { label: الهاتف (كما يظهر), name: phoneDisplay, widget: string }
+              - { label: الموقع, name: location, widget: string }
+              - label: روابط التواصل الاجتماعي
+                name: links
+                widget: list
+                summary: '{{fields.name}}'
+                fields:
+                  - { label: الاسم, name: name, widget: string }
+                  - { label: الرابط, name: url, widget: string }
+
+          - label: روابط القائمة (متقدم — لا تعدّلها عادة)
+            name: navLinks
+            widget: list
+            summary: '{{fields.label}}'
+            collapsed: true
+            fields:
+              - { label: المعرف, name: id, widget: string }
+              - { label: الاسم الظاهر, name: label, widget: string }
