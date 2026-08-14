@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 7%;
+    --foreground: 45 30% 94%;
+    --card: 222 44% 10%;
+    --card-foreground: 45 30% 94%;
+    --popover: 222 44% 9%;
+    --popover-foreground: 45 30% 94%;
+    --primary: 43 74% 49%;
+    --primary-foreground: 222 47% 7%;
+    --secondary: 221 39% 15%;
+    --secondary-foreground: 45 30% 92%;
+    --muted: 221 39% 15%;
+    --muted-foreground: 220 15% 62%;
+    --accent: 43 74% 49%;
+    --accent-foreground: 222 47% 7%;
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 20%;
+    --ring: 43 74% 49%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Tajawal', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: hsl(43 74% 49% / 0.35);
+    color: hsl(45 40% 97%);
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(222 47% 7%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(222 25% 22%);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(43 50% 40%);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Amiri', serif;
+  }
+  .gold-text {
+    background: linear-gradient(135deg, hsl(48 95% 76%) 0%, hsl(43 74% 49%) 45%, hsl(38 60% 38%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gold-line {
+    background: linear-gradient(90deg, transparent, hsl(43 74% 49% / 0.8), transparent);
+  }
+  .card-glow {
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  .card-glow:hover {
+    transform: translateY(-4px);
+    border-color: hsl(43 74% 49% / 0.45);
+    box-shadow: 0 12px 40px -12px hsl(43 74% 49% / 0.18), 0 4px 16px -4px rgb(0 0 0 / 0.5);
+  }
+  .pattern-grid {
+    background-image:
+      linear-gradient(hsl(43 74% 49% / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(43 74% 49% / 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .pattern-star {
+    background-image: radial-gradient(hsl(43 74% 49% / 0.10) 1px, transparent 1.5px);
+    background-size: 26px 26px;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
