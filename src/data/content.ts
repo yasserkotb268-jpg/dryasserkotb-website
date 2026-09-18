@@ -26,7 +26,7 @@ export interface Program { name: string; org: string }
 export interface Article { title: string; field: string; file?: string }
 export interface Lecture { title: string; axis: string }
 export interface ResearchItem { title: string; type: string; venue?: string; year?: string; file: string }
-export interface SeriesLecture { num: string; title: string; file: string }
+export interface SeriesLecture { num: string; title: string; file?: string }
 export interface LectureSeries {
   program: string;
   org: string;
@@ -35,6 +35,8 @@ export interface LectureSeries {
   link?: { url: string; label: string };
 }
 export interface FeaturedVideo { title: string; desc: string; url: string }
+export interface YK7Document { title: string; type: string; date?: string; file?: string }
+export interface YK7 { intro: string; facebook?: string; documents: YK7Document[] }
 export interface Presentation { title: string; desc: string; file: string }
 export interface ContactLink { name: string; url: string }
 export interface Contact {
@@ -63,6 +65,7 @@ const data = raw as unknown as {
   research: ResearchItem[];
   lectureSeries: LectureSeries[];
   featuredVideo: FeaturedVideo;
+  yk7: YK7;
   presentations: Presentation[];
   contact: Contact;
   navLinks: NavLink[];
@@ -84,6 +87,7 @@ export const lectures: Lecture[] = data.lectures;
 export const research: ResearchItem[] = data.research;
 export const lectureSeries: LectureSeries[] = data.lectureSeries;
 export const featuredVideo: FeaturedVideo = data.featuredVideo;
+export const yk7: YK7 = data.yk7;
 export const presentations: Presentation[] = data.presentations;
 export const contact: Contact = data.contact;
 export const navLinks: NavLink[] = data.navLinks;
