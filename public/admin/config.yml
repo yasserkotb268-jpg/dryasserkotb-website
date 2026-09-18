@@ -54,6 +54,24 @@ collections:
               - { label: سنة النشر, name: year, widget: string, required: false }
               - { label: ملف PDF, name: file, widget: file, hint: 'ارفع ملف PDF من جهازك أو اختر من المكتبة' }
 
+          - label: منصة الرصد الاستراتيجي YK7
+            name: yk7
+            widget: object
+            collapsed: true
+            fields:
+              - { label: نبذة المنصة, name: intro, widget: text }
+              - { label: رابط صفحة فيسبوك (اختياري), name: facebook, widget: string, required: false }
+              - label: وثائق المنصة وتقاريرها
+                name: documents
+                widget: list
+                summary: '{{fields.title}}'
+                collapsed: true
+                fields:
+                  - { label: العنوان, name: title, widget: string }
+                  - { label: النوع, name: type, widget: string, hint: 'وثيقة عمل / تقرير رصد / قراءة تحليلية / مصفوفة مرجعية...' }
+                  - { label: التاريخ (اختياري), name: date, widget: string, required: false }
+                  - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
+
           - label: المقالات
             name: articles
             widget: list
@@ -79,7 +97,7 @@ collections:
                 fields:
                   - { label: رقم المحاضرة, name: num, widget: string, hint: 'الافتتاحية / الثانية / الثالثة...' }
                   - { label: العنوان, name: title, widget: string }
-                  - { label: ملف PDF, name: file, widget: file }
+                  - { label: ملف PDF (اختياري — اتركه فارغًا لعرض العنوان فقط), name: file, widget: file, required: false }
               - label: رابط خارجي (اختياري)
                 name: link
                 widget: object
