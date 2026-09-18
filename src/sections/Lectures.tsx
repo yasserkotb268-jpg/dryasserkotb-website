@@ -74,7 +74,7 @@ export default function Lectures() {
               <div className="flex flex-col gap-3">
                 {series.lectures.map((l, i) => (
                   <div
-                    key={l.file}
+                    key={`${l.num}-${l.title}`}
                     className="card-glow flex items-center justify-between gap-3 rounded-xl border border-border bg-card p-4"
                     style={{ transitionDelay: `${i * 50}ms` }}
                   >
@@ -84,15 +84,17 @@ export default function Lectures() {
                       </span>
                       <h4 className="text-sm font-bold leading-snug text-foreground">{l.title}</h4>
                     </div>
-                    <a
-                      href={assetPath('lectures', l.file)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex shrink-0 items-center gap-1.5 rounded-lg border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-                    >
-                      PDF
-                      <Download className="h-3.5 w-3.5" />
-                    </a>
+                    {l.file && (
+                      <a
+                        href={assetPath('lectures', l.file)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex shrink-0 items-center gap-1.5 rounded-lg border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                      >
+                        PDF
+                        <Download className="h-3.5 w-3.5" />
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
