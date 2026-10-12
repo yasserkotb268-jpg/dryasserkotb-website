@@ -1,4 +1,4 @@
-import { Download, Facebook, FileText, Radar } from 'lucide-react';
+import { Download, Facebook, FileText, Newspaper, Radar } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { yk7 } from '@/data/content';
@@ -68,6 +68,56 @@ export default function YK7() {
             </div>
           ))}
         </div>
+
+        {yk7.magazine && yk7.magazine.length > 0 && (
+          <div className="reveal mt-14">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
+                <Newspaper className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="font-display text-2xl font-bold text-foreground">مجلة المنصة</h3>
+                <p className="text-sm text-muted-foreground">العدد الأسبوعي — يصدر كل خميس</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              {yk7.magazine.map((m, i) => (
+                <div
+                  key={`${m.date}-${m.title}`}
+                  className="card-glow flex items-center justify-between gap-4 rounded-xl border border-border bg-card p-5"
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <div className="flex-1">
+                    <div className="mb-1.5 flex flex-wrap items-center gap-2">
+                      {m.issue && (
+                        <span className="rounded-full border border-primary/35 bg-primary/10 px-3 py-0.5 text-xs font-bold text-primary">
+                          {m.issue}
+                        </span>
+                      )}
+                      {m.date && (
+                        <span className="rounded-full border border-border bg-background/60 px-3 py-0.5 text-xs font-semibold text-muted-foreground">
+                          {m.date}
+                        </span>
+                      )}
+                    </div>
+                    <h4 className="font-bold leading-snug text-foreground">{m.title}</h4>
+                  </div>
+                  {m.file && (
+                    <a
+                      href={assetPath('uploads', m.file)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex shrink-0 items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      PDF
+                      <Download className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
