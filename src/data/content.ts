@@ -36,7 +36,9 @@ export interface LectureSeries {
 }
 export interface FeaturedVideo { title: string; desc: string; url: string }
 export interface YK7Document { title: string; type: string; date?: string; file?: string }
-export interface YK7 { intro: string; facebook?: string; documents: YK7Document[] }
+export interface YK7MagazineIssue { title: string; issue?: string; date?: string; file?: string }
+export interface YK7Poster { title: string; file: string; desc?: string }
+export interface YK7 { intro: string; facebook?: string; documents: YK7Document[]; magazine?: YK7MagazineIssue[]; posters?: YK7Poster[] }
 export interface Presentation { title: string; desc: string; file: string }
 export interface ContactLink { name: string; url: string }
 export interface Contact {
