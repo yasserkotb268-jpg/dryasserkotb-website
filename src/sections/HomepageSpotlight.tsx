@@ -1,65 +1,88 @@
 import { useState } from 'react';
-import { ArrowUpLeft, Images, BookOpen, Compass, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpLeft, Images, BookOpen, Compass, Quote, ChevronLeft, ChevronRight, FileText, Radar } from 'lucide-react';
 import { visualGallery } from '@/data/content';
 import { useAvailablePosters } from '@/hooks/useAvailablePosters';
 import { assetPath } from '@/lib/asset';
 import './HomepageSpotlight.css';
 
-const priority = ['narcissistic-personality-book.webp', 'editorial-word-responsibility.webp', 'ai-governance.webp', 'human-behind-decision.webp'];
+const priority = ['narcissistic-personality-book.webp', 'editorial-word-responsibility.webp', 'ai-governance.webp'];
 const candidates = (visualGallery.curatedPosters ?? [])
-  .filter((p) => priority.some((name) => p.file.endsWith(name)))
+  .filter((poster) => priority.some((name) => poster.file.endsWith(name)))
   .sort((a, b) => priority.findIndex((name) => a.file.endsWith(name)) - priority.findIndex((name) => b.file.endsWith(name)));
+
 export default function HomepageSpotlight() {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const uploaded = useAvailablePosters(candidates);
-  const shown = [...uploaded, ...visualGallery.posters].slice(0, 4);
+  const shown = [...uploaded, ...visualGallery.posters].slice(0, 3);
   const quotes = visualGallery.quotes;
-  const quote = quotes[quoteIndex % Math.max(quotes.length, 1)];
-  const moveQuote = (dir: number) => setQuoteIndex((i) => (i + dir + quotes.length) % Math.max(quotes.length, 1));
+  const quote = quotes.length ? quotes[quoteIndex % quotes.length] : undefined;
+  const moveQuote = (direction: number) => setQuoteIndex((index) => (index + direction + quotes.length) % quotes.length);
+
   return (
-    <section id="selected-works" dir="rtl" className="yk7-spotlight relative overflow-hidden border-y border-neutral-800 bg-[#0b0c0f] py-16 sm:py-20" aria-label="مختارات من الأعمال والمنشورات">
-      <div className="relative mx-auto max-w-6xl px-4 md:px-8">
+    <section id="selected-works" dir="rtl" className="yk7-spotlight relative overflow-hidden border-y border-white/10 bg-[#101319] py-16 sm:py-20" aria-label="مختارات معرفية ومهنية">
+      <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="mb-3 text-sm font-bold tracking-wide text-rose-400">منصة الرصد الاستراتيجي <b dir="ltr" className="inline-block font-sans tracking-widest">| YK7</b></p>
-            <h2 className="font-display text-3xl font-bold leading-relaxed text-white sm:text-4xl">مختارات من أعمالي</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-8 text-neutral-300">كتب ومقالات وبوسترات معرفية تتناول جودة القرار والسلوك الإنساني والقيادة والقضايا الاستراتيجية.</p>
+            <p className="mb-3 text-sm font-bold text-rose-300">أعمال مختارة</p>
+            <h2 className="font-display text-3xl font-bold leading-relaxed text-white sm:text-4xl">من المعرفة إلى الأثر</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-8 text-neutral-300">
+              مختارات من المؤلفات والمقالات والمواد البصرية؛ لكل موضوع مساره المعرفي الكامل داخل الموقع.
+            </p>
           </div>
-          <a href="#visual-gallery" className="inline-flex items-center gap-2 rounded-full border border-rose-600/45 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-rose-900/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-400">
-            <Images className="h-4 w-4"/> المعرض الكامل <ArrowUpLeft className="h-4 w-4"/>
+          <a href="#visual-gallery" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-rose-400/50 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-rose-900/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300">
+            <Images className="h-4 w-4" aria-hidden="true" /> استعرض المكتبة البصرية <ArrowUpLeft className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {shown.map((item, index) => (
-            <a href={assetPath('posters', item.file)} target="_blank" rel="noopener noreferrer"
-              key={item.file} className="yk7-spotlight-art group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-400">
-              <img src={assetPath('posters', item.file)} alt={item.title} loading={index < 2 ? 'eager' : 'lazy'} decoding="async" className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.045]"/>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent px-3 pb-4 pt-16 sm:px-5">
-                <p className="mb-1 text-[11px] font-semibold text-rose-300">{item.category || 'مختارات معرفية'}</p>
-                <h3 className="line-clamp-2 text-xs font-bold leading-6 text-white sm:text-sm">{item.title}</h3>
+            <a key={item.file} href={assetPath('posters', item.file)} target="_blank" rel="noopener noreferrer"
+              aria-label={`فتح المادة البصرية: ${item.title}`}
+              className="yk7-spotlight-art group overflow-hidden rounded-2xl border border-white/10 bg-[#1a1d24] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300">
+              <div className="flex aspect-[4/5] items-center justify-center overflow-hidden bg-[#12151b] p-2">
+                <img src={assetPath('posters', item.file)} alt={item.title} loading={index === 0 ? 'eager' : 'lazy'} decoding="async"
+                  className="h-full w-full rounded-lg object-contain transition-transform duration-500 group-hover:scale-[1.035]" />
+              </div>
+              <div className="border-t border-white/10 p-4">
+                <p className="mb-2 text-xs font-semibold text-rose-300">{item.category || 'من أعمال المؤلف'}</p>
+                <h3 className="text-sm font-bold leading-7 text-white">{item.title}</h3>
               </div>
             </a>
           ))}
-        </div>
-        {quote && <div className="mt-7 flex flex-col items-center justify-between gap-5 rounded-2xl border border-neutral-800 bg-neutral-900/75 p-5 sm:flex-row sm:p-7">
-          <div className="flex min-w-0 items-start gap-3">
-            <Quote className="mt-1 h-7 w-7 shrink-0 text-rose-500"/>
+          <div className="flex min-h-64 flex-col justify-between rounded-2xl border border-rose-500/25 bg-[linear-gradient(135deg,#25141c,#15191f)] p-6 text-white">
             <div>
-              <blockquote className="font-display text-lg font-bold leading-[1.9] text-neutral-100 sm:text-xl">«{quote.text}»</blockquote>
-              <p className="mt-2 text-sm text-neutral-400">{quote.context || 'من أعمال د. ياسر قطب'}</p>
+              <Radar className="mb-5 h-8 w-8 text-rose-300" aria-hidden="true" />
+              <p className="mb-3 text-xs font-bold text-rose-300">منصة الرصد الاستراتيجي | <span dir="ltr" className="inline-block font-sans">YK7</span></p>
+              <h3 className="font-display text-2xl font-bold leading-relaxed">الرصد والتحليل والاستشراف</h3>
+              <p className="mt-3 text-sm leading-7 text-neutral-300">قراءات وأوراق تحليلية ونماذج تسند فهم القضايا وجودة الاختيار.</p>
+            </div>
+            <a href="#yk7" className="mt-6 inline-flex items-center gap-2 self-start border-b border-rose-300 pb-1 text-sm font-bold text-white hover:text-rose-200">
+              أعمال المنصة <ArrowUpLeft className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+        {quote && (
+          <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-white/10 bg-white/[.03] p-5 sm:flex-row sm:items-center sm:p-7">
+            <div className="flex min-w-0 items-start gap-3">
+              <Quote className="mt-1 h-6 w-6 shrink-0 text-rose-300" aria-hidden="true" />
+              <div>
+                <blockquote className="font-display text-lg font-bold leading-[1.9] text-neutral-100 sm:text-xl">«{quote.text}»</blockquote>
+                <p className="mt-2 text-xs text-neutral-400">{quote.context || 'من أعمال د. ياسر قطب'}</p>
+              </div>
+            </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <button type="button" aria-label="الاقتباس السابق" disabled={quotes.length < 2} onClick={() => moveQuote(-1)} className="rounded-full border border-neutral-600 p-2 text-white hover:bg-neutral-700 disabled:opacity-40"><ChevronRight className="h-4 w-4" /></button>
+              <span className="w-12 text-center text-xs tabular-nums text-neutral-300" aria-live="polite">{quoteIndex + 1} / {quotes.length}</span>
+              <button type="button" aria-label="الاقتباس التالي" disabled={quotes.length < 2} onClick={() => moveQuote(1)} className="rounded-full border border-neutral-600 p-2 text-white hover:bg-neutral-700 disabled:opacity-40"><ChevronLeft className="h-4 w-4" /></button>
             </div>
           </div>
-          <div className="flex shrink-0 items-center gap-2">
-            <button type="button" aria-label="الاقتباس السابق" onClick={() => moveQuote(-1)} className="rounded-full border border-neutral-600 p-2 text-white hover:bg-neutral-700"><ChevronRight className="h-4 w-4"/></button>
-            <span className="w-12 text-center text-xs tabular-nums text-neutral-300" aria-live="polite">{quoteIndex+1} / {quotes.length}</span>
-            <button type="button" aria-label="الاقتباس التالي" onClick={() => moveQuote(1)} className="rounded-full border border-neutral-600 p-2 text-white hover:bg-neutral-700"><ChevronLeft className="h-4 w-4"/></button>
-          </div>
-        </div>}
-        <div className="mt-7 flex flex-wrap items-center gap-3 text-sm text-neutral-300">
-          <BookOpen className="h-5 w-5 text-rose-400"/>
-          <span>المعرفة في خدمة الإنسان وجودة الاختيار</span>
-          <Compass className="mr-2 h-5 w-5 text-rose-400"/>
-          <span>رصد • تحليل • استشراف • دعم القرار</span>
+        )}
+        <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-neutral-300">
+          <BookOpen className="h-5 w-5 text-rose-300" aria-hidden="true" />
+          <a className="hover:text-white hover:underline" href="#works">الكتب والمؤلفات</a>
+          <FileText className="mr-3 h-5 w-5 text-rose-300" aria-hidden="true" />
+          <a className="hover:text-white hover:underline" href="#research">الأبحاث</a>
+          <Compass className="mr-3 h-5 w-5 text-rose-300" aria-hidden="true" />
+          <a className="hover:text-white hover:underline" href="#articles">المقالات التحليلية</a>
         </div>
       </div>
     </section>
