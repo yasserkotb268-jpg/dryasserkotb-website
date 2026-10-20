@@ -23,12 +23,12 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8">
         <a href="#top" className="group flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/50 bg-primary/10 font-display text-lg font-bold text-primary transition-colors group-hover:bg-primary/20">
-            YK
+          <div dir="ltr" aria-label="YK7" className="flex h-10 min-w-14 items-center justify-center rounded-lg border border-rose-600/65 bg-neutral-950 px-2 font-sans text-lg font-extrabold tracking-tight text-white transition-colors group-hover:border-rose-400">
+            YK<span className="text-rose-500">7</span>
           </div>
           <div className="leading-tight">
             <p className="font-display text-base font-bold text-foreground">د. ياسر قطب</p>
-            <p className="text-[11px] tracking-wide text-muted-foreground">YK7 — الرصد الإستراتيجي</p>
+            <p className="text-[11px] tracking-wide text-muted-foreground">منصة الرصد الاستراتيجي | YK7</p>
           </div>
         </a>
 
