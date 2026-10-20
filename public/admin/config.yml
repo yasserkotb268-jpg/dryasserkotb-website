@@ -72,6 +72,18 @@ collections:
                   - { label: التاريخ (اختياري), name: date, widget: string, required: false }
                   - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
 
+              - label: مجلة المنصة وإصداراتها
+                name: magazine
+                widget: list
+                required: false
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: عنوان الإصدار, name: title, widget: string }
+                  - { label: العدد أو وصف الإصدار, name: issue, widget: string, required: false }
+                  - { label: تاريخ الإصدار, name: date, widget: string, required: false }
+                  - { label: ملف PDF, name: file, widget: file, required: false }
+
           - label: المقالات
             name: articles
             widget: list
