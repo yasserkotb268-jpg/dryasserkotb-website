@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pb-20 pt-20 text-center md:pt-28">
         <div className="reveal mb-7 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-2 text-sm font-semibold text-primary">
           <Award className="h-4 w-4" />
-          +25 عامًا من الخبرة التطبيقية والبحثية
+          منصة الرصد الاستراتيجي <span dir="ltr" className="font-sans font-extrabold tracking-wide">| YK7</span>
         </div>
 
         <div className="reveal relative mb-8 h-44 w-44 shrink-0 rounded-full border-2 border-rose-700/65 bg-card p-1.5 shadow-2xl shadow-black/35 md:h-48 md:w-48">

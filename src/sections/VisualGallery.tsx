@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Images, Quote, Film, ExternalLink, PlayCircl
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { photos, visualGallery } from '@/data/content';
+import { useAvailablePosters } from '@/hooks/useAvailablePosters';
 import { assetPath } from '@/lib/asset';
 import './VisualGallery.css';
 
@@ -19,8 +20,10 @@ export default function VisualGallery() {
   const [view, setView] = useState<View>('photos');
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [category, setCategory] = useState('الكل');
-  const posterCategories = ['الكل', ...new Set(visualGallery.posters.map((p) => p.category).filter((value): value is string => Boolean(value)))];
-  const displayedPosters = category === 'الكل' ? visualGallery.posters : visualGallery.posters.filter((p) => p.category === category);
+  const curated = useAvailablePosters(visualGallery.curatedPosters ?? [], view === 'posters');
+  const posters = [...curated, ...visualGallery.posters];
+  const posterCategories = ['الكل', ...new Set(posters.map((p) => p.category).filter((value): value is string => Boolean(value)))];
+  const displayedPosters = category === 'الكل' ? posters : posters.filter((p) => p.category === category);
   const quotes = visualGallery.quotes;
   const selectedQuote = quotes.length > 0 ? quotes[quoteIndex % quotes.length] : undefined;
 
