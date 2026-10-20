@@ -1,7 +1,7 @@
 import { Award } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
-import { memberships } from '@/data/content';
+import { memberships, recognitions } from '@/data/content';
 
 export default function Memberships() {
   const ref = useReveal<HTMLElement>();
@@ -31,6 +31,22 @@ export default function Memberships() {
             </div>
           ))}
         </div>
+
+        {recognitions.length > 0 && (
+          <div className="mt-14">
+            <h3 className="mb-5 font-display text-2xl font-bold text-foreground">التكريمات والمساهمات البحثية</h3>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {recognitions.map((item) => (
+                <article key={item.title} className="reveal card-glow rounded-2xl border border-border bg-card p-6">
+                  <p className="mb-2 text-xs font-semibold text-primary">{item.date}</p>
+                  <h4 className="mb-2 text-lg font-bold leading-relaxed text-foreground">{item.title}</h4>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{item.org}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/80">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
