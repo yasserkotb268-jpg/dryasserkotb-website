@@ -35,7 +35,7 @@ export default function About() {
           <div className="flex flex-col gap-5 lg:col-span-2">
             <div className="reveal card-glow overflow-hidden rounded-2xl border border-border">
               <img
-                src="/photos/library-portrait.png"
+                src="/photos/yk7-official-portrait.jpg"
                 alt="د. ياسر قطب في مكتبته"
                 className="h-64 w-full object-cover object-top"
                 loading="lazy"
