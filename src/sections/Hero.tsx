@@ -20,6 +20,19 @@ export default function Hero() {
           +25 عامًا من الخبرة التطبيقية والبحثية
         </div>
 
+        <div className="reveal relative mb-8 h-44 w-44 shrink-0 rounded-full border-2 border-rose-700/65 bg-card p-1.5 shadow-2xl shadow-black/35 md:h-48 md:w-48">
+          <span className="pointer-events-none absolute -inset-3 rounded-full border border-rose-500/20" aria-hidden="true" />
+          <img
+            src="/photos/library-portrait.png"
+            alt="د. ياسر قطب — صورة شخصية من المكتبة الحالية للموقع"
+            width="192"
+            height="192"
+            loading="eager"
+            decoding="async"
+            className="h-full w-full rounded-full object-cover object-top"
+          />
+        </div>
+
         <h1 className="reveal font-display text-4xl font-bold leading-[1.35] text-foreground md:text-6xl md:leading-[1.3]">
           د. ياسر سيد عبد السلام <span className="gold-text">قطب</span>
         </h1>
