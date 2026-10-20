@@ -999,6 +999,10 @@
     {
       "org": "الهيئة الدولية للتحكيم (International Arbitration Organization)",
       "role": "قيد سابق بصفة مستشار تحكيم تجاري دولي وفق بطاقة سارية حتى 1 يوليو 2025"
+    },
+    {
+      "org": "مجلس التدريب التعليمي في لندن (Educational Training Board in London)",
+      "role": "عضوية مهنية موثقة ببطاقتَي CTQM وCBC الصادرتين في 25 مارس و2 يوليو 2024؛ لا تثبت البطاقتان استمرار العضوية بعد هذين التاريخين"
     }
   ],
   "yk7": {
@@ -1152,15 +1156,15 @@
     },
     {
       "title": "مدير جودة شاملة معتمد (Certified Total Quality Manager — CTQM)",
-      "org": "كلية أكسفورد للدراسات الدولية (Oxford College for International Studies) — الاعتماد المرتبط بالبورد البريطاني وفق بيانات الشهادة",
-      "kind": "شهادة مهنية",
-      "date": "2024"
+      "org": "مجلس التدريب التعليمي في لندن (Educational Training Board in London) — الصفة مثبتة على بطاقة عضوية مهنية",
+      "kind": "بطاقة عضوية مهنية",
+      "date": "25 مارس 2024"
     },
     {
       "title": "تدريب المدربين (Training of Trainers — TOT)",
-      "org": "كلية أكسفورد للدراسات الدولية (Oxford College for International Studies) — الاعتماد المرتبط بالبورد البريطاني وفق بيانات الشهادة",
+      "org": "كلية أكسفورد للدراسات الدولية (Oxford College for International Studies) — وفق الشهادة، مع اعتماد مذكور من Educational Training Board in London",
       "kind": "شهادة تدريب مهني",
-      "date": "2024"
+      "date": "2 فبراير 2024"
     }
   ]
 }
