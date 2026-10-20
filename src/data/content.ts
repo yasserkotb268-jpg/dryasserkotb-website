@@ -40,7 +40,26 @@ export interface FeaturedVideo { title: string; desc: string; url: string }
 export interface YK7Document { title: string; type: string; date?: string; file?: string }
 export interface YK7MagazineIssue { title: string; issue?: string; date?: string; file?: string }
 export interface YK7Poster { title: string; file: string; desc?: string }
-export interface YK7 { intro: string; facebook?: string; documents: YK7Document[]; magazine?: YK7MagazineIssue[]; posters?: YK7Poster[] }
+export interface YK7Unit {
+  title: string;
+  poster: string;
+  lead: string;
+  project: string;
+  description: string;
+  team: string;
+  supervisor: string;
+}
+export interface YK7Publication {
+  title: string;
+  type: string;
+  year: string;
+  project?: string;
+  team: string;
+  supervisor: string;
+  note?: string;
+  file?: string;
+}
+export interface YK7 { intro: string; facebook?: string; documents: YK7Document[]; magazine?: YK7MagazineIssue[]; posters?: YK7Poster[]; units?: YK7Unit[]; publications?: YK7Publication[] }
 export interface Presentation { title: string; desc: string; file: string }
 export interface ContactLink { name: string; url: string }
 export interface Contact {

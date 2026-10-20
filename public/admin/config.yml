@@ -72,6 +72,43 @@ collections:
                   - { label: التاريخ (اختياري), name: date, widget: string, required: false }
                   - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
 
+              - label: ملفات تعريف الأقسام والأنشطة
+                name: posters
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: العنوان, name: title, widget: string }
+                  - { label: اسم الملف داخل مجلد posters, name: file, widget: string }
+                  - { label: وصف مختصر, name: desc, widget: text, required: false }
+              - label: الوحدات المتخصصة
+                name: units
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: اسم الوحدة, name: title, widget: string }
+                  - { label: اسم ملف الملصق داخل posters, name: poster, widget: string }
+                  - { label: المشرف على الوحدة, name: lead, widget: string }
+                  - { label: المشروع, name: project, widget: string }
+                  - { label: وصف الوحدة, name: description, widget: text }
+                  - { label: فريق الإعداد, name: team, widget: string }
+                  - { label: الإشراف العام, name: supervisor, widget: string }
+              - label: إصدارات المنصة
+                name: publications
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: عنوان الإصدار, name: title, widget: string }
+                  - { label: النوع, name: type, widget: string }
+                  - { label: السنة, name: year, widget: string }
+                  - { label: الوحدة أو المشروع, name: project, widget: string, required: false }
+                  - { label: فريق الإعداد, name: team, widget: text }
+                  - { label: الإشراف, name: supervisor, widget: string }
+                  - { label: ملخص, name: note, widget: text, required: false }
+                  - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
+
           - label: المقالات
             name: articles
             widget: list

@@ -1,4 +1,4 @@
-import { Download, Facebook, FileText, Images, Newspaper, Radar } from 'lucide-react';
+import { BookOpen, Download, Facebook, FileText, Images, Newspaper, Radar, ShieldCheck } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { yk7 } from '@/data/content';
@@ -69,13 +69,66 @@ export default function YK7() {
           ))}
         </div>
 
+        {((yk7.units && yk7.units.length > 0) || (yk7.posters && yk7.posters.length > 0) || (yk7.publications && yk7.publications.length > 0)) && (
+          <div className="reveal mt-16 mb-8">
+            <h3 className="font-display text-2xl font-bold leading-relaxed text-foreground md:text-3xl">
+              وحدات وأقسام وإصدارات منصة الرصد الاستراتيجي | YK7
+            </h3>
+          </div>
+        )}
+
+        {yk7.units && yk7.units.length > 0 && (
+          <div className="reveal" id="yk7-units">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
+                <ShieldCheck className="h-5 w-5" />
+              </span>
+              <h4 className="font-display text-xl font-bold text-foreground">الوحدات المتخصصة</h4>
+            </div>
+            <div className="space-y-5">
+              {yk7.units.map((unit) => (
+                <article
+                  key={unit.title}
+                  className="card-glow grid overflow-hidden rounded-2xl border border-border bg-card md:grid-cols-[minmax(0,1fr)_minmax(0,1.45fr)]"
+                >
+                  <a
+                    href={assetPath('posters', unit.poster)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center bg-background/60 p-5"
+                    aria-label={`عرض الملصق التعريفي: ${unit.title}`}
+                  >
+                    <img
+                      src={assetPath('posters', unit.poster)}
+                      alt={`ملصق ${unit.title} — منصة YK7`}
+                      className="mx-auto h-auto max-h-[470px] w-auto max-w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                  <div className="flex flex-col justify-center gap-4 p-6 md:p-8">
+                    <h5 className="font-display text-2xl font-bold text-primary">{unit.title}</h5>
+                    <p className="text-sm leading-[1.9] text-foreground/85">{unit.description}</p>
+                    <dl className="grid gap-3 text-sm leading-relaxed">
+                      <div><dt className="font-bold text-foreground">إشراف الوحدة</dt><dd className="mt-1 text-muted-foreground">{unit.lead}</dd></div>
+                      <div><dt className="font-bold text-foreground">المشروع</dt><dd className="mt-1 text-muted-foreground">{unit.project}</dd></div>
+                      <div><dt className="font-bold text-foreground">فريق العمل والإعداد</dt><dd className="mt-1 text-muted-foreground">{unit.team}</dd></div>
+                      <div><dt className="font-bold text-foreground">الإشراف العام</dt><dd className="mt-1 text-muted-foreground">{unit.supervisor}</dd></div>
+                    </dl>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
         {yk7.posters && yk7.posters.length > 0 && (
           <div className="reveal mt-14">
             <div className="mb-6 flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
                 <Images className="h-5 w-5" />
               </span>
-              <h3 className="font-display text-2xl font-bold text-foreground">بوسترات وحدات المنصة وأعمالها</h3>
+              <h4 className="font-display text-xl font-bold text-foreground">أقسام المنصة وأنشطتها</h4>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {yk7.posters.map((poster) => (
@@ -99,6 +152,37 @@ export default function YK7() {
                     {poster.desc && <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{poster.desc}</p>}
                   </div>
                 </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {yk7.publications && yk7.publications.length > 0 && (
+          <div className="reveal mt-14" id="yk7-publications">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
+                <BookOpen className="h-5 w-5" />
+              </span>
+              <h4 className="font-display text-xl font-bold text-foreground">إصدارات المنصة</h4>
+            </div>
+            <div className="space-y-4">
+              {yk7.publications.map((publication) => (
+                <article key={publication.title} className="card-glow rounded-2xl border border-border bg-card p-6 md:p-7">
+                  <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-bold text-primary">
+                    <span className="rounded-full border border-primary/35 bg-primary/10 px-3 py-1">{publication.type}</span>
+                    <span className="rounded-full border border-border px-3 py-1 text-muted-foreground">{publication.year}</span>
+                  </div>
+                  <h5 className="font-display text-xl font-bold leading-relaxed text-foreground">{publication.title}</h5>
+                  {publication.note && <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{publication.note}</p>}
+                  <p className="mt-4 text-sm leading-[1.9] text-foreground/85">{publication.team}</p>
+                  <p className="text-sm leading-[1.9] text-foreground/85">{publication.supervisor}</p>
+                  {publication.file && (
+                    <a href={assetPath('uploads', publication.file)} target="_blank" rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary">
+                      <Download className="h-4 w-4" /> قراءة الإصدار
+                    </a>
+                  )}
+                </article>
               ))}
             </div>
           </div>
