@@ -16,6 +16,8 @@ export interface Profile {
 export interface Qualification { title: string; detail: string }
 export interface Position { org: string; role: string }
 export interface Membership { org: string; role: string }
+export interface Recognition { title: string; org: string; date: string; desc: string }
+export interface TrainingCertificate { title: string; org: string; date?: string; kind: string }
 export interface ExpertiseArea { area: string; detail: string; icon: string }
 export interface Framework { name: string; desc: string }
 export interface Photo { src: string; alt: string }
@@ -55,6 +57,8 @@ const data = raw as unknown as {
   qualifications: Qualification[];
   positions: Position[];
   memberships: Membership[];
+  recognitions: Recognition[];
+  trainingCertificates: TrainingCertificate[];
   expertise: ExpertiseArea[];
   frameworks: Framework[];
   photos: Photo[];
@@ -77,6 +81,8 @@ export const profile: Profile = data.profile;
 export const qualifications: Qualification[] = data.qualifications;
 export const positions: Position[] = data.positions;
 export const memberships: Membership[] = data.memberships;
+export const recognitions: Recognition[] = data.recognitions;
+export const trainingCertificates: TrainingCertificate[] = data.trainingCertificates;
 export const expertise: ExpertiseArea[] = data.expertise;
 export const frameworks: Framework[] = data.frameworks;
 export const photos: Photo[] = data.photos;

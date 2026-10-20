@@ -188,6 +188,28 @@ collections:
               - { label: الصورة, name: src, widget: image }
               - { label: وصف الصورة, name: alt, widget: string }
 
+          - label: التكريمات والمساهمات البحثية
+            name: recognitions
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: عنوان التكريم, name: title, widget: string }
+              - { label: الجهة, name: org, widget: string }
+              - { label: التاريخ, name: date, widget: string }
+              - { label: بيان طبيعة التكريم, name: desc, widget: text }
+
+          - label: شهادات التدريب والدورات المهنية
+            name: trainingCertificates
+            widget: list
+            summary: '{{fields.title}}'
+            collapsed: true
+            fields:
+              - { label: اسم التدريب, name: title, widget: string }
+              - { label: الجهة ونوع البرنامج, name: org, widget: text }
+              - { label: التاريخ, name: date, widget: string, required: false }
+              - { label: نوع الشهادة, name: kind, widget: string }
+
           - label: المؤهلات العلمية
             name: qualifications
             widget: list

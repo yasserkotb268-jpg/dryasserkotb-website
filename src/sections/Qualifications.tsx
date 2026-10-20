@@ -1,7 +1,7 @@
 import { GraduationCap } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
-import { qualifications } from '@/data/content';
+import { qualifications, trainingCertificates } from '@/data/content';
 
 export default function Qualifications() {
   const ref = useReveal<HTMLElement>();
@@ -45,6 +45,24 @@ export default function Qualifications() {
             ))}
           </div>
         </div>
+
+        {trainingCertificates.length > 0 && (
+          <div className="mt-16">
+            <h3 className="mb-3 font-display text-2xl font-bold text-foreground">التدريب والشهادات المهنية</h3>
+            <p className="mb-6 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+              شهادات حضور أو اجتياز مقررات وورش تدريبية، تُعرض بصفتها التدريبية ولا تعادل درجات علمية أو تراخيص مهنية مستقلة.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {trainingCertificates.map((item) => (
+                <article key={item.title} className="reveal card-glow rounded-2xl border border-border bg-card p-5">
+                  <p className="mb-2 text-xs font-semibold text-primary">{item.kind}{item.date ? ` — ${item.date}` : ''}</p>
+                  <h4 className="mb-2 font-bold leading-relaxed text-foreground">{item.title}</h4>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{item.org}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
