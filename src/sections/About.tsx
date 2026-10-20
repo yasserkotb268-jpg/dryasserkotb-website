@@ -36,8 +36,10 @@ export default function About() {
             <div className="reveal card-glow overflow-hidden rounded-2xl border border-border">
               <img
                 src="/photos/yk7-official-portrait.jpg"
-                alt="د. ياسر قطب في مكتبته"
-                className="h-64 w-full object-cover object-top"
+                alt="الصورة الرسمية للدكتور ياسر قطب"
+                width={1064}
+                height={2048}
+                className="block h-auto w-full object-contain"
                 loading="lazy"
               />
             </div>
