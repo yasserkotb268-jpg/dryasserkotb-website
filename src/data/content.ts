@@ -39,7 +39,8 @@ export interface VisualPoster { title: string; desc?: string; file: string }
 export interface VisualQuote { text: string; context?: string }
 export interface VisualGalleryData { intro: string; posters: VisualPoster[]; quotes: VisualQuote[] }
 export interface YK7Document { title: string; type: string; date?: string; file?: string }
-export interface YK7 { intro: string; facebook?: string; documents: YK7Document[] }
+export interface YK7MagazineIssue { title: string; issue?: string; date?: string; file?: string }
+export interface YK7 { intro: string; facebook?: string; documents: YK7Document[]; magazine?: YK7MagazineIssue[] }
 export interface Presentation { title: string; desc: string; file: string }
 export interface ContactLink { name: string; url: string }
 export interface Contact {
