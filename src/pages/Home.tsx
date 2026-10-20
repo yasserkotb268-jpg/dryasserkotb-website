@@ -7,6 +7,7 @@ import Memberships from '@/sections/Memberships';
 import Expertise from '@/sections/Expertise';
 import Works from '@/sections/Works';
 import Research from '@/sections/Research';
+import VisualGallery from '@/sections/VisualGallery';
 import YK7 from '@/sections/YK7';
 import Lectures from '@/sections/Lectures';
 import Seminars from '@/sections/Seminars';
@@ -28,6 +29,7 @@ export default function Home() {
         <Memberships />
         <Expertise />
         <Works />
+        <VisualGallery />
         <Research />
         <YK7 />
         <Lectures />

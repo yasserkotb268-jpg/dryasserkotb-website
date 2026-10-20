@@ -51,6 +51,12 @@ export default function Hero() {
             اكتشف المسيرة المهنية
           </a>
           <a
+            href="#visual-gallery"
+            className="rounded-lg border border-rose-500/40 bg-rose-500/10 px-7 py-3 text-sm font-bold text-rose-300 transition-colors hover:bg-rose-500/20"
+          >
+            الصور والاقتباسات
+          </a>
+          <a
             href="#contact"
             className="rounded-lg border border-primary/50 bg-primary/5 px-7 py-3 text-sm font-bold text-primary transition-all hover:bg-primary/15"
           >
