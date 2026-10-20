@@ -71,6 +71,55 @@ collections:
                   - { label: النوع, name: type, widget: string, hint: 'وثيقة عمل / تقرير رصد / قراءة تحليلية / مصفوفة مرجعية...' }
                   - { label: التاريخ (اختياري), name: date, widget: string, required: false }
                   - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
+              - label: مجلة المنصة وإصداراتها
+                name: magazine
+                widget: list
+                required: false
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: عنوان الإصدار, name: title, widget: string }
+                  - { label: العدد أو وصف الإصدار, name: issue, widget: string, required: false }
+                  - { label: تاريخ الإصدار, name: date, widget: string, required: false }
+                  - { label: ملف PDF, name: file, widget: file, required: false }
+
+          - label: المعرض المرئي والبوسترات والاقتباسات
+            name: visualGallery
+            widget: object
+            collapsed: true
+            fields:
+              - { label: مقدمة المعرض, name: intro, widget: text }
+              - label: البوسترات
+                name: posters
+                widget: list
+                required: false
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: عنوان البوستر, name: title, widget: string }
+                  - { label: وصف مختصر, name: desc, widget: string, required: false }
+                  - { label: ملف الصورة أو SVG, name: file, widget: file }
+                  - label: المجال
+                    name: category
+                    widget: select
+                    required: false
+                    options: ['جودة القرار', 'علم النفس والسلوك', 'الفكر والقيادة', 'الذكاء الاصطناعي والحوكمة', 'القانون والدبلوماسية', 'الكتب والمؤلفات', 'المحاضرات والمؤتمرات', 'أخلاقيات الكلمة']
+              - label: الفيديو التعريفي للموقع (بعد اعتماد الملف)
+                name: video
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: عنوان الفيديو, name: title, widget: string }
+                  - { label: الفيديو بصيغة MP4, name: file, widget: file }
+                  - { label: صورة معاينة الفيديو, name: poster, widget: image, required: false }
+              - label: الاقتباسات
+                name: quotes
+                widget: list
+                required: false
+                summary: '{{fields.text}}'
+                fields:
+                  - { label: نص الاقتباس, name: text, widget: text }
+                  - { label: موضوع الاقتباس أو مصدره, name: context, widget: string, required: false }
 
           - label: المقالات
             name: articles

@@ -35,8 +35,13 @@ export interface LectureSeries {
   link?: { url: string; label: string };
 }
 export interface FeaturedVideo { title: string; desc: string; url: string }
+export interface VisualPoster { title: string; desc?: string; file: string; category?: string }
+export interface VisualQuote { text: string; context?: string }
+export interface VisualGalleryVideo { title: string; file: string; poster?: string }
+export interface VisualGalleryData { intro: string; posters: VisualPoster[]; quotes: VisualQuote[]; video?: VisualGalleryVideo; curatedPosters?: VisualPoster[]; featuredMediaVideo?: VisualGalleryVideo }
 export interface YK7Document { title: string; type: string; date?: string; file?: string }
-export interface YK7 { intro: string; facebook?: string; documents: YK7Document[] }
+export interface YK7MagazineIssue { title: string; issue?: string; date?: string; file?: string }
+export interface YK7 { intro: string; facebook?: string; documents: YK7Document[]; magazine?: YK7MagazineIssue[] }
 export interface Presentation { title: string; desc: string; file: string }
 export interface ContactLink { name: string; url: string }
 export interface Contact {
@@ -56,6 +61,7 @@ const data = raw as unknown as {
   expertise: ExpertiseArea[];
   frameworks: Framework[];
   photos: Photo[];
+  visualGallery: VisualGalleryData;
   models: ModelItem[];
   seminars: Seminar[];
   books: Book[];
@@ -78,6 +84,7 @@ export const memberships: Membership[] = data.memberships;
 export const expertise: ExpertiseArea[] = data.expertise;
 export const frameworks: Framework[] = data.frameworks;
 export const photos: Photo[] = data.photos;
+export const visualGallery: VisualGalleryData = data.visualGallery;
 export const models: ModelItem[] = data.models;
 export const seminars: Seminar[] = data.seminars;
 export const books: Book[] = data.books;

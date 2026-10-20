@@ -1,0 +1,113 @@
+{
+  "purpose": "Editorial asset registry: files are NOT added to public site until physically uploaded and reviewed",
+  "gallery_target": "src/data/content.json:visualGallery.posters",
+  "video_source_local": "YK7_Official_Advertisement_Poster_Collection_Mobile.mp4",
+  "video_target": "/uploads/yk7-official-announcement.mp4",
+  "video_status": "awaiting_actual_binary_upload",
+  "candidates": [
+    {
+      "name": "editorial-word-responsibility.webp",
+      "title": "من الخبر إلى الفهم: مسؤولية الكلمة",
+      "category": "أخلاقيات الكلمة",
+      "original": "ملصق من الخبر إلى الفهم: مسؤولية الكلمة.png",
+      "site_path": "/uploads/editorial-word-responsibility.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "narcissistic-personality-book.webp",
+      "title": "الشخصية النرجسية: من تضخم الذات إلى ميزان الكرامة والحدود",
+      "category": "الكتب والمؤلفات",
+      "original": "ملصق ترويجي لكتاب النمط النرجسي.png",
+      "site_path": "/uploads/narcissistic-personality-book.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "responsibility-before-title.webp",
+      "title": "من اللقب إلى المسؤولية",
+      "category": "الفكر والقيادة",
+      "original": "من اللقب إلى المسؤولية.png",
+      "site_path": "/uploads/responsibility-before-title.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "middle-east-balance.webp",
+      "title": "موازين القوة في الشرق الأوسط",
+      "category": "القانون والدبلوماسية",
+      "original": "قضايا: موازين القوة في الشرق الأوسط.png",
+      "site_path": "/uploads/middle-east-balance.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "leadership-impact-magazine.webp",
+      "title": "صناعة الأثر ومسؤولية القيادة",
+      "category": "الفكر والقيادة",
+      "original": "غلاف مجلة YK7: صناعة الأثر والقيادة.png",
+      "site_path": "/uploads/leadership-impact-magazine.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "psychology-drama.webp",
+      "title": "من فهم النفس إلى بناء الشخصية الدرامية",
+      "category": "علم النفس والسلوك",
+      "original": "من فهم النفس إلى بناء الشخصية الدرامية.png",
+      "site_path": "/uploads/psychology-drama.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "correction-stigma.webp",
+      "title": "حين يصبح التصحيح وصمة",
+      "category": "أخلاقيات الكلمة",
+      "original": "ملصق فاخر: حين يصبح التصحيح وصمة.png",
+      "site_path": "/uploads/correction-stigma.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "human-behind-decision.webp",
+      "title": "وراء كل قرار إنسان يتأثر به",
+      "category": "جودة القرار",
+      "original": "وراء كل قرار إنسان.png",
+      "site_path": "/uploads/human-behind-decision.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "hope.webp",
+      "title": "قد يخيب أمل الإنسان في أمر معين، لكنه يظل قادرًا على الأمل في غيره",
+      "category": "علم النفس والسلوك",
+      "original": "قد يخيب الأمل ويبقى الرجاء.png",
+      "site_path": "/uploads/hope.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "knowledge-choice.webp",
+      "title": "قيمة المعرفة في حسن الاختيار",
+      "category": "جودة القرار",
+      "original": "قيمة المعرفة في حسن الاختيار.png",
+      "site_path": "/uploads/knowledge-choice.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "ai-governance.webp",
+      "title": "الذكاء الاصطناعي والحوكمة",
+      "category": "الذكاء الاصطناعي والحوكمة",
+      "original": "ملصقات الرصد الاستراتيجي: الذكاء الاصطناعي والحوكمة.png",
+      "site_path": "/uploads/ai-governance.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "psychodrama-self.webp",
+      "title": "السيكودراما واكتشاف الذات",
+      "category": "علم النفس والسلوك",
+      "original": "ملصقات السيكودراما واكتشاف الذات.png",
+      "site_path": "/uploads/psychodrama-self.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    },
+    {
+      "name": "psychodrama-roles.webp",
+      "title": "السيكودراما والأدوار الحياتية",
+      "category": "علم النفس والسلوك",
+      "original": "ملصق السيكودراما والأدوار الحياتية.png",
+      "site_path": "/uploads/psychodrama-roles.webp",
+      "review_status": "awaiting_actual_binary_upload"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-label="قد يخيب أمل الإنسان في أمر معين، لكنه يظل قادرًا على الأمل في غيره.">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18191d"/><stop offset="1" stop-color="#07080b"/></linearGradient><radialGradient id="glow"><stop stop-color="#6a1623" stop-opacity=".35"/><stop offset="1" stop-color="#6a1623" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="1500" fill="url(#bg)"/><circle cx="1050" cy="390" r="660" fill="url(#glow)"/><rect x="0" y="0" width="17" height="1500" fill="#c22b42"/>
+<path d="M110 340H1090" stroke="#953142" stroke-opacity=".55" stroke-width="2"/>
+<text x="1075" y="175" text-anchor="end" font-family="Arial,sans-serif" font-size="70" font-weight="700" fill="#f7f7f8">YK<tspan fill="#ce334b">7</tspan></text>
+<text x="1075" y="235" text-anchor="end" font-family="Tahoma,Arial,sans-serif" font-size="33" fill="#b9bcc2">منصة الرصد الاستراتيجي</text>
+<text x="600" y="505" text-anchor="middle" direction="rtl" font-family="Tahoma, 'Noto Naskh Arabic', Arial, sans-serif" font-weight="700" font-size="58" fill="#f4f5f7">قد يخيب أمل الإنسان في أمر معين،</text>
+<text x="600" y="620" text-anchor="middle" direction="rtl" font-family="Tahoma, 'Noto Naskh Arabic', Arial, sans-serif" font-weight="700" font-size="58" fill="#e2e3e7">لكنه يظل قادرًا</text>
+<text x="600" y="735" text-anchor="middle" direction="rtl" font-family="Tahoma, 'Noto Naskh Arabic', Arial, sans-serif" font-weight="700" font-size="58" fill="#e2e3e7">على الأمل في غيره.</text>
+<path d="M400 960H800" stroke="#c22b42" stroke-width="6" stroke-linecap="round"/>
+<text x="600" y="1040" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="38" fill="#d0d2d8">التجربة الإنسانية</text>
+<text x="600" y="1290" text-anchor="middle" font-family="Tahoma,Arial,sans-serif" font-size="39" fill="#f1f1f3">د. ياسر قطب</text>
+<text x="600" y="1355" text-anchor="middle" font-family="Arial,sans-serif" font-size="31" fill="#979aa1">dryasserkotb.com</text>
+<path d="M110 1405H1090" stroke="#383a40" stroke-width="2"/></svg>

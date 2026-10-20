@@ -589,59 +589,31 @@
   "navLinks": [
     {
       "id": "about",
-      "label": "نبذة مهنية"
-    },
-    {
-      "id": "qualifications",
-      "label": "المؤهلات"
-    },
-    {
-      "id": "positions",
-      "label": "المناصب"
-    },
-    {
-      "id": "memberships",
-      "label": "العضويات والزمالات"
-    },
-    {
-      "id": "expertise",
-      "label": "مجالات الخبرة"
+      "label": "عن المؤلف"
     },
     {
       "id": "works",
-      "label": "الأعمال الفكرية"
+      "label": "الكتب والأعمال"
     },
     {
       "id": "research",
-      "label": "الأبحاث العلمية"
-    },
-    {
-      "id": "yk7",
-      "label": "منصة YK7"
-    },
-    {
-      "id": "lectures",
-      "label": "المحاضرات"
-    },
-    {
-      "id": "seminars",
-      "label": "الندوات وورش العمل"
-    },
-    {
-      "id": "programs",
-      "label": "البرامج العلمية"
+      "label": "الأبحاث"
     },
     {
       "id": "articles",
       "label": "المقالات"
     },
     {
-      "id": "publications",
-      "label": "محاضرات وعروض"
+      "id": "yk7",
+      "label": "منصة YK7"
+    },
+    {
+      "id": "visual-gallery",
+      "label": "المكتبة البصرية"
     },
     {
       "id": "contact",
-      "label": "تواصل"
+      "label": "التواصل"
     }
   ],
   "presentations": [
@@ -1023,5 +995,128 @@
         "file": "/uploads/yk7-taammulat-regional-vacuum.pdf"
       }
     ]
+  },
+  "visualGallery": {
+    "intro": "مختارات موثقة من صور المؤلف وبوستراته واقتباساته في مجالات الفكر والقيادة والسلوك الإنساني والقضايا الاستراتيجية.",
+    "posters": [
+      {
+        "title": "وراء كل قرار إنسان يتأثر به",
+        "desc": "مسؤولية الاختيار والأثر الإنساني",
+        "file": "quote-human-decision.svg",
+        "category": "جودة القرار"
+      },
+      {
+        "title": "التقنية تضيف قدرة والمؤسسة تحدد القيمة",
+        "desc": "التقنية وجودة الممارسة المؤسسية",
+        "file": "quote-technology-value.svg",
+        "category": "الذكاء الاصطناعي والحوكمة"
+      },
+      {
+        "title": "قد يخيب الأمل ويبقى الرجاء",
+        "desc": "حدود خيبة الأمل واتساع إمكاناته",
+        "file": "quote-hope.svg",
+        "category": "السلوك الإنساني"
+      },
+      {
+        "title": "معرفة تنصف الإنسان وتحسن القرار",
+        "desc": "المعرفة في خدمة الإنسان وجودة الاختيار",
+        "file": "quote-knowledge.svg",
+        "category": "جودة القرار"
+      }
+    ],
+    "quotes": [
+      {
+        "text": "وراء كل قرار إنسان يتأثر به.",
+        "context": "في جودة القرار والسلوك الإنساني"
+      },
+      {
+        "text": "التقنية تضيف قدرة والمؤسسة تحدد القيمة.",
+        "context": "في تطبيق الذكاء الاصطناعي وإدارة الجودة"
+      },
+      {
+        "text": "قد يخيب أمل الإنسان في أمر معين، لكنه يظل قادرًا على الأمل في غيره.",
+        "context": "في الأمل والتجربة الإنسانية"
+      },
+      {
+        "text": "معرفة تُنصف الإنسان وتُحسّن القرار.",
+        "context": "في مسؤولية المعرفة والأثر"
+      },
+      {
+        "text": "افهم السلوك دون أن تتعجل الحكم، واحمِ نفسك دون أن تؤذي غيرك، وضع حدودك دون أن تفقد إنسانيتك.",
+        "context": "من كتاب «كيف أتعامل مع النمط النرجسي»"
+      }
+    ],
+    "curatedPosters": [
+      {
+        "title": "من الخبر إلى الفهم: مسؤولية الكلمة",
+        "category": "أخلاقيات الكلمة",
+        "file": "/uploads/editorial-word-responsibility.webp"
+      },
+      {
+        "title": "الشخصية النرجسية: من تضخم الذات إلى ميزان الكرامة والحدود",
+        "category": "الكتب والمؤلفات",
+        "file": "/uploads/narcissistic-personality-book.webp"
+      },
+      {
+        "title": "من اللقب إلى المسؤولية",
+        "category": "الفكر والقيادة",
+        "file": "/uploads/responsibility-before-title.webp"
+      },
+      {
+        "title": "موازين القوة في الشرق الأوسط",
+        "category": "القانون والدبلوماسية",
+        "file": "/uploads/middle-east-balance.webp"
+      },
+      {
+        "title": "صناعة الأثر ومسؤولية القيادة",
+        "category": "الفكر والقيادة",
+        "file": "/uploads/leadership-impact-magazine.webp"
+      },
+      {
+        "title": "من فهم النفس إلى بناء الشخصية الدرامية",
+        "category": "علم النفس والسلوك",
+        "file": "/uploads/psychology-drama.webp"
+      },
+      {
+        "title": "حين يصبح التصحيح وصمة",
+        "category": "أخلاقيات الكلمة",
+        "file": "/uploads/correction-stigma.webp"
+      },
+      {
+        "title": "وراء كل قرار إنسان يتأثر به",
+        "category": "جودة القرار",
+        "file": "/uploads/human-behind-decision.webp"
+      },
+      {
+        "title": "قد يخيب أمل الإنسان في أمر معين، لكنه يظل قادرًا على الأمل في غيره",
+        "category": "علم النفس والسلوك",
+        "file": "/uploads/hope.webp"
+      },
+      {
+        "title": "قيمة المعرفة في حسن الاختيار",
+        "category": "جودة القرار",
+        "file": "/uploads/knowledge-choice.webp"
+      },
+      {
+        "title": "الذكاء الاصطناعي والحوكمة",
+        "category": "الذكاء الاصطناعي والحوكمة",
+        "file": "/uploads/ai-governance.webp"
+      },
+      {
+        "title": "السيكودراما واكتشاف الذات",
+        "category": "علم النفس والسلوك",
+        "file": "/uploads/psychodrama-self.webp"
+      },
+      {
+        "title": "السيكودراما والأدوار الحياتية",
+        "category": "علم النفس والسلوك",
+        "file": "/uploads/psychodrama-roles.webp"
+      }
+    ],
+    "featuredMediaVideo": {
+      "title": "منصة الرصد الاستراتيجي | YK7",
+      "file": "/uploads/yk7-official-announcement.mp4",
+      "poster": "/uploads/yk7-announcement-cover.webp"
+    }
   }
 }
