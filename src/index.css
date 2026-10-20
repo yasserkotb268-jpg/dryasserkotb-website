@@ -4,98 +4,67 @@
 
 @layer base {
   :root {
-    --background: 222 47% 7%;
-    --foreground: 45 30% 94%;
-    --card: 222 44% 10%;
-    --card-foreground: 45 30% 94%;
-    --popover: 222 44% 9%;
-    --popover-foreground: 45 30% 94%;
-    --primary: 43 74% 49%;
-    --primary-foreground: 222 47% 7%;
-    --secondary: 221 39% 15%;
-    --secondary-foreground: 45 30% 92%;
-    --muted: 221 39% 15%;
-    --muted-foreground: 220 15% 62%;
-    --accent: 43 74% 49%;
-    --accent-foreground: 222 47% 7%;
-    --destructive: 0 62.8% 45%;
+    --background: 225 24% 7%;
+    --foreground: 220 20% 95%;
+    --card: 220 20% 11%;
+    --card-foreground: 220 20% 95%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 348 70% 66%;
+    --primary-foreground: 225 24% 7%;
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 220 16% 16%;
+    --muted-foreground: 218 13% 73%;
+    --accent: 348 70% 66%;
+    --accent-foreground: 225 24% 7%;
+    --destructive: 0 63% 45%;
     --destructive-foreground: 0 0% 98%;
-    --border: 222 30% 18%;
-    --input: 222 30% 20%;
-    --ring: 43 74% 49%;
-    --radius: 0.75rem;
+    --border: 220 13% 24%;
+    --input: 220 16% 22%;
+    --ring: 348 70% 66%;
+    --radius: .75rem;
   }
 }
-
 @layer base {
-  * {
-    @apply border-border;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground;
     font-family: 'Tajawal', system-ui, sans-serif;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
   }
-  ::selection {
-    background: hsl(43 74% 49% / 0.35);
-    color: hsl(45 40% 97%);
-  }
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsl(222 47% 7%);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(222 25% 22%);
-    border-radius: 8px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(43 50% 40%);
-  }
+  section[id] { scroll-margin-top: 5rem; }
+  ::selection { background: hsl(348 65% 44% / .52); color: white; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: hsl(225 24% 7%); }
+  ::-webkit-scrollbar-thumb { background: hsl(220 13% 34%); border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(348 45% 44%); }
 }
-
 @layer utilities {
-  .font-display {
-    font-family: 'Amiri', serif;
-  }
+  .font-display { font-family: 'Amiri', 'Tajawal', serif; }
+  /* Formerly gold-themed utilities are preserved for old components, now using the YK7 red/neutral palette. */
   .gold-text {
-    background: linear-gradient(135deg, hsl(48 95% 76%) 0%, hsl(43 74% 49%) 45%, hsl(38 60% 38%) 100%);
+    background: linear-gradient(135deg, hsl(220 20% 98%) 0%, hsl(348 75% 74%) 70%, hsl(348 70% 58%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .gold-line {
-    background: linear-gradient(90deg, transparent, hsl(43 74% 49% / 0.8), transparent);
-  }
-  .card-glow {
-    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-  }
-  .card-glow:hover {
-    transform: translateY(-4px);
-    border-color: hsl(43 74% 49% / 0.45);
-    box-shadow: 0 12px 40px -12px hsl(43 74% 49% / 0.18), 0 4px 16px -4px rgb(0 0 0 / 0.5);
-  }
+  .gold-line { background: linear-gradient(90deg, transparent, hsl(348 68% 58% / .8), transparent); }
+  .card-glow { transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  .card-glow:hover { transform: translateY(-4px); border-color: hsl(348 65% 55% / .5); box-shadow: 0 12px 40px -12px hsl(348 65% 40% / .2), 0 4px 16px -4px rgb(0 0 0 / .45); }
   .pattern-grid {
-    background-image:
-      linear-gradient(hsl(43 74% 49% / 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(43 74% 49% / 0.045) 1px, transparent 1px);
+    background-image: linear-gradient(hsl(348 60% 60% / .035) 1px, transparent 1px), linear-gradient(90deg, hsl(348 60% 60% / .035) 1px, transparent 1px);
     background-size: 44px 44px;
   }
-  .pattern-star {
-    background-image: radial-gradient(hsl(43 74% 49% / 0.10) 1px, transparent 1.5px);
-    background-size: 26px 26px;
-  }
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .pattern-star { background-image: radial-gradient(hsl(348 60% 60% / .08) 1px, transparent 1.5px); background-size: 26px 26px; }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card-glow { transition: none; }
+  .card-glow:hover { transform: none; }
 }
