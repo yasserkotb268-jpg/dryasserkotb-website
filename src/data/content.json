@@ -21,8 +21,8 @@
   },
   "photos": [
     {
-      "src": "library-portrait.png",
-      "alt": "د. ياسر قطب في مكتبته"
+      "src": "yk7-official-portrait.jpg",
+      "alt": "الصورة الرسمية للدكتور ياسر قطب"
     },
     {
       "src": "holding-law-book.png",
@@ -1021,6 +1021,23 @@
         "title": "الفراغ الإقليمي ومداخل التأثير الخارجي: لماذا يجد الآخرون مساحة واسعة في قراراتنا؟",
         "issue": "كتاب العدد الرابع — سلسلة تأملات استراتيجية",
         "file": "/uploads/yk7-taammulat-regional-vacuum.pdf"
+      }
+    ],
+    "posters": [
+      {
+        "title": "آلية التكامل بين وحدات الرصد",
+        "file": "yk7-units-integration.webp",
+        "desc": "من وحدات منفصلة إلى منظومة متكاملة"
+      },
+      {
+        "title": "منصة الرصد الاستراتيجي | YK7",
+        "file": "yk7-strategic-platform.webp",
+        "desc": "الرصد والملاحظة • التحليل • الاستشراف • دعم القرار"
+      },
+      {
+        "title": "الرصد والتحقق المؤسسي",
+        "file": "yk7-institutional-verification.webp",
+        "desc": "مثال تطبيقي لفحص الوثائق والادعاءات المؤسسية"
       }
     ]
   }

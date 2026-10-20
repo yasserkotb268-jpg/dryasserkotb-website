@@ -130,7 +130,9 @@ export default function Works() {
                       src={assetPath('photos', p.src)}
                       alt={p.alt}
                       loading="lazy"
-                      className="aspect-[4/5] w-full object-cover transition-transform duration-500 hover:scale-105"
+                      className={p.src === 'yk7-official-portrait.jpg'
+                        ? 'block h-auto w-full object-contain'
+                        : 'aspect-[4/5] w-full object-cover transition-transform duration-500 hover:scale-105'}
                     />
                   </div>
                 ))}

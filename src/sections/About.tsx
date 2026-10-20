@@ -35,9 +35,11 @@ export default function About() {
           <div className="flex flex-col gap-5 lg:col-span-2">
             <div className="reveal card-glow overflow-hidden rounded-2xl border border-border">
               <img
-                src="/photos/library-portrait.png"
-                alt="د. ياسر قطب في مكتبته"
-                className="h-64 w-full object-cover object-top"
+                src="/photos/yk7-official-portrait.jpg"
+                alt="الصورة الرسمية للدكتور ياسر قطب"
+                width={1064}
+                height={2048}
+                className="block h-auto w-full object-contain"
                 loading="lazy"
               />
             </div>
