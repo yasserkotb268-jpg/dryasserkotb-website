@@ -6,10 +6,11 @@ import { assetPath } from '@/lib/asset';
 import './HomepageSpotlight.css';
 
 const priority = ['narcissistic-personality-book.webp', 'editorial-word-responsibility.webp', 'ai-governance.webp', 'human-behind-decision.webp'];
+const candidates = (visualGallery.curatedPosters ?? [])
+  .filter((p) => priority.some((name) => p.file.endsWith(name)))
+  .sort((a, b) => priority.findIndex((name) => a.file.endsWith(name)) - priority.findIndex((name) => b.file.endsWith(name)));
 export default function HomepageSpotlight() {
   const [quoteIndex, setQuoteIndex] = useState(0);
-  const candidates = (visualGallery.curatedPosters ?? []).filter((p) => priority.some((name) => p.file.endsWith(name)))
-    .sort((a, b) => priority.findIndex((name) => a.file.endsWith(name)) - priority.findIndex((name) => b.file.endsWith(name)));
   const uploaded = useAvailablePosters(candidates);
   const shown = [...uploaded, ...visualGallery.posters].slice(0, 4);
   const quotes = visualGallery.quotes;
