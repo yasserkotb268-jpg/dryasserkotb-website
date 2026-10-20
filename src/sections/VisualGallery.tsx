@@ -29,7 +29,7 @@ export default function VisualGallery() {
     <section id="visual-gallery" ref={ref} dir="rtl" aria-label="المعرض المرئي والاقتباسات" className="relative overflow-hidden py-24">
       <div className="yk7-visual-ambient pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 md:px-8">
-        <SectionHeading kicker="المعرض المرئي | YK7" title="الصورة والاقتباس والأثر" icon={Images} description={visualGallery.intro} />
+        <SectionHeading kicker="المعرض المرئي | YK7" title="معرض الصور والاقتباسات" icon={Images} description={visualGallery.intro} />
         <div className="reveal mb-9 flex flex-wrap justify-center gap-2" role="group" aria-label="تصنيف المعرض">
           {tabs.map((item) => {
             const Icon = item.icon;
@@ -100,10 +100,9 @@ export default function VisualGallery() {
                   </button>
                 </div>
               </div>
-            ) : <p className="text-center text-muted-foreground">سيتم إدراج الاقتباسات بعد مراجعتها.</p>}
+            ) : <p className="text-center text-muted-foreground">لا توجد اقتباسات متاحة للعرض حاليًا.</p>}
           </div>
         )}
-        <p className="mt-8 text-center text-xs leading-relaxed text-muted-foreground">مواد بصرية وتحريرية للتعريف بالأعمال؛ لا تُعدّ الصور التوضيحية توثيقًا لوقائع مستقلة.</p>
       </div>
     </section>
   );
