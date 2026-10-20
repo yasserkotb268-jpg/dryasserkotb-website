@@ -10,14 +10,14 @@ import './VisualGallery.css';
 type View = 'photos' | 'posters' | 'quotes' | 'video';
 
 const tabs: { id: View; label: string; icon: typeof Images }[] = [
-  { id: 'photos', label: 'صور من مكتبة المؤلف', icon: Images },
   { id: 'posters', label: 'بوسترات معرفية', icon: Film },
+  { id: 'photos', label: 'صور من مكتبة المؤلف', icon: Images },
   { id: 'quotes', label: 'اقتباسات مختارة', icon: Quote },
 ];
 
 export default function VisualGallery() {
   const ref = useReveal<HTMLElement>();
-  const [view, setView] = useState<View>('photos');
+  const [view, setView] = useState<View>('posters');
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [category, setCategory] = useState('الكل');
   const curated = useAvailablePosters(visualGallery.curatedPosters ?? [], view === 'posters');
@@ -35,7 +35,7 @@ export default function VisualGallery() {
     <section id="visual-gallery" ref={ref} dir="rtl" aria-label="المعرض المرئي والاقتباسات" className="relative overflow-hidden py-24">
       <div className="yk7-visual-ambient pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 md:px-8">
-        <SectionHeading kicker="المعرض المرئي | YK7" title="معرض الصور والاقتباسات" icon={Images} description={visualGallery.intro} />
+        <SectionHeading kicker="المعرض المرئي | YK7" title="المكتبة البصرية" icon={Images} description={visualGallery.intro} />
         <div className="reveal mb-9 flex flex-wrap justify-center gap-2" role="group" aria-label="تصنيف المعرض">
           {[...tabs, ...(visualGallery.video?.file ? [{ id: 'video' as View, label: 'الفيديو التعريفي', icon: PlayCircle }] : [])].map((item) => {
             const Icon = item.icon;
