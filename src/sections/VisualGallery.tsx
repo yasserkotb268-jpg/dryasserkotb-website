@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Images, Quote, Film, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Images, Quote, Film, ExternalLink, PlayCircle } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { photos, visualGallery } from '@/data/content';
 import { assetPath } from '@/lib/asset';
 import './VisualGallery.css';
 
-type View = 'photos' | 'posters' | 'quotes';
+type View = 'photos' | 'posters' | 'quotes' | 'video';
 
 const tabs: { id: View; label: string; icon: typeof Images }[] = [
   { id: 'photos', label: 'صور من مكتبة المؤلف', icon: Images },
@@ -18,6 +18,9 @@ export default function VisualGallery() {
   const ref = useReveal<HTMLElement>();
   const [view, setView] = useState<View>('photos');
   const [quoteIndex, setQuoteIndex] = useState(0);
+  const [category, setCategory] = useState('الكل');
+  const posterCategories = ['الكل', ...new Set(visualGallery.posters.map((p) => p.category).filter((value): value is string => Boolean(value)))];
+  const displayedPosters = category === 'الكل' ? visualGallery.posters : visualGallery.posters.filter((p) => p.category === category);
   const quotes = visualGallery.quotes;
   const selectedQuote = quotes.length > 0 ? quotes[quoteIndex % quotes.length] : undefined;
 
@@ -31,7 +34,7 @@ export default function VisualGallery() {
       <div className="relative mx-auto max-w-6xl px-4 md:px-8">
         <SectionHeading kicker="المعرض المرئي | YK7" title="معرض الصور والاقتباسات" icon={Images} description={visualGallery.intro} />
         <div className="reveal mb-9 flex flex-wrap justify-center gap-2" role="group" aria-label="تصنيف المعرض">
-          {tabs.map((item) => {
+          {[...tabs, ...(visualGallery.video?.file ? [{ id: 'video' as View, label: 'الفيديو التعريفي', icon: PlayCircle }] : [])].map((item) => {
             const Icon = item.icon;
             return (
               <button
@@ -64,8 +67,18 @@ export default function VisualGallery() {
         )}
 
         {view === 'posters' && (
-          <div key="posters" className="yk7-visual-entrance grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {visualGallery.posters.map((p) => (
+          <div key="posters" className="yk7-visual-entrance">
+            {posterCategories.length > 2 && (
+              <div className="mb-7 flex flex-wrap justify-center gap-2" role="group" aria-label="تصفية البوسترات حسب المجال">
+                {posterCategories.map((name) => (
+                  <button type="button" key={name} onClick={() => setCategory(name)} aria-pressed={category === name}
+                    className={`rounded-full border px-3.5 py-2 text-xs font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500 ${category === name ? 'border-rose-500 bg-rose-700 text-white' : 'border-border bg-card text-muted-foreground hover:border-rose-600'}`}
+                  >{name}</button>
+                ))}
+              </div>
+            )}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {displayedPosters.map((p) => (
               <figure key={p.file} className="yk7-visual-tile overflow-hidden rounded-2xl border border-border bg-card">
                 <a href={assetPath('posters', p.file)} target="_blank" rel="noopener noreferrer" aria-label={`فتح البوستر: ${p.title}`}>
                   <img src={assetPath('posters', p.file)} alt={p.title} loading="lazy" decoding="async" className="aspect-[4/5] w-full object-contain" />
@@ -75,7 +88,19 @@ export default function VisualGallery() {
                   </figcaption>
                 </a>
               </figure>
-            ))}
+              ))}
+            </div>
+          </div>
+        )}
+
+        {view === 'video' && visualGallery.video?.file && (
+          <div key="video" className="yk7-visual-entrance mx-auto max-w-3xl overflow-hidden rounded-2xl border border-border bg-card p-4 md:p-6">
+            <h3 className="mb-4 font-display text-2xl font-bold text-foreground">{visualGallery.video.title}</h3>
+            <video controls preload="metadata" playsInline className="mx-auto max-h-[72vh] w-full rounded-xl bg-black"
+              poster={visualGallery.video.poster ? assetPath('uploads', visualGallery.video.poster) : undefined}>
+              <source src={assetPath('uploads', visualGallery.video.file)} type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو بهذا التنسيق.
+            </video>
           </div>
         )}
 

@@ -1030,22 +1030,26 @@
       {
         "title": "وراء كل قرار إنسان يتأثر به",
         "desc": "مسؤولية الاختيار والأثر الإنساني",
-        "file": "quote-human-decision.svg"
+        "file": "quote-human-decision.svg",
+        "category": "جودة القرار"
       },
       {
         "title": "التقنية تضيف قدرة والمؤسسة تحدد القيمة",
         "desc": "التقنية وجودة الممارسة المؤسسية",
-        "file": "quote-technology-value.svg"
+        "file": "quote-technology-value.svg",
+        "category": "الذكاء الاصطناعي والحوكمة"
       },
       {
         "title": "قد يخيب الأمل ويبقى الرجاء",
         "desc": "حدود خيبة الأمل واتساع إمكاناته",
-        "file": "quote-hope.svg"
+        "file": "quote-hope.svg",
+        "category": "السلوك الإنساني"
       },
       {
         "title": "معرفة تنصف الإنسان وتحسن القرار",
         "desc": "المعرفة في خدمة الإنسان وجودة الاختيار",
-        "file": "quote-knowledge.svg"
+        "file": "quote-knowledge.svg",
+        "category": "جودة القرار"
       }
     ],
     "quotes": [
