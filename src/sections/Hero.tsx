@@ -44,7 +44,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <div className="order-1 mx-auto w-full max-w-[370px] lg:order-2 lg:col-span-5 lg:max-w-none">
+        <div className="order-1 mx-auto w-full max-w-[220px] sm:max-w-[320px] lg:order-2 lg:col-span-5 lg:max-w-none">
           <div className="relative mx-auto max-w-[420px]">
             <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] border border-rose-500/20" />
             <div className="relative overflow-hidden rounded-[1.6rem] border border-white/15 bg-neutral-900 shadow-2xl shadow-black/55">
