@@ -1248,41 +1248,76 @@
   ],
   "professionalPracticeDocuments": [
     {
-      "title": "شهادة اعتماد مهني — استشاري صحة نفسية وتعديل سلوك",
+      "title": "اعتماد مهني مجدد — استشاري صحة نفسية وتعديل سلوك",
       "issuer": "اتحاد المعالجين النفسيين العرب",
-      "scope": "اعتماد مهني صادر عن الاتحاد بالصفة المبينة في الشهادة؛ ولا يثبت بذاته ترخيصًا حكوميًا للممارسة السريرية.",
-      "issuedAt": "1 أغسطس 2025",
-      "validUntil": "30 يوليو 2026",
-      "status": "انتهت مدة الاعتماد"
+      "scope": "وفق شهادة الاعتماد الجديدة المقدمة من الاتحاد، بصفة استشاري صحة نفسية وتعديل سلوك.",
+      "issuedAt": "1 يونيو 2026",
+      "validUntil": "30 مايو 2027",
+      "status": "اعتماد مجدد وفق المدة المثبتة في الوثيقة"
     },
     {
-      "title": "شهادة اعتماد في الصحة النفسية وتعديل السلوك — المجلس الأوروبي للصحة العامة",
-      "issuer": "الجهتان المذكورتان بالوثيقة: European Board of Public Health وFederation of Arab Psychotherapists",
-      "scope": "وثيقة اعتماد مهني وفق المعايير المنسوبة إلى الجهة المذكورة، وتتضمن إشارة إلى علم النفس الرياضي؛ لا تُعامل كترخيص حكومي.",
-      "issuedAt": "1 أغسطس 2025",
-      "validUntil": "30 يوليو 2026",
-      "status": "انتهت مدة الاعتماد"
+      "title": "اعتماد مهني — المجلس الأوروبي للصحة العامة",
+      "issuer": "European Board of Public Health بالتعاون المذكور مع اتحاد المعالجين النفسيين العرب",
+      "scope": "Mental Health and Behavior Modification Consultant، وفق النص الوارد في شهادة الاعتماد لعام 2026.",
+      "issuedAt": "1 يونيو 2026",
+      "validUntil": "30 مايو 2027",
+      "status": "وثيقة اعتماد مجددة وفق المدة المثبتة فيها"
     },
     {
-      "title": "شهادة موافقة مهنية في الصحة النفسية وتعديل السلوك — المجلس الكندي للصحة العامة",
-      "issuer": "الجهتان المذكورتان بالوثيقة: Canadian Board of Public Health وFederation of Arab Psychotherapists",
-      "scope": "وثيقة موافقة/اعتماد مهني حسب النص الظاهر، وليست ترخيصًا حكوميًا للممارسة.",
-      "issuedAt": "1 أغسطس 2025",
-      "validUntil": "30 يوليو 2026",
-      "status": "انتهت مدة الاعتماد"
+      "title": "اعتماد مهني — المجلس الكندي للصحة العامة",
+      "issuer": "Canadian Board of Public Health بالتعاون المذكور مع اتحاد المعالجين النفسيين العرب",
+      "scope": "Mental Health and Behavior Modification Consultant، وفق النص الوارد في شهادة الموافقة لعام 2026.",
+      "issuedAt": "1 يونيو 2026",
+      "validUntil": "30 مايو 2027",
+      "status": "وثيقة اعتماد مجددة وفق المدة المثبتة فيها"
     },
     {
-      "title": "بطاقة مستشار التحكيم التجاري الدولي — عضوية مهنية سابقة",
-      "issuer": "الهيئة الدولية للتحكيم — International Arbitration Organization",
-      "scope": "بطاقة صادرة بصفة مستشار في التحكيم التجاري الدولي وفق الوثيقة، ولا تعادل ترخيصًا قضائيًا.",
-      "validUntil": "1 يوليو 2025",
-      "status": "بطاقة منتهية الصلاحية"
+      "title": "صفة محكّم/قائم بالتحكيم (Adjudicator) — بطاقة INCODIR",
+      "issuer": "International Court for Dispute Resolution (INCODIR) — لندن، وفق البطاقة",
+      "scope": "بطاقة تعريف مهنية بوصف Adjudicator in the Court؛ الصفة لدى الجهة المذكورة ولا تعني منصب قاضٍ في محكمة حكومية.",
+      "issuedAt": "22 أبريل 2025",
+      "validUntil": "21 أبريل 2029",
+      "status": "بطاقة مهنية وفق المدة المثبتة فيها"
+    },
+    {
+      "title": "خطاب قبول الانضمام إلى منتدى INCODIR لمنطقة الشرق الأوسط وشمال أفريقيا",
+      "issuer": "International Court for Dispute Resolution — MENA Forum",
+      "scope": "خطاب قبول عضوية/انضمام وفق نص الرسالة الموقعة من رئيس المنتدى؛ مرتبط بدور التحكيم وتسوية المنازعات.",
+      "issuedAt": "22 أبريل 2025",
+      "status": "قبول عضوية موثّق بخطاب"
     },
     {
       "title": "زمالة وحدة التحكيم الخاصة — برنامج MENA Mentoring",
       "issuer": "Equity College — London, Special Arbitration Unit",
-      "scope": "بطاقة زمالة مهنية لدى وحدة التحكيم الخاصة، وفق المسمى المبين بالبطاقة؛ لا تتضمن الوثيقة المتاحة إثبات ترخيص قضائي مستقل.",
-      "status": "صفة موثقة بالبطاقة؛ سريانها الحالي غير متحقق"
+      "scope": "إثبات المشاركة في برنامج الزمالة لدى وحدة التحكيم الخاصة، بحسب البطاقة المقدمة.",
+      "status": "زمالة موثّقة ببطاقة الجهة"
+    },
+    {
+      "title": "استشاري أعمال معتمد — CBC",
+      "issuer": "London Business College — مع ذكر Educational Training Board in London في الشهادة",
+      "scope": "Certified Business Consultant — CBC؛ شهادة إتمام الاختبار وفق المستند المقدم.",
+      "issuedAt": "2 يوليو 2024",
+      "status": "شهادة تأهيل مهني"
+    },
+    {
+      "title": "مدير الجودة الشاملة المعتمد — CTQM",
+      "issuer": "Oxford College for International Studies — وفق شهادة التدريب المقدمة",
+      "scope": "Certified Total Quality Manager (CTQM)، مع وجود بطاقة عضوية من Educational Training Board in London.",
+      "issuedAt": "25 مارس 2024",
+      "status": "شهادة تأهيل وعضوية مهنية"
+    },
+    {
+      "title": "شهادة تدريب المدربين — TOT",
+      "issuer": "Oxford College for International Studies — وفق نص شهادة التدريب",
+      "scope": "Training of Trainers (TOT)، مع الإشارات التدريبية والاعتماد الواردة بالمستند.",
+      "issuedAt": "2 فبراير 2024",
+      "status": "شهادة تأهيل تدريبي"
+    },
+    {
+      "title": "دبلوم التحكيم التجاري الدولي",
+      "issuer": "Equity College / Special Arbitration Unit — بحسب الوثيقة",
+      "scope": "برنامج التحكيم التجاري الدولي، بما في ذلك إعداد اتفاق التحكيم وآلية تنفيذه وفق الشهادة المصورة.",
+      "status": "شهادة اجتياز/تأهيل مهني"
     }
   ]
 }
