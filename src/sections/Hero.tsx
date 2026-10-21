@@ -1,8 +1,9 @@
-import { ArrowDown, Award, BrainCircuit, Feather, GraduationCap, HeartPulse, Radar, Scale } from 'lucide-react';
+import { ArrowDown, Award, BookOpenCheck, BrainCircuit, BriefcaseBusiness, Feather, GraduationCap, HeartPulse, Radar, Scale } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 import { profile } from '@/data/content';
 
 const titleIcons = [Radar, Award, GraduationCap, BrainCircuit, Feather];
+const consultingIcons = [HeartPulse, Scale, BriefcaseBusiness, BookOpenCheck];
 
 export default function Hero() {
   const ref = useReveal<HTMLElement>();
@@ -50,11 +51,11 @@ export default function Hero() {
             </h2>
             <div className="grid gap-3 sm:grid-cols-2">
               {profile.consultingRoles.map((role, i) => {
-                const Icon = i === 0 ? HeartPulse : Scale;
+                const Icon = consultingIcons[i] ?? BriefcaseBusiness;
                 return (
                   <div
                     key={role}
-                    className="card-glow flex min-w-0 items-center gap-3 rounded-xl border border-primary/30 bg-card/80 px-4 py-4 text-right sm:px-5"
+                    className="card-glow flex min-w-0 items-start gap-3 rounded-xl border border-primary/30 bg-card/80 px-4 py-4 text-right sm:px-5"
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
                       <Icon className="h-5 w-5" aria-hidden="true" />
@@ -64,6 +65,9 @@ export default function Hero() {
                 );
               })}
             </div>
+            <p className="mx-auto mt-4 max-w-3xl text-center text-xs leading-[1.9] text-muted-foreground md:text-sm">
+              يشمل الإشراف البحثي الخارجي التوجيه المنهجي والمراجعة العلمية المستقلة، ولا يحل محل الإشراف الأكاديمي الرسمي الذي تعتمده الجامعة.
+            </p>
           </div>
         )}
 
