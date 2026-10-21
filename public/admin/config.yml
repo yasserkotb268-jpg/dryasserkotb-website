@@ -81,6 +81,18 @@ collections:
                   - { label: العنوان, name: title, widget: string }
                   - { label: اسم الملف داخل مجلد posters, name: file, widget: string }
                   - { label: وصف مختصر, name: desc, widget: text, required: false }
+              - label: أعداد مجلة YK7 وكتب العدد
+                name: magazine
+                widget: list
+                collapsed: true
+                summary: '{{fields.issue}} — {{fields.title}}'
+                fields:
+                  - { label: عنوان الإصدار, name: title, widget: string }
+                  - { label: نوع الإصدار ورقمه, name: issue, widget: string, required: false, hint: 'مثال: العدد الثامن — خاص ثالث، أو كتاب العدد' }
+                  - { label: تاريخ الإصدار, name: date, widget: string, required: false }
+                  - { label: العدد الكامل PDF, name: file, widget: file, required: false }
+                  - { label: صورة الغلاف (اختياري), name: cover, widget: image, required: false }
+
               - label: الوحدات المتخصصة
                 name: units
                 widget: list
@@ -109,6 +121,16 @@ collections:
                   - { label: ملخص, name: note, widget: text, required: false }
                   - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
 
+          - label: كلمات وأقوال المؤلف
+            name: creativeQuotes
+            widget: list
+            collapsed: true
+            summary: '{{fields.text}}'
+            fields:
+              - { label: العبارة, name: text, widget: text }
+              - { label: الموضوع أو السياق, name: context, widget: string, required: false }
+              - { label: صورة أو بوستر مرافق (اختياري), name: image, widget: image, required: false }
+
           - label: المقالات
             name: articles
             widget: list
@@ -118,6 +140,7 @@ collections:
               - { label: عنوان المقال, name: title, widget: string }
               - { label: المجال / جهة النشر, name: field, widget: string }
               - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
+              - { label: رابط صفحة القراءة (اختياري), name: url, widget: string, required: false }
 
           - label: سلاسل المحاضرات (دبلومات وبرامج)
             name: lectureSeries

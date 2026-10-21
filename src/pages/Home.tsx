@@ -13,6 +13,9 @@ import Seminars from '@/sections/Seminars';
 import Programs from '@/sections/Programs';
 import Publications from '@/sections/Publications';
 import Articles from '@/sections/Articles';
+import QadayaArticles from '@/sections/QadayaArticles';
+import MagazineArchive from '@/sections/MagazineArchive';
+import CreativeGallery from '@/sections/CreativeGallery';
 import Contact from '@/sections/Contact';
 import Footer from '@/sections/Footer';
 
@@ -34,6 +37,9 @@ export default function Home() {
         <Seminars />
         <Programs />
         <Articles />
+        <QadayaArticles />
+        <MagazineArchive />
+        <CreativeGallery />
         <Publications />
         <Contact />
       </main>

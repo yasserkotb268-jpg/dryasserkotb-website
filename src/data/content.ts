@@ -21,6 +21,7 @@ export interface TrainingCertificate { title: string; org: string; date?: string
 export interface ExpertiseArea { area: string; detail: string; icon: string }
 export interface Framework { name: string; desc: string }
 export interface Photo { src: string; alt: string }
+export interface CreativeQuote { text: string; context?: string; image?: string }
 export interface ModelItem { name: string; desc: string; file: string }
 export interface Seminar { title: string; kind: string; topic: string; file: string }
 export interface Book { title: string; topic: string; status: string }
@@ -38,7 +39,7 @@ export interface LectureSeries {
 }
 export interface FeaturedVideo { title: string; desc: string; url: string }
 export interface YK7Document { title: string; type: string; date?: string; file?: string }
-export interface YK7MagazineIssue { title: string; issue?: string; date?: string; file?: string }
+export interface YK7MagazineIssue { title: string; issue?: string; date?: string; file?: string; cover?: string }
 export interface YK7Poster { title: string; file: string; desc?: string }
 export interface YK7Unit {
   title: string;
@@ -81,6 +82,7 @@ const data = raw as unknown as {
   expertise: ExpertiseArea[];
   frameworks: Framework[];
   photos: Photo[];
+  creativeQuotes: CreativeQuote[];
   models: ModelItem[];
   seminars: Seminar[];
   books: Book[];
@@ -105,6 +107,7 @@ export const trainingCertificates: TrainingCertificate[] = data.trainingCertific
 export const expertise: ExpertiseArea[] = data.expertise;
 export const frameworks: Framework[] = data.frameworks;
 export const photos: Photo[] = data.photos;
+export const creativeQuotes: CreativeQuote[] = data.creativeQuotes ?? [];
 export const models: ModelItem[] = data.models;
 export const seminars: Seminar[] = data.seminars;
 export const books: Book[] = data.books;
