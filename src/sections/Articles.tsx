@@ -27,6 +27,18 @@ export default function Articles() {
                 <h3 className="mb-1.5 font-bold leading-snug text-foreground">{a.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{a.field}</p>
               </div>
+              {a.url && (
+                <a
+                  href={a.url}
+                  className="flex shrink-0 items-center gap-1.5 rounded-lg border border-primary/40 bg-primary/10 px-3.5 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`قراءة مقال ${a.title}`}
+                >
+                  قراءة المقال
+                  <Newspaper className="h-3.5 w-3.5" />
+                </a>
+              )}
               {'file' in a && a.file && (
                 <a
                   href={assetPath('articles', a.file)}
