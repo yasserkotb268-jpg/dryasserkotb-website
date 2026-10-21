@@ -48,6 +48,42 @@ collections:
                   - { label: الرقم, name: value, widget: string, hint: 'مثال: 13 أو +25' }
                   - { label: الوصف, name: label, widget: string }
 
+          - label: المسار العلمي والمهني والقيمة المضافة
+            name: careerJourney
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { label: عنوان المسار, name: title, widget: string }
+              - { label: تقديم المسار, name: intro, widget: text }
+              - label: محطات المسار
+                name: phases
+                widget: list
+                collapsed: true
+                summary: '{{fields.period}} — {{fields.title}}'
+                fields:
+                  - { label: المرحلة الزمنية, name: period, widget: string }
+                  - { label: عنوان المحطة, name: title, widget: string }
+                  - { label: الخبرة والممارسة, name: practice, widget: text }
+                  - { label: القيمة التطبيقية, name: value, widget: text }
+
+          - label: منهج تحويل الخبرة إلى قيمة
+            name: valueApproach
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { label: العنوان, name: title, widget: string }
+              - { label: المقدمة, name: intro, widget: text }
+              - label: أبعاد القيمة
+                name: pillars
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: البعد, name: title, widget: string }
+                  - { label: الوصف, name: description, widget: text }
+
           - label: الأبحاث العلمية وأوراق المؤتمرات
             name: research
             widget: list
