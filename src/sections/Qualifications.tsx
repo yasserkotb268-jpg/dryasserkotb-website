@@ -50,8 +50,13 @@ export default function Qualifications() {
         {professionalPracticeDocuments.length > 0 && (
           <div className="mt-16" dir="rtl">
             <h3 className="mb-4 font-display text-2xl font-bold text-foreground">
-              وثائق المزاولة المهنية
+              وثائق الاعتماد والتأهيل المهني
             </h3>
+            <p className="mb-6 max-w-4xl text-sm leading-[1.95] text-muted-foreground">
+              تُعرض الوثائق بحسب المسميات والتواريخ الظاهرة بها. شهادات الاعتماد المهني وبطاقات العضوية
+              لا تثبت بذاتها الحصول على ترخيص حكومي ساري لمزاولة الممارسة العلاجية أو القضائية،
+              ولا تثبت الاعتراف الرسمي بالجهة المانحة خارج نطاقها.
+            </p>
             <div className="grid gap-4 md:grid-cols-2">
               {professionalPracticeDocuments.map((document) => (
                 <article key={document.title} className="card-glow flex min-w-0 flex-col gap-3 rounded-2xl border border-border bg-card p-6">
@@ -62,12 +67,15 @@ export default function Qualifications() {
                   {document.issuer && <p className="text-sm leading-relaxed text-muted-foreground">الجهة المصدرة: {document.issuer}</p>}
                   {document.scope && <p className="text-sm leading-relaxed text-muted-foreground">نطاق الوثيقة: {document.scope}</p>}
                   {document.issuedAt && <p className="text-sm leading-relaxed text-muted-foreground">تاريخ الإصدار: {document.issuedAt}</p>}
-                  {document.validUntil && <p className="text-sm leading-relaxed text-muted-foreground">تاريخ انتهاء الصلاحية الوارد بالوثيقة: {document.validUntil}</p>}
-                  <a href={assetPath('uploads', document.file)}
-                    target="_blank" rel="noopener noreferrer"
-                    className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-lg border border-primary/45 bg-primary/10 px-5 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
-                    عرض الوثيقة <FileCheck2 className="h-4 w-4" aria-hidden="true" />
-                  </a>
+                  {document.validUntil && <p className="text-sm leading-relaxed text-muted-foreground">نهاية المدة بحسب الوثيقة: {document.validUntil}</p>}
+                  {document.status && <p className="mt-auto w-fit rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs font-semibold text-foreground/80">{document.status}</p>}
+                  {document.file && (
+                    <a href={assetPath('uploads', document.file)}
+                      target="_blank" rel="noopener noreferrer"
+                      className="mt-2 inline-flex min-h-11 w-fit items-center gap-2 rounded-lg border border-primary/45 bg-primary/10 px-5 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                      عرض الوثيقة <FileCheck2 className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  )}
                 </article>
               ))}
             </div>
