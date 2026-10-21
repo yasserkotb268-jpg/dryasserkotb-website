@@ -66,8 +66,8 @@ export default function Qualifications() {
                   </div>
                   {document.issuer && <p className="text-sm leading-relaxed text-muted-foreground">الجهة المصدرة: {document.issuer}</p>}
                   {document.scope && <p className="text-sm leading-relaxed text-muted-foreground">نطاق الوثيقة: {document.scope}</p>}
-                  {document.issuedAt && <p className="text-sm leading-relaxed text-muted-foreground">تاريخ الإصدار: {document.issuedAt}</p>}
-                  {document.validUntil && <p className="text-sm leading-relaxed text-muted-foreground">نهاية المدة بحسب الوثيقة: {document.validUntil}</p>}
+                  {document.issuedAt && <p className="text-sm leading-relaxed text-muted-foreground">التاريخ الوارد في الوثيقة: {document.issuedAt}</p>}
+                  {document.validUntil && <p className="text-sm leading-relaxed text-muted-foreground">سريان الوثيقة وفق التاريخ المدون حتى: {document.validUntil}</p>}
                   {document.status && <p className="mt-auto w-fit rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs font-semibold text-foreground/80">{document.status}</p>}
                   {document.file && (
                     <a href={assetPath('uploads', document.file)}
