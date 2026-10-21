@@ -1,0 +1,4 @@
+YK7 deployment health check
+Date: 2026-10-21
+Branch: main
+Expected PDF: /articles/article-international-legitimacy-yk7hr-amiri19-rtl-final-2026.pdf
