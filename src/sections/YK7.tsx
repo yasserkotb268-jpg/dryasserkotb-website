@@ -31,6 +31,18 @@ export default function YK7() {
           </div>
         )}
 
+        <nav aria-label="أرشيفات المنصة" className="mb-10 flex flex-wrap justify-center gap-3" dir="rtl">
+          <a href="#yk7-magazines" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+            أعداد مجلة YK7
+          </a>
+          <a href="#qadaya-articles" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+            مقالات صحيفة قضايا
+          </a>
+          <a href="#posters-quotes" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+            الكلمات والبوسترات
+          </a>
+        </nav>
+
         <div className="flex flex-col gap-5">
           {yk7.documents.map((doc, i) => (
             <div
