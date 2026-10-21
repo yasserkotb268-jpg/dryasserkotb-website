@@ -10,10 +10,19 @@ export interface Profile {
   name: string;
   nameEn: string;
   titles: string[];
+  consultingRoles?: string[];
   bio: string[];
   stats: ProfileStat[];
 }
 export interface Qualification { title: string; detail: string }
+export interface ProfessionalPracticeDocument {
+  title: string;
+  issuer?: string;
+  scope?: string;
+  issuedAt?: string;
+  validUntil?: string;
+  file: string;
+}
 export interface Position { org: string; role: string }
 export interface Membership { org: string; role: string }
 export interface Recognition { title: string; org: string; date: string; desc: string }
@@ -75,6 +84,7 @@ export interface NavLink { id: string; label: string }
 const data = raw as unknown as {
   profile: Profile;
   qualifications: Qualification[];
+  professionalPracticeDocuments?: ProfessionalPracticeDocument[];
   positions: Position[];
   memberships: Membership[];
   recognitions: Recognition[];
@@ -100,6 +110,7 @@ const data = raw as unknown as {
 
 export const profile: Profile = data.profile;
 export const qualifications: Qualification[] = data.qualifications;
+export const professionalPracticeDocuments: ProfessionalPracticeDocument[] = data.professionalPracticeDocuments ?? [];
 export const positions: Position[] = data.positions;
 export const memberships: Membership[] = data.memberships;
 export const recognitions: Recognition[] = data.recognitions;
