@@ -21,7 +21,8 @@ export interface ProfessionalPracticeDocument {
   scope?: string;
   issuedAt?: string;
   validUntil?: string;
-  file: string;
+  file?: string;
+  status?: string;
 }
 export interface Position { org: string; role: string }
 export interface Membership { org: string; role: string }
