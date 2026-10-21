@@ -300,6 +300,26 @@ collections:
               - { label: المؤهل, name: title, widget: string }
               - { label: التفاصيل, name: detail, widget: text }
 
+          - label: التأهيل والخبرة المهنية في الصناعات الدوائية
+            name: pharmaProfessionalTraining
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { label: عنوان القسم, name: title, widget: string }
+              - { label: الفترة العامة, name: period, widget: string }
+              - { label: مقدمة توضح مصدر المعلومات, name: intro, widget: text }
+              - label: محطات العمل والتأهيل
+                name: stages
+                widget: list
+                collapsed: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: عنوان المحطة أو الجهة, name: title, widget: string }
+                  - { label: الفترة, name: period, widget: string }
+                  - { label: نوع النشاط, name: kind, widget: string }
+                  - { label: تفاصيل التدريب والخبرة, name: detail, widget: text }
+
           - label: المناصب
             name: positions
             widget: list
