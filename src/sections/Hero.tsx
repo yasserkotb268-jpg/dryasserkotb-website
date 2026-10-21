@@ -1,6 +1,6 @@
-import { ArrowDown, Award, BookOpenCheck, BrainCircuit, BriefcaseBusiness, Feather, GraduationCap, HeartPulse, Radar, Scale } from 'lucide-react';
+import { ArrowDown, Award, BookOpenCheck, BrainCircuit, BriefcaseBusiness, Feather, GraduationCap, HeartPulse, Newspaper, Radar, Scale } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
-import { profile } from '@/data/content';
+import { positions, profile } from '@/data/content';
 
 const titleIcons = [Radar, Award, GraduationCap, BrainCircuit, Feather];
 const consultingIcons = [HeartPulse, Scale, BriefcaseBusiness, BookOpenCheck];
@@ -43,6 +43,32 @@ export default function Hero() {
             );
           })}
         </ul>
+
+        {positions.some((position) => position.org === 'صحيفة قضايا' && position.role.includes('مستشار التحرير')) && (
+          <div className="reveal mt-9 w-full max-w-4xl" dir="rtl">
+            <div className="flex min-w-0 flex-col gap-4 rounded-2xl border border-border bg-card/80 px-5 py-5 text-right md:flex-row md:items-center md:justify-between md:px-6">
+              <div className="flex min-w-0 items-center gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary/35 bg-primary/10 text-primary">
+                  <Newspaper className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <p className="mb-1 text-xs font-semibold text-primary">المسؤولية الصحفية والتحريرية</p>
+                  <h2 className="font-display text-lg font-bold leading-relaxed text-foreground md:text-xl">
+                    مستشار التحرير بصحيفة قضايا
+                  </h2>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">الكتابة والمراجعة والتحليل التحريري</p>
+                </div>
+              </div>
+              <a
+                href="#qadaya-articles"
+                className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 self-start rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground md:self-auto"
+              >
+                مقالاتي في صحيفة قضايا
+                <ArrowDown className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        )}
 
         {profile.consultingRoles && profile.consultingRoles.length > 0 && (
           <div className="reveal mt-10 w-full max-w-4xl" dir="rtl">
