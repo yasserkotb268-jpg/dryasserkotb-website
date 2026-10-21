@@ -15,6 +15,18 @@ export interface Profile {
   stats: ProfileStat[];
 }
 export interface Qualification { title: string; detail: string }
+export interface PharmaTrainingStage {
+  title: string;
+  period: string;
+  kind: string;
+  detail: string;
+}
+export interface PharmaProfessionalTraining {
+  title: string;
+  period: string;
+  intro: string;
+  stages: PharmaTrainingStage[];
+}
 export interface ProfessionalPracticeDocument {
   title: string;
   issuer?: string;
@@ -85,6 +97,7 @@ export interface NavLink { id: string; label: string }
 const data = raw as unknown as {
   profile: Profile;
   qualifications: Qualification[];
+  pharmaProfessionalTraining?: PharmaProfessionalTraining;
   professionalPracticeDocuments?: ProfessionalPracticeDocument[];
   positions: Position[];
   memberships: Membership[];
@@ -111,6 +124,7 @@ const data = raw as unknown as {
 
 export const profile: Profile = data.profile;
 export const qualifications: Qualification[] = data.qualifications;
+export const pharmaProfessionalTraining: PharmaProfessionalTraining | undefined = data.pharmaProfessionalTraining;
 export const professionalPracticeDocuments: ProfessionalPracticeDocument[] = data.professionalPracticeDocuments ?? [];
 export const positions: Position[] = data.positions;
 export const memberships: Membership[] = data.memberships;
