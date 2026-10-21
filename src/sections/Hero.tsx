@@ -1,4 +1,4 @@
-import { ArrowDown, Award, BrainCircuit, Feather, GraduationCap, Radar } from 'lucide-react';
+import { ArrowDown, Award, BrainCircuit, Feather, GraduationCap, HeartPulse, Radar, Scale } from 'lucide-react';
 import { useReveal } from '@/hooks/useReveal';
 import { profile } from '@/data/content';
 
@@ -42,6 +42,30 @@ export default function Hero() {
             );
           })}
         </ul>
+
+        {profile.consultingRoles && profile.consultingRoles.length > 0 && (
+          <div className="reveal mt-10 w-full max-w-4xl" dir="rtl">
+            <h2 className="mb-5 font-display text-xl font-bold text-foreground md:text-2xl">
+              مجالات الاستشارة المهنية
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {profile.consultingRoles.map((role, i) => {
+                const Icon = i === 0 ? HeartPulse : Scale;
+                return (
+                  <div
+                    key={role}
+                    className="card-glow flex min-w-0 items-center gap-3 rounded-xl border border-primary/30 bg-card/80 px-4 py-4 text-right sm:px-5"
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <p className="min-w-0 font-display text-base font-bold leading-[1.85] text-foreground md:text-lg">{role}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
