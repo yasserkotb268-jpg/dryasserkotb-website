@@ -265,7 +265,7 @@ collections:
               - { label: التاريخ, name: date, widget: string }
               - { label: بيان طبيعة التكريم, name: desc, widget: text }
 
-          - label: وثائق المزاولة المهنية — بعد التحقق
+          - label: وثائق الاعتماد والتأهيل المهني — مع بيان الصلاحية
             name: professionalPracticeDocuments
             widget: list
             collapsed: true
@@ -277,7 +277,8 @@ collections:
               - { label: نطاق أو نوع المزاولة, name: scope, widget: text, required: false }
               - { label: تاريخ الإصدار, name: issuedAt, widget: string, required: false }
               - { label: انتهاء الصلاحية وفق الوثيقة, name: validUntil, widget: string, required: false }
-              - { label: ملف الوثيقة PDF أو صورة, name: file, widget: file, required: true }
+              - { label: الحالة المهنية أو صلاحية الوثيقة, name: status, widget: string, required: false }
+              - { label: ملف الوثيقة PDF أو صورة بعد مراجعة الخصوصية, name: file, widget: file, required: false }
 
           - label: شهادات التدريب والدورات المهنية
             name: trainingCertificates
