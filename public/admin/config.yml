@@ -30,6 +30,12 @@ collections:
                 name: titles
                 widget: list
                 field: { label: الدور, name: title, widget: string }
+              - label: صفات الاستشارة المهنية في الواجهة
+                name: consultingRoles
+                widget: list
+                required: false
+                field: { label: الصفة المهنية, name: role, widget: string }
+
               - label: فقرات النبذة
                 name: bio
                 widget: list
@@ -258,6 +264,20 @@ collections:
               - { label: الجهة, name: org, widget: string }
               - { label: التاريخ, name: date, widget: string }
               - { label: بيان طبيعة التكريم, name: desc, widget: text }
+
+          - label: وثائق المزاولة المهنية — بعد التحقق
+            name: professionalPracticeDocuments
+            widget: list
+            collapsed: true
+            required: false
+            summary: '{{fields.title}}'
+            fields:
+              - { label: عنوان الوثيقة كما هو مكتوب, name: title, widget: string }
+              - { label: الجهة المصدرة, name: issuer, widget: string, required: false }
+              - { label: نطاق أو نوع المزاولة, name: scope, widget: text, required: false }
+              - { label: تاريخ الإصدار, name: issuedAt, widget: string, required: false }
+              - { label: انتهاء الصلاحية وفق الوثيقة, name: validUntil, widget: string, required: false }
+              - { label: ملف الوثيقة PDF أو صورة, name: file, widget: file, required: true }
 
           - label: شهادات التدريب والدورات المهنية
             name: trainingCertificates
