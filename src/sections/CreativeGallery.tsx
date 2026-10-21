@@ -19,7 +19,7 @@ export default function CreativeGallery() {
         {creativeQuotes.length > 0 && (
           <div className="mb-12 grid gap-5 md:grid-cols-3">
             {creativeQuotes.map((item) => (
-              <blockquote key={item.text} className="reveal card-glow flex min-w-0 flex-col gap-4 rounded-2xl border border-primary/20 bg-card p-6">
+              <blockquote key={item.text} className="reveal quote-card-motion card-glow flex min-w-0 flex-col gap-4 rounded-2xl border border-primary/20 bg-card p-6">
                 <Quote className="h-7 w-7 text-primary" aria-hidden="true" />
                 <p className="font-display text-xl font-bold leading-[1.9] text-foreground">{item.text}</p>
                 {item.context && <p className="mt-auto text-sm leading-relaxed text-muted-foreground">{item.context}</p>}
@@ -40,7 +40,7 @@ export default function CreativeGallery() {
               href={assetPath('posters', poster.file)}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-glow overflow-hidden rounded-2xl border border-border bg-card"
+              className="gallery-tile-motion card-glow overflow-hidden rounded-2xl border border-border bg-card"
               aria-label={`عرض ${poster.title}`}
             >
               <img src={assetPath('posters', poster.file)} alt={poster.title}
