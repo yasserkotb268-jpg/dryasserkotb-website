@@ -265,19 +265,19 @@ collections:
               - { label: التاريخ, name: date, widget: string }
               - { label: بيان طبيعة التكريم, name: desc, widget: text }
 
-          - label: وثائق الاعتماد والتأهيل المهني — مع بيان الصلاحية
+          - label: الاعتمادات والمؤهلات المهنية
             name: professionalPracticeDocuments
             widget: list
             collapsed: true
             required: false
             summary: '{{fields.title}}'
             fields:
-              - { label: عنوان الوثيقة كما هو مكتوب, name: title, widget: string }
+              - { label: اسم الاعتماد أو الصفة المهنية, name: title, widget: string }
               - { label: الجهة المصدرة, name: issuer, widget: string, required: false }
-              - { label: نطاق أو نوع المزاولة, name: scope, widget: text, required: false }
-              - { label: التاريخ الوارد في الوثيقة, name: issuedAt, widget: string, required: false }
-              - { label: سريان الوثيقة وفق التاريخ المدون حتى, name: validUntil, widget: string, required: false }
-              - { label: الحالة المهنية أو صلاحية الوثيقة, name: status, widget: string, required: false }
+              - { label: مجال الاختصاص, name: scope, widget: text, required: false }
+              - { label: تاريخ الإصدار (سجل داخلي), name: issuedAt, widget: string, required: false }
+              - { label: نهاية مدة الاعتماد (سجل داخلي), name: validUntil, widget: string, required: false }
+              - { label: ملاحظات الأرشفة, name: status, widget: string, required: false }
               - { label: ملف الوثيقة PDF أو صورة بعد مراجعة الخصوصية, name: file, widget: file, required: false }
 
           - label: شهادات التدريب والدورات المهنية

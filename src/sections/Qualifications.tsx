@@ -52,11 +52,6 @@ export default function Qualifications() {
             <h3 className="mb-4 font-display text-2xl font-bold text-foreground">
               وثائق الاعتماد والتأهيل المهني
             </h3>
-            <p className="mb-6 max-w-4xl text-sm leading-[1.95] text-muted-foreground">
-              تُعرض الوثائق بحسب المسميات والتواريخ الظاهرة بها. شهادات الاعتماد المهني وبطاقات العضوية
-              لا تثبت بذاتها الحصول على ترخيص حكومي ساري لمزاولة الممارسة العلاجية أو القضائية،
-              ولا تثبت الاعتراف الرسمي بالجهة المانحة خارج نطاقها.
-            </p>
             <div className="grid gap-4 md:grid-cols-2">
               {professionalPracticeDocuments.map((document) => (
                 <article key={document.title} className="card-glow flex min-w-0 flex-col gap-3 rounded-2xl border border-border bg-card p-6">
@@ -64,11 +59,8 @@ export default function Qualifications() {
                     <FileCheck2 className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                     <h4 className="font-display text-xl font-bold leading-relaxed text-foreground">{document.title}</h4>
                   </div>
-                  {document.issuer && <p className="text-sm leading-relaxed text-muted-foreground">الجهة المصدرة: {document.issuer}</p>}
-                  {document.scope && <p className="text-sm leading-relaxed text-muted-foreground">نطاق الوثيقة: {document.scope}</p>}
-                  {document.issuedAt && <p className="text-sm leading-relaxed text-muted-foreground">التاريخ الوارد في الوثيقة: {document.issuedAt}</p>}
-                  {document.validUntil && <p className="text-sm leading-relaxed text-muted-foreground">سريان الوثيقة وفق التاريخ المدون حتى: {document.validUntil}</p>}
-                  {document.status && <p className="mt-auto w-fit rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs font-semibold text-foreground/80">{document.status}</p>}
+                  {document.issuer && <p className="text-sm leading-relaxed text-muted-foreground">{document.issuer}</p>}
+                  {document.scope && <p className="text-sm leading-[1.9] text-foreground/85">{document.scope}</p>}
                   {document.file && (
                     <a href={assetPath('uploads', document.file)}
                       target="_blank" rel="noopener noreferrer"
@@ -85,13 +77,10 @@ export default function Qualifications() {
         {trainingCertificates.length > 0 && (
           <div className="mt-16">
             <h3 className="mb-3 font-display text-2xl font-bold text-foreground">التدريب والشهادات المهنية</h3>
-            <p className="mb-6 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-              شهادات حضور أو اجتياز مقررات وورش تدريبية، تُعرض بصفتها التدريبية ولا تعادل درجات علمية أو تراخيص مهنية مستقلة.
-            </p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {trainingCertificates.map((item) => (
                 <article key={item.title} className="reveal card-glow rounded-2xl border border-border bg-card p-5">
-                  <p className="mb-2 text-xs font-semibold text-primary">{item.kind}{item.date ? ` — ${item.date}` : ''}</p>
+                  {item.date && <p className="mb-2 text-xs font-semibold text-primary">{item.date}</p>}
                   <h4 className="mb-2 font-bold leading-relaxed text-foreground">{item.title}</h4>
                   <p className="text-sm leading-relaxed text-muted-foreground">{item.org}</p>
                 </article>
