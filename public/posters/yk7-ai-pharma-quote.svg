@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1250" viewBox="0 0 1000 1250" role="img" aria-label="اقتباس علمي من كتاب الذكاء الاصطناعي وإدارة الجودة الشاملة">
+<defs>
+<linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#071528"/><stop offset=".5" stop-color="#102f55"/><stop offset="1" stop-color="#081627"/></linearGradient>
+<linearGradient id="silver" x1="0" x2="1"><stop stop-color="#f6f8fb"/><stop offset=".5" stop-color="#9db6cc"/><stop offset="1" stop-color="#f9fbfd"/></linearGradient>
+<linearGradient id="blue" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0d2a51"/><stop offset=".6" stop-color="#164d82"/><stop offset="1" stop-color="#06172e"/></linearGradient>
+<linearGradient id="spine" x1="0" x2="1"><stop stop-color="#a0b4ca"/><stop offset=".25" stop-color="#17406d"/><stop offset="1" stop-color="#051529"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#528fd0" stop-opacity=".35"/><stop offset="1" stop-color="#0a2038" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur in="SourceAlpha" stdDeviation="17"/><feOffset dy="16"/><feComponentTransfer><feFuncA type="linear" slope=".52"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<style>
+.ar{font-family:Amiri,"Noto Naskh Arabic",Tahoma,Arial,sans-serif;direction:rtl;unicode-bidi:embed}
+.white{fill:#f7fbff}.muted{fill:#c3d5e5}.silver{fill:url(#silver)}.small{font-size:27px}.med{font-size:40px}.large{font-size:55px;font-weight:700}
+</style><rect width="1000" height="1250" fill="url(#bg)"/><ellipse cx="510" cy="520" rx="700" ry="650" fill="url(#halo)"/><path d="M0 84H1000M0 1180H1000" stroke="#98b8d8" opacity=".45"/><path d="M40 47H960V1203H40Z" fill="none" stroke="#6b93bb" opacity=".7" stroke-width="3"/><circle cx="855" cy="90" r="145" fill="none" stroke="#8eb5e1" opacity=".14" stroke-width="2"/><circle cx="120" cy="1095" r="220" fill="none" stroke="#8eb5e1" opacity=".12" stroke-width="2"/><g><text class="ar silver" x="500" y="102" font-size="33" font-weight="700" text-anchor="middle">من الكتاب</text><path d="M135 120H865" stroke="#9ab9d7" stroke-width="2"/></g>
+<text class="silver" x="500" y="338" font-family="serif" font-size="184" text-anchor="middle">“</text>
+<rect x="87" y="305" width="826" height="514" rx="28" fill="#0b2342" opacity=".8" stroke="#9ab9d7" stroke-width="3"/>
+<text class="ar white" x="500" y="426" text-anchor="middle" font-weight="700" font-size="55">القيمة النهائية لأي نظام ذكي</text>
+<text class="ar white" x="500" y="520" text-anchor="middle" font-weight="700" font-size="54">لا تُقاس بمجرد قدرته على التحليل،</text>
+<text class="ar white" x="500" y="614" text-anchor="middle" font-weight="700" font-size="54">بل بقدرته على دعم قرار أفضل</text>
+<text class="ar silver" x="500" y="709" text-anchor="middle" font-weight="700" font-size="54">وأكثر اتساقًا مع الواقع.</text>
+<text class="ar muted" x="500" y="878" text-anchor="middle" font-size="30">من كتاب «الذكاء الاصطناعي وإدارة الجودة الشاملة</text>
+<text class="ar muted" x="500" y="922" text-anchor="middle" font-size="30">في الصناعات الدوائية»</text>
+<text class="ar white" x="500" y="997" text-anchor="middle" font-size="32" font-weight="700">د. ياسر سيد عبد السلام قطب</text><path d="M170 1111H830" stroke="#99bbdd" stroke-width="2" opacity=".65"/><text x="500" y="1160" class="white" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="32">dryasserkotb.com</text><text class="ar muted" x="500" y="1197" font-size="25" text-anchor="middle">منصة الرصد الاستراتيجي | YK7</text></svg>
