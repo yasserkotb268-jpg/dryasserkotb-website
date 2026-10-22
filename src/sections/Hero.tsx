@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pb-20 pt-20 text-center md:pt-28">
         <div className="reveal mb-7 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-2 text-sm font-semibold text-primary">
           <Award className="h-4 w-4" />
-          +25 عامًا من الخبرة التطبيقية والبحثية
+          أكثر من 25 عامًا من الخبرة التطبيقية والبحثية
         </div>
 
         <h1 className="reveal font-display text-4xl font-bold leading-[1.35] text-foreground md:text-6xl md:leading-[1.3]">
@@ -122,11 +122,14 @@ export default function Hero() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-border/60 divide-x-reverse md:grid-cols-4">
           {profile.stats.map((s) => (
             <div key={s.label} className="reveal flex flex-col items-center gap-1 px-4 py-8">
-              <span className="font-display text-4xl font-bold text-primary md:text-5xl">{s.value}</span>
+              <span className="font-display text-4xl font-bold text-primary md:text-5xl" dir="ltr">{s.value}</span>
               <span className="text-center text-sm text-muted-foreground">{s.label}</span>
             </div>
           ))}
         </div>
+        <p className="mx-auto max-w-4xl px-4 pb-6 text-center text-xs leading-relaxed text-muted-foreground">
+          تمثل هذه المؤشرات مجمل الأعمال والأنشطة على امتداد المسيرة المهنية، ولا تقتصر على المواد المفهرسة حاليًا في الموقع.
+        </p>
       </div>
     </section>
   );
