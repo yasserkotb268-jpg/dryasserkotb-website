@@ -781,209 +781,251 @@
       "title": "الشرعية الدولية والتحصين الخارجي للدولة",
       "field": "ضمن YK7-HR — امتداد مستقل للمحاضرة الثامنة من الدبلوم الاستراتيجي في حقوق الإنسان والدبلوماسية | العدد الثامن/الخاص الثالث لمجلة YK7 | أكتوبر 2026",
       "url": "/articles/international-legitimacy-external-safeguards/",
-      "file": "article-international-legitimacy-yk7hr-amiri19-rtl-final-2026.pdf"
+      "file": "article-international-legitimacy-yk7hr-amiri19-rtl-final-2026.pdf",
+      "publicationStatus": "published"
     },
     {
       "title": "صحّحوا الأقوال… ولا تجعلوا أخطاء الناس وصمةً تلاحقهم وأبناءهم",
       "field": "بين واجب البيان وأمانة الكلمة وكرامة الإنسان — قراءة فكرية موجزة مستقلة | منصة YK7، أكتوبر 2026.",
-      "url": "/articles/correct-words-without-stigma/"
+      "url": "/articles/correct-words-without-stigma/",
+      "publicationStatus": "title_only"
     },
     {
       "title": "حين يصبح التصحيح وصمة",
       "field": "نقد الأقوال والتشهير بالأشخاص والمسؤولية الممتدة عن النشر الرقمي — مشروع «ميزان الكلمة» | YK7، أكتوبر 2026.",
-      "url": "/articles/when-correction-becomes-stigma.html"
+      "url": "/articles/when-correction-becomes-stigma.html",
+      "publicationStatus": "title_only"
     },
     {
       "title": "صناعة محتوى الجوهر وصناعة محتوى المظهر",
       "field": "صناعة المحتوى والهوية المهنية — المعهد العربي للاعتماد.",
-      "file": "article-content-substance-vs-form.pdf"
+      "file": "article-content-substance-vs-form.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "النفس البشرية كنظام معقّد: مدخل عملي لتحسين السلوك وجودة القرار في بيئات العمل",
       "field": "السلوك المؤسسي وجودة القرار — المعهد العربي للاعتماد.",
-      "file": "article-human-soul-complex-system-work.pdf"
+      "file": "article-human-soul-complex-system-work.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "النفس البشرية ليست لغزًا",
       "field": "قراءة نفسية تحليلية — المعهد العربي للاعتماد.",
-      "file": "article-human-soul-not-mystery.pdf"
+      "file": "article-human-soul-not-mystery.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الشخصية النرجسية: إعادة ضبط المصطلح النفسي",
       "field": "علم النفس وضبط المصطلحات — المعهد العربي للاعتماد.",
-      "file": "article-narcissistic-personality.pdf"
+      "file": "article-narcissistic-personality.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "من حوكمة الخوارزميات إلى حوكمة الوعي",
-      "field": "لماذا لا يكفي ضبط الآلة دون ترشيد الإنسان؟"
+      "field": "لماذا لا يكفي ضبط الآلة دون ترشيد الإنسان؟",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الوعي الرقمي المتزن",
-      "field": "كيف يستعيد الإنسان دوره في عصر الذكاء الاصطناعي؟ — شبكة الرواد الإلكترونية."
+      "field": "كيف يستعيد الإنسان دوره في عصر الذكاء الاصطناعي؟ — شبكة الرواد الإلكترونية.",
+      "publicationStatus": "title_only"
     },
     {
       "title": "زاوية البُعد السابع: قراءة بينية لتفكيك الأزمات وإعادة هندسة الواقع",
       "field": "صحيفة قضايا.",
-      "file": "article-seventh-dimension-qadaya.pdf"
+      "file": "article-seventh-dimension-qadaya.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "لماذا تفشل السياسات؟ قراءة في الأسباب الجذرية من منظور الوعي الحقوقي المتزن (YK7-HR)",
       "field": "شبكة الرواد الإلكترونية.",
-      "file": "article-why-policies-fail-yk7hr.pdf"
+      "file": "article-why-policies-fail-yk7hr.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الكرامة الإنسانية: الأصل المنسي لحقوق الإنسان",
       "field": "قراءة فلسفية وشرعية في إعادة ضبط الخطاب الحقوقي — شبكة الرواد الإلكترونية.",
-      "file": "article-human-dignity-rowwad.pdf"
+      "file": "article-human-dignity-rowwad.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الوعي يصنع القيادة: لماذا يبدأ الإصلاح من المجتمع قبل القائد؟",
       "field": "القيادة والوعي المجتمعي.",
-      "file": "article-awareness-makes-leadership.pdf"
+      "file": "article-awareness-makes-leadership.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "القيادة تتجاوز الألقاب",
       "field": "القيادة من منظور إنساني — المعهد العربي للاعتماد.",
-      "file": "article-leadership-beyond-titles.pdf"
+      "file": "article-leadership-beyond-titles.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "حين يقودك العلم لا اللقب: عن جوهر الباحث وتكامل الهوية",
       "field": "تنويه تحليلي فلسفي–نفسي — المعهد العربي للاعتماد.",
-      "file": "article-when-science-leads-not-title.pdf"
+      "file": "article-when-science-leads-not-title.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "وأجسام البغال وأحلام العصافير: قراءة فلسفية بين المظهر والجوهر",
       "field": "قراءة فلسفية.",
-      "file": "article-mules-bodies-sparrows-dreams.pdf"
+      "file": "article-mules-bodies-sparrows-dreams.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "خدعوك فقالوا... الفلسفة طريق الضلال!",
       "field": "تأصيل فلسفي.",
-      "file": "article-philosophy-not-misguidance.pdf"
+      "file": "article-philosophy-not-misguidance.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الزود عن الثوابت",
       "field": "الثوابت مرتكزات كل نهضة حقيقية.",
-      "file": "article-defending-constants.pdf"
+      "file": "article-defending-constants.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "استعادة الكلمة واستعادة الكفاءة: من التمكين الإنساني إلى التميّز المؤسسي",
       "field": "التمكين والتميز المؤسسي.",
-      "file": "article-empowerment-institutional-excellence.pdf"
+      "file": "article-empowerment-institutional-excellence.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "ريادة الأعمال بين الفكرة والرسالة: نحو مشروع يحمل معنى وقيمة",
       "field": "ريادة الأعمال — المعهد العربي للاعتماد.",
-      "file": "article-entrepreneurship-idea-mission.pdf"
+      "file": "article-entrepreneurship-idea-mission.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الريادة والابتكار في العمل الإنساني: نحو ريادة مستدامة في عالم يتغيّر",
       "field": "الابتكار الإنساني والعمل التطوعي.",
-      "file": "article-leadership-innovation-humanitarian-work.pdf"
+      "file": "article-leadership-innovation-humanitarian-work.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "تمكين العمل الإنساني في عصر التحول الرقمي",
       "field": "العمل الإنساني والتحول الرقمي.",
-      "file": "article-humanitarian-work-digital-transformation.pdf"
+      "file": "article-humanitarian-work-digital-transformation.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "التسعير بين الأخلاق والاقتصاد: قراءة قيادية في عقل السوق المعاصر",
       "field": "أخلاقيات الأعمال.",
-      "file": "article-pricing-ethics-economics.pdf"
+      "file": "article-pricing-ethics-economics.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "العلم في خدمة السيادة: نحو إعادة توجيه المعرفة والمال والقوة لبناء الهيمنة العربية",
       "field": "تحليل استراتيجي.",
-      "file": "article-science-sovereignty-arab-hegemony.pdf"
+      "file": "article-science-sovereignty-arab-hegemony.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "من المؤتمرات إلى الهيمنة: فجوة التأثير بين العالم العربي والغرب",
       "field": "تحليل أكاديمي استراتيجي.",
-      "file": "article-conferences-to-hegemony-arab-west-gap.pdf"
+      "file": "article-conferences-to-hegemony-arab-west-gap.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الصراع العربي الأمريكي: بين استهداف الهوية وتحديات السيادة",
       "field": "تحليل جيوسياسي.",
-      "file": "article-arab-american-conflict.pdf"
+      "file": "article-arab-american-conflict.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "ترامب والدول العربية: هل يكون دافعًا للوحدة أم لتعميق الانقسام؟",
       "field": "تحليل سياسي.",
-      "file": "article-trump-arab-countries-unity-division.pdf"
+      "file": "article-trump-arab-countries-unity-division.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "سوريا بين صراع المحاور ومصالح اللاعبين: هل تنذر التحركات الإسرائيلية بحرب باردة إقليمية؟",
       "field": "تحليل جيوسياسي — منصة الرصد الإستراتيجي | YK7.",
-      "file": "article-syria-axis-conflict.pdf"
+      "file": "article-syria-axis-conflict.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "سوريا بين نيران حماس وتحركات تركيا: إسرائيل ترسم خطوطًا حمراء جديدة",
       "field": "تحليل جيوسياسي — منصة الرصد الإستراتيجي | YK7.",
-      "file": "article-syria-hamas-turkey-israel.pdf"
+      "file": "article-syria-hamas-turkey-israel.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "التهديدات العالمية لأمريكا: فرصة استراتيجية لسوريا لإعادة التوازن الإقليمي",
       "field": "تحليل استراتيجي — منصة الرصد الإستراتيجي | YK7.",
-      "file": "article-us-global-threats-syria-rebalance.pdf"
+      "file": "article-us-global-threats-syria-rebalance.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "انتهاك حقوق الإنسان في سجون سوريا: دروس للتغيير في الدول العربية",
       "field": "حقوق الإنسان والقانون الدولي.",
-      "file": "article-syria-prisons-human-rights.pdf"
+      "file": "article-syria-prisons-human-rights.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "التكامل بين التنمية الإنسانية والإدارة الاستراتيجية: رؤية شاملة لسوريا المستقبل",
       "field": "التنمية الإنسانية والإدارة الاستراتيجية.",
-      "file": "article-syria-humanitarian-strategic-future.pdf"
+      "file": "article-syria-humanitarian-strategic-future.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "تحديات التعليم في الوطن العربي والنموذج الأنسب",
       "field": "سياسات التعليم والنماذج البينية.",
-      "file": "article-arab-education-challenges-model.pdf"
+      "file": "article-arab-education-challenges-model.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "نحو اقتصاد إنساني تشاركي في إطار مبادرة الحزام والطريق: مدخل فلسفي استراتيجي لتمكين الشباب العربي في السوق العالمي",
       "field": "اقتصاد إنساني وتمكين الشباب.",
-      "file": "article-humanitarian-economy-belt-road-youth.pdf"
+      "file": "article-humanitarian-economy-belt-road-youth.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "التوازن بين المصلحة الوطنية والانخراط في الاقتصاد العالمي: منظور فلسفي استراتيجي للتجارة الخارجية",
       "field": "الاقتصاد والتجارة الخارجية.",
-      "file": "article-national-interest-global-economy-trade.pdf"
+      "file": "article-national-interest-global-economy-trade.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "المرأة في النظام العالمي الحديث",
       "field": "قراءة فلسفية اجتماعية.",
-      "file": "article-women-modern-world-system.pdf"
+      "file": "article-women-modern-world-system.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "مقالات وتحليلات استراتيجية",
-      "field": "إسهامات منشورة عبر صحيفة قضايا ومنصة الرصد الإستراتيجي | YK7."
+      "field": "إسهامات منشورة عبر صحيفة قضايا ومنصة الرصد الإستراتيجي | YK7.",
+      "publicationStatus": "title_only"
     },
     {
       "title": "من الجزر المنعزلة إلى المحاذاة السيادية — قراءة تحليلية استراتيجية",
       "field": "تحليل استراتيجي",
-      "file": "/uploads/قراءة-تحليلية-استراتيجية-من-الجزر-المنعزلة-إلى-المحاذاة-السيادية.pdf"
+      "file": "/uploads/قراءة-تحليلية-استراتيجية-من-الجزر-المنعزلة-إلى-المحاذاة-السيادية.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الشخصية النرجسية: من تضخم الذات إلى ميزان الكرامة والحدود — قراءة تمهيدية",
       "field": "الصحة النفسية والسلوك",
-      "file": "/uploads/قراءة_تمهيدية_الشخصية_النرجسية-1-.pdf"
+      "file": "/uploads/قراءة_تمهيدية_الشخصية_النرجسية-1-.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "الأوكتاجون: قراءة تحليلية استشرافية في القيادة الاستراتيجية وبناء القدرة السيادية",
       "field": "تحليل استراتيجي — منصة الرصد الاستراتيجي YK7",
-      "file": "/uploads/octagon-analysis.pdf"
+      "file": "/uploads/octagon-analysis.pdf",
+      "publicationStatus": "title_only"
     },
     {
       "title": "هل نحتاج إلى اليأس لنعرف الأمل؟ قراءة في التضاد اللغوي والتجربة الإنسانية وحدود القنوط في القرآن الكريم",
       "field": "مقال فكري تحليلي — منصة الرصد الاستراتيجي YK7، أكتوبر 2026",
-      "file": "/articles/article-hope-versus-despair-yk7-2026-amiri19-13pages.pdf"
+      "file": "/articles/article-hope-versus-despair-yk7-2026-amiri19-13pages.pdf",
+      "publicationStatus": "published"
     },
     {
       "title": "من المؤهل العلمي إلى الجدارة في قيادة الدولة",
       "field": "قراءة تحليلية في معايير اختيار القيادات وجودة القرار — منصة YK7، أكتوبر 2026",
-      "file": "/articles/article-academic-merit-public-leadership-yk7-2026.pdf"
+      "file": "/articles/article-academic-merit-public-leadership-yk7-2026.pdf",
+      "publicationStatus": "title_only"
     }
   ],
   "memberships": [
