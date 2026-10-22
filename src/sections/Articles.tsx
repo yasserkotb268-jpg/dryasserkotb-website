@@ -14,13 +14,14 @@ export default function Articles() {
           kicker="المقالات"
           title="مقالات فكرية وتحليلات استراتيجية"
           icon={Newspaper}
-          description="مقالات وتحليلات متاحة للقراءة؛ ويمكن تنزيل نسخة PDF من الأعمال التي تتوافر ملفاتها."
+          description="عناوين من الأعمال الفكرية والتحليلية؛ تُتاح القراءة والتحميل للأعمال التي استوفت المراجعة والإخراج المعتمد."
         />
 
         <div className="grid gap-5 md:grid-cols-2">
           {articles.map((a, i) => {
-            const pdfUrl = 'file' in a && a.file ? assetPath('articles', a.file) : undefined;
-            const readingUrl = a.url || pdfUrl;
+            const isPublished = a.publicationStatus === 'published';
+            const pdfUrl = isPublished && a.file ? assetPath('articles', a.file) : undefined;
+            const readingUrl = isPublished ? (a.url || pdfUrl) : undefined;
 
             return (
               <article
@@ -33,12 +34,14 @@ export default function Articles() {
                   <h3 className="mb-2 break-words font-display text-xl font-bold leading-relaxed text-foreground">
                     {a.title}
                   </h3>
-                  <p className="break-words text-sm leading-7 text-muted-foreground">
-                    {a.field}
-                  </p>
+                  {isPublished && (
+                    <p className="break-words text-sm leading-7 text-muted-foreground">
+                      {a.field}
+                    </p>
+                  )}
                 </div>
 
-                {readingUrl ? (
+                {readingUrl && (
                   <div className="mt-auto flex w-full flex-wrap items-center gap-2 border-t border-border/60 pt-4">
                     <a
                       href={readingUrl}
@@ -62,10 +65,6 @@ export default function Articles() {
                       </a>
                     )}
                   </div>
-                ) : (
-                  <p className="mt-auto border-t border-border/60 pt-4 text-sm text-muted-foreground">
-                    النص غير متاح للقراءة حاليًا
-                  </p>
                 )}
               </article>
             );
