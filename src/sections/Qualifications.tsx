@@ -59,7 +59,17 @@ export default function Qualifications() {
                     <FileCheck2 className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                     <h4 className="font-display text-xl font-bold leading-relaxed text-foreground">{document.title}</h4>
                   </div>
-                  {document.issuer && <p className="text-sm leading-relaxed text-muted-foreground">{document.issuer}</p>}
+                  {document.issuer && (
+                    /\b(?:CTQM|TOT)\b/.test(document.title) ? (
+                      <ul className="list-disc space-y-1 pr-5 text-sm leading-relaxed text-muted-foreground">
+                        {document.issuer.split('؛ و').map((issuer) => (
+                          <li key={issuer}>{issuer}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm leading-relaxed text-muted-foreground">{document.issuer}</p>
+                    )
+                  )}
                   {document.scope && <p className="text-sm leading-[1.9] text-foreground/85">{document.scope}</p>}
                   {document.file && (
                     <a href={assetPath('uploads', document.file)}
@@ -82,7 +92,15 @@ export default function Qualifications() {
                 <article key={item.title} className="reveal card-glow rounded-2xl border border-border bg-card p-5">
                   {item.date && <p className="mb-2 text-xs font-semibold text-primary">{item.date}</p>}
                   <h4 className="mb-2 font-bold leading-relaxed text-foreground">{item.title}</h4>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{item.org}</p>
+                  {/\b(?:CTQM|TOT)\b/.test(item.title) ? (
+                    <ul className="list-disc space-y-1 pr-5 text-sm leading-relaxed text-muted-foreground">
+                      {item.org.split('؛ و').map((issuer) => (
+                        <li key={issuer}>{issuer}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm leading-relaxed text-muted-foreground">{item.org}</p>
+                  )}
                 </article>
               ))}
             </div>
