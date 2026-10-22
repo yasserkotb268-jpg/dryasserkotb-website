@@ -127,8 +127,8 @@ export default function Hero() {
             </div>
           ))}
         </div>
-        <p className="mx-auto max-w-4xl px-4 pb-6 text-center text-xs leading-relaxed text-muted-foreground">
-          تمثل هذه المؤشرات مجمل الأعمال والأنشطة على امتداد المسيرة المهنية، ولا تقتصر على المواد المفهرسة حاليًا في الموقع.
+        <p className="mx-auto max-w-4xl px-6 pb-8 text-center text-base leading-[2] text-foreground/85" dir="rtl">
+          تُعرض في الموقع نماذج مختارة من الكتب والأبحاث والمقالات والندوات والبرامج والأطر الفكرية، ولا تمثل حصرًا لجميع الأعمال والأنشطة خلال المسيرة العلمية والمهنية.
         </p>
       </div>
     </section>
