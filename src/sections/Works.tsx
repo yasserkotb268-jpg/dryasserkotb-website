@@ -16,8 +16,11 @@ export default function Works() {
           kicker="الأعمال العلمية والفكرية والمهنية"
           title="مختارات من أعمال د. ياسر قطب — لا على سبيل الحصر"
           icon={BookOpen}
-          description="تُعرض في الموقع نماذج مختارة من الكتب والأبحاث والمقالات والندوات والبرامج والأطر الفكرية، ولا تمثل حصرًا لجميع الأعمال والأنشطة خلال المسيرة العلمية والمهنية."
         />
+
+        <p className="mx-auto -mt-8 mb-10 max-w-4xl rounded-xl border border-border bg-card/60 px-6 py-5 text-center text-base leading-[2] text-foreground/90 md:text-lg" dir="rtl">
+          تُعرض في الموقع نماذج مختارة من الكتب والأبحاث والمقالات والندوات والبرامج والأطر الفكرية، ولا تمثل حصرًا لجميع الأعمال والأنشطة خلال المسيرة العلمية والمهنية.
+        </p>
 
         <Tabs defaultValue="frameworks" dir="rtl" className="reveal">
           <TabsList className="mx-auto mb-10 flex w-fit gap-1 rounded-xl border border-border bg-card p-1.5">
