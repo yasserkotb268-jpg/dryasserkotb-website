@@ -13,9 +13,10 @@ export default function Works() {
     <section id="works" ref={ref} className="py-24">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         <SectionHeading
-          kicker="الأعمال الفكرية والكتب"
-          title="أطر ونماذج من بناء الفكر، وكتب تصوغ الوعي"
+          kicker="الأعمال العلمية والفكرية والمهنية"
+          title="مختارات من أعمال د. ياسر قطب — لا على سبيل الحصر"
           icon={BookOpen}
+          description="تُعرض في الموقع نماذج مختارة من الكتب والأبحاث والمقالات والندوات والبرامج والأطر الفكرية، ولا تمثل حصرًا لجميع الأعمال والأنشطة خلال المسيرة العلمية والمهنية."
         />
 
         <Tabs defaultValue="frameworks" dir="rtl" className="reveal">
