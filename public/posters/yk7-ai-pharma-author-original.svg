@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1250" viewBox="0 0 1000 1250" role="img" aria-label="صورة المؤلف الأصلية بجوار مجسم الكتاب">
+<defs>
+<linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#071528"/><stop offset=".5" stop-color="#102f55"/><stop offset="1" stop-color="#081627"/></linearGradient>
+<linearGradient id="silver" x1="0" x2="1"><stop stop-color="#f6f8fb"/><stop offset=".5" stop-color="#9db6cc"/><stop offset="1" stop-color="#f9fbfd"/></linearGradient>
+<linearGradient id="blue" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0d2a51"/><stop offset=".6" stop-color="#164d82"/><stop offset="1" stop-color="#06172e"/></linearGradient>
+<linearGradient id="spine" x1="0" x2="1"><stop stop-color="#a0b4ca"/><stop offset=".25" stop-color="#17406d"/><stop offset="1" stop-color="#051529"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#528fd0" stop-opacity=".35"/><stop offset="1" stop-color="#0a2038" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur in="SourceAlpha" stdDeviation="17"/><feOffset dy="16"/><feComponentTransfer><feFuncA type="linear" slope=".52"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<style>
+.ar{font-family:Amiri,"Noto Naskh Arabic",Tahoma,Arial,sans-serif;direction:rtl;unicode-bidi:embed}
+.white{fill:#f7fbff}.muted{fill:#c3d5e5}.silver{fill:url(#silver)}.small{font-size:27px}.med{font-size:40px}.large{font-size:55px;font-weight:700}
+</style><rect width="1000" height="1250" fill="url(#bg)"/><ellipse cx="510" cy="520" rx="700" ry="650" fill="url(#halo)"/><path d="M0 84H1000M0 1180H1000" stroke="#98b8d8" opacity=".45"/><path d="M40 47H960V1203H40Z" fill="none" stroke="#6b93bb" opacity=".7" stroke-width="3"/><circle cx="855" cy="90" r="145" fill="none" stroke="#8eb5e1" opacity=".14" stroke-width="2"/><circle cx="120" cy="1095" r="220" fill="none" stroke="#8eb5e1" opacity=".12" stroke-width="2"/><g><text class="ar silver" x="500" y="102" font-size="33" font-weight="700" text-anchor="middle">عن الكتاب والمؤلف</text><path d="M135 120H865" stroke="#9ab9d7" stroke-width="2"/></g>
+<text class="ar white" x="500" y="193" font-size="52" font-weight="700" text-anchor="middle">من الدراسة إلى التطبيق المؤسسي</text>
+<text class="ar muted" x="500" y="253" font-size="30" text-anchor="middle">الذكاء الاصطناعي • إدارة الجودة الشاملة • الصناعات الدوائية</text>
+<rect x="500" y="312" width="414" height="527" rx="14" stroke="#d3e1f0" stroke-width="6" fill="#193755"/>
+<image href="/photos/yk7-official-portrait.jpg" x="510" y="322" width="394" height="507" preserveAspectRatio="xMidYMid slice"/>
+<rect x="510" y="739" width="394" height="90" fill="#06172b" opacity=".79"/>
+<text class="ar white" x="707" y="786" text-anchor="middle" font-size="30" font-weight="700">د. ياسر سيد عبد السلام قطب</text>
+<g transform="translate(87 380) scale(0.81)" filter="url(#shadow)">
+<path d="M0 0L430 -17L506 7L506 631L430 644L0 625Z" fill="#06162a" stroke="#b9c9da" stroke-width="4"/>
+<path d="M430 -17L506 7V631L430 644Z" fill="url(#spine)" stroke="#d8e4f0" stroke-width="2"/>
+<path d="M0 0L430 -17V644L0 625Z" fill="url(#blue)" stroke="#a0c5e5" stroke-width="3"/>
+<path d="M0 0L430 -17V110L0 135Z" fill="#071931" opacity=".55"/>
+<path d="M0 432 Q210 350 430 435L430 644L0 625Z" fill="#07162a" opacity=".78"/>
+<path d="M14 440Q200 390 417 442" fill="none" stroke="#e2eaf2" stroke-width="8"/>
+<g opacity=".6"><circle cx="218" cy="377" r="115" stroke="#96c4f2" stroke-width="2.5" fill="none"/><circle cx="218" cy="377" r="82" stroke="#d7e9f6" stroke-width="3" fill="none"/><path d="M173 384l32 32 69-84" stroke="url(#silver)" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="103" cy="377" r="12" fill="#a8c7ee"/><circle cx="332" cy="377" r="12" fill="#a8c7ee"/></g>
+<text class="ar white" x="214" y="62" font-size="23" text-anchor="middle">كتاب علمي تطبيقي</text>
+<text class="ar white" x="214" y="133" font-size="41" font-weight="700" text-anchor="middle">الذكاء الاصطناعي</text>
+<text class="ar white" x="214" y="191" font-size="37" font-weight="700" text-anchor="middle">وإدارة الجودة الشاملة</text>
+<text class="ar white" x="214" y="251" font-size="40" font-weight="700" text-anchor="middle">في الصناعات الدوائية</text>
+<path d="M43 283H385" stroke="#a3bed6" opacity=".8"/>
+<text class="ar muted" x="215" y="312" font-size="19" text-anchor="middle">دراسة تطبيقية في التحول المؤسسي وجودة القرار</text>
+<text class="ar white" x="212" y="533" font-size="26" font-weight="700" text-anchor="middle">د. ياسر سيد عبد السلام قطب</text>
+<text class="ar muted" x="212" y="576" font-size="19" text-anchor="middle">منصة الرصد الاستراتيجي | YK7</text>
+<text class="white" x="214" y="607" font-size="22" text-anchor="middle">2026</text>
+<text class="ar white" transform="translate(477 330) rotate(90)" font-size="23" text-anchor="middle">الذكاء الاصطناعي والجودة الشاملة</text>
+</g>
+<text class="ar white" x="500" y="939" font-size="35" text-anchor="middle">كتاب علمي مستمد من رسالة الدكتوراه</text>
+<text class="ar muted" x="500" y="996" font-size="30" text-anchor="middle">مرتكزاته: جودة القرار والعمليات والامتثال المؤسسي</text>
+<path d="M170 1111H830" stroke="#99bbdd" stroke-width="2" opacity=".65"/><text x="500" y="1160" class="white" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="32">dryasserkotb.com</text><text class="ar muted" x="500" y="1197" font-size="25" text-anchor="middle">منصة الرصد الاستراتيجي | YK7</text></svg>
