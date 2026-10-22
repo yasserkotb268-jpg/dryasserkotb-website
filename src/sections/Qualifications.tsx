@@ -1,7 +1,7 @@
-import { FileCheck2, GraduationCap, Pill } from 'lucide-react';
+import { FileCheck2, GraduationCap } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
-import { pharmaProfessionalTraining, professionalPracticeDocuments, qualifications, trainingCertificates } from '@/data/content';
+import { professionalPracticeDocuments, qualifications, trainingCertificates } from '@/data/content';
 import { assetPath } from '@/lib/asset';
 
 export default function Qualifications() {
@@ -46,44 +46,6 @@ export default function Qualifications() {
             ))}
           </div>
         </div>
-
-        {pharmaProfessionalTraining && (
-          <div className="mt-20" dir="rtl">
-            <div className="mx-auto mb-9 max-w-4xl text-center">
-              <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-bold text-primary">
-                <Pill className="h-4 w-4" aria-hidden="true" />
-                التأهيل المهني أثناء العمل
-              </span>
-              <h3 className="font-display text-2xl font-bold leading-[1.65] text-foreground md:text-3xl">
-                {pharmaProfessionalTraining.title}
-              </h3>
-              <p className="mt-2 text-sm font-bold text-primary">{pharmaProfessionalTraining.period}</p>
-              <p className="mt-5 text-sm leading-[2] text-muted-foreground md:text-base">
-                {pharmaProfessionalTraining.intro}
-              </p>
-            </div>
-            <div className="grid gap-5 md:grid-cols-2">
-              {pharmaProfessionalTraining.stages.map((stage, i) => (
-                <article
-                  key={stage.title}
-                  className="reveal card-glow flex min-w-0 flex-col rounded-2xl border border-border bg-card p-6 sm:p-7"
-                >
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <p className="text-xs font-bold text-primary">{stage.kind}</p>
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-xs font-bold text-primary" aria-hidden="true">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-                  <h4 className="mb-2 font-display text-xl font-bold leading-[1.7] text-foreground">
-                    {stage.title}
-                  </h4>
-                  <p className="mb-4 text-xs font-semibold text-primary/85">{stage.period}</p>
-                  <p className="text-sm leading-[2] text-foreground/85">{stage.detail}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        )}
 
         {professionalPracticeDocuments.length > 0 && (
           <div className="mt-16" dir="rtl">
