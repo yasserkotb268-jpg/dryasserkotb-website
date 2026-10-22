@@ -145,6 +145,13 @@ collections:
             fields:
               - { label: عنوان المقال, name: title, widget: string }
               - { label: المجال / جهة النشر, name: field, widget: string }
+              - label: حالة عرض المقال
+                name: publicationStatus
+                widget: select
+                default: title_only
+                options:
+                  - { label: "العنوان فقط — بانتظار إعادة المراجعة والإخراج", value: title_only }
+                  - { label: "إظهار النص والروابط — بعد الاعتماد", value: published }
               - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
               - { label: رابط صفحة القراءة (اختياري), name: url, widget: string, required: false }
 
