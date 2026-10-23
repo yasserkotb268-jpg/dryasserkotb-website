@@ -34,7 +34,7 @@ export interface Photo { src: string; alt: string }
 export interface CreativeQuote { text: string; context?: string; image?: string }
 export interface ModelItem { name: string; desc: string; file: string }
 export interface Seminar { title: string; kind: string; topic: string; file: string }
-export interface Book { title: string; topic: string; status: string }
+export interface Book { title: string; topic: string; status: string; summaryUrl?: string }
 export interface Program { name: string; org: string }
 export interface Article { title: string; field: string; file?: string; url?: string; publicationStatus?: 'published' | 'title_only' }
 export interface Lecture { title: string; axis: string }
