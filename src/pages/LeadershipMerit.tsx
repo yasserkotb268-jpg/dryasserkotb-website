@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Download } from 'lucide-react';
 import { Link } from 'react-router';
 
 const poster = '/posters/yk7-leadership-merit-quote.svg';
@@ -14,6 +14,16 @@ export default function LeadershipMerit() {
           <p className="mb-3 text-sm font-bold text-primary">منصة الرصد الاستراتيجي | YK7</p>
           <h1 className="font-display text-3xl font-bold leading-relaxed sm:text-4xl">من المؤهل العلمي إلى الجدارة في قيادة الدولة</h1>
           <p className="mt-3 text-base text-muted-foreground">قراءة مؤسسية في معايير اختيار القيادات الوطنية</p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a href="/articles/article-academic-merit-public-leadership-yk7-2026.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold text-primary-foreground hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              <BookOpen className="h-4 w-4" aria-hidden="true" />
+              قراءة المقال المطوّل
+            </a>
+            <a href="/articles/article-academic-merit-public-leadership-yk7-2026.pdf" download className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-primary/40 px-5 py-3 text-sm font-bold text-primary hover:bg-primary/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              <Download className="h-4 w-4" aria-hidden="true" />
+              تحميل المقال PDF
+            </a>
+          </div>
         </div>
         <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
           <figure className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
