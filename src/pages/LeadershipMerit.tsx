@@ -1,4 +1,4 @@
-import { ArrowRight, Image as ImageIcon, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router';
 
 const poster = '/posters/yk7-leadership-merit-quote.svg';
@@ -11,18 +11,15 @@ export default function LeadershipMerit() {
           <ArrowRight className="h-4 w-4" aria-hidden="true" /> العودة إلى الموقع
         </Link>
         <div className="mb-8 border-b border-border pb-8 text-right">
-          <p className="mb-3 text-sm font-bold text-primary">منصة الرصد الاستراتيجي | YK7 — مقال ورأي</p>
+          <p className="mb-3 text-sm font-bold text-primary">منصة الرصد الاستراتيجي | YK7</p>
           <h1 className="font-display text-3xl font-bold leading-relaxed sm:text-4xl">من المؤهل العلمي إلى الجدارة في قيادة الدولة</h1>
-          <p className="mt-3 text-base text-muted-foreground">نص للنشر مصاحب للبوستر | د. ياسر قطب</p>
+          <p className="mt-3 text-base text-muted-foreground">قراءة مؤسسية في معايير اختيار القيادات الوطنية</p>
         </div>
         <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
           <figure className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-            <img src={poster} alt="اقتباس: الدولة لا تُدار بمجرد الألقاب أو تراكم المعلومات، بل من خلال مؤسسات فاعلة وقيادات جديرة بالمسؤولية" className="h-auto w-full" width="1122" height="1402" />
-            <figcaption className="border-t border-border p-3 text-center">
-              <a href={poster} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                <ImageIcon className="h-4 w-4" aria-hidden="true" /> عرض البوستر <ExternalLink className="h-3 w-3" aria-hidden="true" />
-              </a>
-            </figcaption>
+            <a href={poster} target="_blank" rel="noopener noreferrer" aria-label="مشاهدة الصورة بحجمها الكامل">
+              <img src={poster} alt="اقتباس: الدولة لا تُدار بمجرد الألقاب أو تراكم المعلومات، بل من خلال مؤسسات فاعلة وقيادات جديرة بالمسؤولية" className="h-auto w-full" width="1122" height="1402" />
+            </a>
           </figure>
           <article className="rounded-2xl border border-border bg-card p-5 text-right leading-[2.1] shadow-sm sm:p-8">
             <h2 className="mb-5 font-display text-2xl font-bold leading-relaxed">هل تكفي الشهادات الأكاديمية لإثبات الجدارة القيادية؟</h2>
