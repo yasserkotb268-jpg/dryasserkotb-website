@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1122" height="1402" viewBox="0 0 1122 1402" role="img" aria-labelledby="t d">
+<title id="t">الجدارة القيادية — اقتباس من مقال د. ياسر قطب</title>
+<desc id="d">والدولة لا تُدار بمجرد الألقاب أو تراكم المعلومات، وإنما من خلال مؤسسات فاعلة وقيادات تمتلك المعرفة والكفاءة والرؤية والمسؤولية، وتستطيع توظيف التخصصات المختلفة لصياغة قرارات تراعي الإنسان والمجتمع ومصالح الدولة في الحاضر والمستقبل.</desc>
+<defs><linearGradient id="bg" x2=".9" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f2f3f5"/></linearGradient><linearGradient id="red" x2="1" y2="1"><stop stop-color="#7c0b12"/><stop offset="1" stop-color="#c02429"/></linearGradient><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="#9ba0a7" opacity=".23"/></pattern></defs>
+<rect width="1122" height="1402" fill="url(#bg)"/>
+<path d="M0 850L280 1120 0 1402Z" fill="url(#red)" opacity=".92"/><path d="M0 1130L230 1402H0Z" fill="#25252a" opacity=".85"/>
+<path d="M0 268L112 135 185 196 0 428Z" fill="#e9e9e9" opacity=".55"/>
+<g stroke="#aeb0b6" stroke-width="1.5" opacity=".17" fill="none"><path d="M0 225 182 90 245 155 62 355M0 314 230 152 300 235 0 538M0 395 275 250 325 334 0 615"/><path d="M865 470L1040 535 955 650 1100 725M955 650L805 735M1040 535L1115 450"/></g>
+<rect x="835" y="885" width="287" height="440" fill="url(#dots)" opacity=".7"/>
+<path d="M75 157h970" stroke="#e1e1e1" stroke-width="2"/>
+<text x="78" y="105" font-family="Arial,Tajawal,sans-serif" font-size="75" font-weight="900" fill="#181818" direction="ltr">YK<tspan fill="#9e101b">7</tspan></text>
+<text x="292" y="72" font-family="Amiri,Tajawal,serif" font-size="29" text-anchor="middle" fill="#333">من الرصد</text>
+<text x="292" y="111" font-family="Amiri,Tajawal,serif" font-size="29" text-anchor="middle" fill="#333">إلى الرؤية</text>
+<path d="M215 40v80" stroke="#585858" stroke-width="2"/>
+<text x="1015" y="100" text-anchor="end" font-family="Amiri,Tajawal,serif" font-size="38" font-weight="700" fill="#161616">اقتباس</text>
+<path d="M820 98h112" stroke="#b61a21" stroke-width="4"/>
+<text x="1015" y="234" font-family="Georgia,serif" font-size="118" fill="#a00e18" text-anchor="middle">”</text>
+<g font-family="Amiri,'Noto Naskh Arabic',serif" font-size="54" font-weight="700" text-anchor="middle" direction="rtl" fill="#101010">
+<text x="560" y="290">والدولة لا تُدار بمجرد الألقاب أو تراكم</text>
+<text x="560" y="378">المعلومات، وإنما من خلال مؤسسات فاعلة</text>
+<text x="560" y="466" fill="#99131c">وقيادات تمتلك المعرفة والكفاءة والرؤية</text>
+<text x="560" y="554">والمسؤولية، وتستطيع توظيف التخصصات</text>
+<text x="560" y="642">المختلفة لصياغة قرارات تراعي الإنسان</text>
+<text x="560" y="730">والمجتمع ومصالح الدولة في الحاضر</text>
+<text x="560" y="818">والمستقبل.</text>
+</g>
+<path d="M430 856h262" stroke="#a9141b" stroke-width="3"/>
+<rect x="105" y="899" width="912" height="237" rx="14" fill="#ffffff" opacity=".73"/>
+<g font-family="Amiri,'Noto Naskh Arabic',serif" text-anchor="middle" direction="rtl" font-weight="700">
+<text x="561" y="978" font-size="50" fill="#171717">وهذا هو جوهر الدعوة إلى الانتقال من</text>
+<text x="561" y="1052" font-size="53" fill="#95121b">الاكتفاء بالمؤهل العلمي إلى التحقق</text>
+<text x="561" y="1119" font-size="53" fill="#95121b">من الجدارة القيادية.</text>
+</g>
+<path d="M487 1166h150" stroke="#a3151c" stroke-width="3"/>
+<g text-anchor="middle" font-family="Amiri,Tajawal,serif" direction="rtl">
+<text x="561" y="1220" font-size="37" font-weight="700" fill="#121212">د. ياسر قطب</text>
+<text x="561" y="1266" font-size="28" fill="#363636">مفكر ومحلل استراتيجي</text>
+<text x="561" y="1308" font-size="27" fill="#303030">مؤسس منصة الرصد الاستراتيجي | YK7</text>
+</g>
+<text x="561" y="1363" font-size="28" font-family="Arial,sans-serif" direction="ltr" text-anchor="middle" fill="#252525">dryasserkotb.com</text>
+</svg>
