@@ -37,7 +37,7 @@ export default function CreativeGallery() {
           {(yk7.posters ?? []).map((poster) => (
             <a
               key={poster.file}
-              href={assetPath('posters', poster.file)}
+              href={poster.url || assetPath('posters', poster.file)}
               target="_blank"
               rel="noopener noreferrer"
               className="card-glow overflow-hidden rounded-2xl border border-border bg-card"
