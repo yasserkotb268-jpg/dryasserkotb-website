@@ -790,6 +790,20 @@
       "publicationStatus": "published"
     },
     {
+      "title": "إعادة قراءة موازين القوة في الشرق الأوسط",
+      "field": "نُشر في صحيفة «قضايا»، العدد (104)، 20 أكتوبر 2026 | تأملات استراتيجية في أوضاع الشرق الأوسط، الجزء الثالث — المقال الثالث | نسخة الصحيفة الأصلية، الصفحتان 6–7",
+      "url": "/articles/qadaya-104-strategic-power/",
+      "file": "qadaya-104-pages-6-7.pdf",
+      "publicationStatus": "published"
+    },
+    {
+      "title": "القوة التي لا تُستخدم ليست قوة كاملة: من امتلاك الموارد إلى القدرة الاستراتيجية",
+      "field": "نُشر في صحيفة «قضايا»، العدد (103)، 13 أكتوبر 2026 | تأملات استراتيجية في أوضاع الشرق الأوسط، الجزء الثالث — المقال الثاني | نسخة الصحيفة الأصلية، الصفحتان 6–7",
+      "url": "/articles/qadaya-103-strategic-power/",
+      "file": "qadaya-103-pages-6-7.pdf",
+      "publicationStatus": "published"
+    },
+    {
       "title": "حين يُستهدف الأمن المجتمعي: مسؤولية الدولة والمجتمع وجودة القرار",
       "field": "قراءة استراتيجية عامة في حماية الإنسان، والتماسك الأهلي، وجودة القرار وإدارة الأزمات — منصة الرصد الاستراتيجي | YK7، أكتوبر 2026",
       "url": "/articles/community-security-quality-of-decision.html",
@@ -1171,6 +1185,36 @@
       }
     ],
     "posters": [
+      {
+        "title": "العدد 103 | القوة الاستراتيجية — بوستر تحليلي",
+        "file": "qadaya-103-strategic-power-poster.webp",
+        "desc": "من موضوعات المقال الثاني في صحيفة قضايا، العدد 103 — القدرة على استخدام موارد القوة.",
+        "url": "/articles/qadaya-103-strategic-power/"
+      },
+      {
+        "title": "العدد 104 | إعادة قراءة موازين القوة في الشرق الأوسط",
+        "file": "qadaya-104-power-balance-main.webp",
+        "desc": "بوستر المقال الثالث من سلسلة القرار الاستراتيجي وموازين القوة.",
+        "url": "/articles/qadaya-104-strategic-power/"
+      },
+      {
+        "title": "العدد 104 | اقتباس من موازين القوة",
+        "file": "qadaya-104-power-balance-quote.webp",
+        "desc": "بوستر مقتطف من المقال الثالث المنشور في الصفحتين 6 و7.",
+        "url": "/articles/qadaya-104-strategic-power/"
+      },
+      {
+        "title": "العدد 104 | مصدر بصري عن الإنفاق العسكري",
+        "file": "qadaya-104-sipri-visual.webp",
+        "desc": "بطاقة تصميمية للإشارة إلى مرجع SIPRI؛ ليست صورة أصلية لواجهة التقرير.",
+        "url": "/articles/qadaya-104-strategic-power/"
+      },
+      {
+        "title": "العدد 104 | بطاقة اقتصادية من البنك الدولي",
+        "file": "qadaya-104-worldbank-visual.webp",
+        "desc": "تصميم بصري لإحدى مواد البنك الدولي ذات الصلة بالسلسلة؛ ليس صورة أصلية للتقرير.",
+        "url": "/articles/qadaya-104-strategic-power/"
+      },
       {
         "title": "التحالفات في الشرق الأوسط — المقال التحليلي",
         "file": "q105-alliances-main.webp",
