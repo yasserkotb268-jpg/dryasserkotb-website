@@ -18,6 +18,27 @@ export default function Works() {
           icon={BookOpen}
         />
 
+        <div className="reveal mb-10 flex flex-col items-center gap-5 overflow-hidden rounded-2xl border border-primary/30 bg-card p-5 text-right md:flex-row md:p-7" dir="rtl">
+          <img
+            src={assetPath('posters', 'yk7-ai-pharma-book-3d.svg')}
+            alt="كتاب الذكاء الاصطناعي وإدارة الجودة الشاملة في الصناعات الدوائية"
+            loading="lazy"
+            className="h-48 w-auto shrink-0 rounded-lg bg-background object-contain md:h-56"
+          />
+          <div className="min-w-0 flex-1">
+            <p className="mb-2 text-sm font-semibold text-primary">كتاب علمي مستمد من رسالة الدكتوراه</p>
+            <h3 className="font-display text-xl font-bold leading-[1.65] text-foreground md:text-2xl">
+              الذكاء الاصطناعي وإدارة الجودة الشاملة في الصناعات الدوائية
+            </h3>
+            <p className="my-3 text-sm leading-[2] text-muted-foreground">
+              ملخص علمي يعرض المشكلة البحثية والمنهج المختلط والنتائج والتوصيات، مع بيان الإضافة الإجرائية لنموذج YK7–PIL وحدود تعميم نتائج الدراسة.
+            </p>
+            <a href="/books/ai-tqm-pharma-summary.html" className="inline-flex items-center rounded-lg border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+              قراءة ملخص الكتاب
+            </a>
+          </div>
+        </div>
+
         <Tabs defaultValue="frameworks" dir="rtl" className="reveal">
           <TabsList className="mx-auto mb-10 flex w-fit gap-1 rounded-xl border border-border bg-card p-1.5">
             <TabsTrigger
@@ -108,6 +129,11 @@ export default function Works() {
                   <span className="mt-auto inline-flex w-fit rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                     {b.status}
                   </span>
+                  {b.summaryUrl && (
+                    <a href={b.summaryUrl} className="mt-4 inline-flex w-fit items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary hover:bg-primary hover:text-primary-foreground">
+                      قراءة ملخص الكتاب
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
