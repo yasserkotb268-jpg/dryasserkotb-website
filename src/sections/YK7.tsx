@@ -135,35 +135,41 @@ export default function YK7() {
         )}
 
         {yk7.posters && yk7.posters.length > 0 && (
-          <div className="reveal mt-14">
+          <div className="reveal mt-14" id="posters-quotes" dir="rtl">
             <div className="mb-6 flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
                 <Images className="h-5 w-5" />
               </span>
-              <h4 className="font-display text-xl font-bold text-foreground">أقسام المنصة وأنشطتها</h4>
+              <h4 className="font-display text-xl font-bold text-foreground">الكلمات والبوسترات — أعمال منصة YK7</h4>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {yk7.posters.map((poster) => (
-                <a
+                <article
                   key={poster.file}
-                  href={assetPath('posters', poster.file)}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="card-glow overflow-hidden rounded-2xl border border-border bg-card"
-                  aria-label={`عرض البوستر: ${poster.title}`}
                 >
-                  <img
-                    src={assetPath('posters', poster.file)}
-                    alt={poster.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="aspect-[4/5] w-full bg-background object-contain"
-                  />
-                  <div className="p-4">
+                  <a href={assetPath('posters', poster.file)}
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label={`عرض البوستر بالحجم الكامل: ${poster.title}`}>
+                    <img
+                      src={assetPath('posters', poster.file)}
+                      alt={poster.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[4/5] w-full bg-background object-contain"
+                    />
+                  </a>
+                  <div className="p-4" dir="rtl">
                     <h4 className="font-bold leading-relaxed text-foreground">{poster.title}</h4>
                     {poster.desc && <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{poster.desc}</p>}
+                    {poster.url && (
+                      <a href={poster.url}
+                        className="mt-3 inline-flex min-h-10 items-center rounded-lg border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground">
+                        قراءة العمل المرتبط
+                      </a>
+                    )}
                   </div>
-                </a>
+                </article>
               ))}
             </div>
           </div>
