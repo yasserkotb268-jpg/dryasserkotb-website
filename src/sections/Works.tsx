@@ -20,7 +20,7 @@ export default function Works() {
 
         <div className="reveal mb-10 flex flex-col items-center gap-5 overflow-hidden rounded-2xl border border-primary/30 bg-card p-5 text-right md:flex-row md:p-7" dir="rtl">
           <img
-            src={assetPath('posters', 'yk7-ai-pharma-book-3d.svg')}
+            src={assetPath('posters', 'yk7-ai-pharma-book-3d.webp')}
             alt="كتاب الذكاء الاصطناعي وإدارة الجودة الشاملة في الصناعات الدوائية"
             loading="lazy"
             className="h-48 w-auto shrink-0 rounded-lg bg-background object-contain md:h-56"
