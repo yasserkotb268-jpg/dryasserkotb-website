@@ -1,6 +1,11 @@
 backend:
   name: git-gateway
   branch: main
+  squash_merges: true
+
+# تحرير المسودات خارج main حتى موعد إصدار YK7 الموحد
+# الحفظ: مسودة / مراجعة، والنشر: دمج في main بعد فحص الحزمة كاملة
+publish_mode: editorial_workflow
 
 site_url: https://dryasserkotb.com
 display_url: https://dryasserkotb.com
