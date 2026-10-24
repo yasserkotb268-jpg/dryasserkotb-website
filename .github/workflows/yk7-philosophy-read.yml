@@ -1,0 +1,26 @@
+name: YK7 philosophy PDF read-only review
+on:
+  push:
+    branches:
+      - yk7/philosophy-review-2026-10-24
+    paths:
+      - .github/workflows/yk7-philosophy-read.yml
+permissions:
+  contents: read
+jobs:
+  inspect-existing-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report PDF layout, fonts, page count and full extracted article text
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+          FILE=public/articles/article-philosophy-not-misguidance.pdf
+          printf '\n===== FILE DETAILS =====\n'
+          pdfinfo "$FILE" | grep -E 'Pages:|Page size:|File size:|PDF version:'
+          printf '\n===== FONTS =====\n'
+          pdffonts "$FILE"
+          printf '\n===== TEXT START =====\n'
+          pdftotext -layout "$FILE" - | tr '\f' '\n'
+          printf '\n===== TEXT END =====\n'
