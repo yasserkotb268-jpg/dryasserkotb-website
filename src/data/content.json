@@ -620,6 +620,10 @@
       "label": "نبذة مهنية"
     },
     {
+      "id": "vision-mission",
+      "label": "الرؤية والرسالة والأهداف"
+    },
+    {
       "id": "qualifications",
       "label": "المؤهلات"
     },
