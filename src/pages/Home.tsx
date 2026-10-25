@@ -1,6 +1,7 @@
 import Navbar from '@/sections/Navbar';
 import Hero from '@/sections/Hero';
 import About from '@/sections/About';
+import VisionMission from '@/sections/VisionMission';
 import Qualifications from '@/sections/Qualifications';
 import Positions from '@/sections/Positions';
 import Memberships from '@/sections/Memberships';
@@ -26,6 +27,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <VisionMission />
         <Qualifications />
         <Positions />
         <Memberships />
