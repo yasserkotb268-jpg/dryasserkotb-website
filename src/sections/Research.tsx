@@ -14,7 +14,7 @@ export default function Research() {
           kicker="الأبحاث العلمية"
           title="أبحاث منشورة وأوراق مؤتمرات وأطروحات"
           icon={FlaskConical}
-          description="نصوص كاملة قابلة للتحميل بصيغة PDF — مهيأة للفهرسة الأكاديمية العالمية"
+          description="أبحاث منشورة بصيغة PDF وموجزات بحثية قابلة للقراءة المباشرة"
         />
 
         <div className="flex flex-col gap-5">
@@ -47,8 +47,8 @@ export default function Research() {
                 rel="noopener noreferrer"
                 className="inline-flex shrink-0 items-center gap-2 self-start rounded-lg border border-primary/45 bg-primary/10 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground sm:self-center"
               >
-                <Download className="h-4 w-4" />
-                PDF
+                {r.file.toLowerCase().endsWith('.html') ? <FileText className="h-4 w-4" /> : <Download className="h-4 w-4" />}
+                {r.file.toLowerCase().endsWith('.html') ? 'قراءة الموجز' : 'PDF'}
               </a>
             </div>
           ))}
