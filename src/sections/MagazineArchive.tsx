@@ -20,14 +20,14 @@ export default function MagazineArchive() {
         />
         <div className="grid gap-5 md:grid-cols-2">
           {magazine.map((m) => (
-            <article key={m.title} className="reveal card-glow flex min-w-0 flex-col gap-4 rounded-2xl border border-border bg-card p-5 sm:p-7">
+            <article key={m.title} className="reveal magazine-card-motion card-glow flex min-w-0 flex-col gap-4 rounded-2xl border border-border bg-card p-5 sm:p-7">
               {m.cover && (
                 <img
                   src={assetPath('uploads', m.cover)}
                   alt={`غلاف ${m.issue || m.title}`}
                   loading="lazy"
                   decoding="async"
-                  className="mx-auto max-h-[420px] w-full rounded-lg bg-background object-contain"
+                  className="magazine-cover-motion mx-auto max-h-[420px] w-full rounded-lg bg-background object-contain"
                 />
               )}
               <div className="flex flex-wrap gap-2 text-xs font-bold text-primary">
@@ -37,7 +37,7 @@ export default function MagazineArchive() {
               <h3 className="font-display text-xl font-bold leading-relaxed text-foreground">{m.title}</h3>
               {m.file && (
                 <a href={assetPath('uploads', m.file)} target="_blank" rel="noopener noreferrer"
-                   className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-5 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                   className="site-action-link mt-auto inline-flex min-h-11 w-fit items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-5 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
                   فتح العدد كاملًا (PDF) <Download className="h-4 w-4" aria-hidden="true" />
                 </a>
               )}
@@ -57,7 +57,7 @@ export default function MagazineArchive() {
                   <h4 className="flex-1 font-bold leading-relaxed text-foreground">{m.title}</h4>
                   {m.file && (
                     <a href={assetPath('uploads', m.file)} target="_blank" rel="noopener noreferrer"
-                       className="inline-flex min-h-11 w-fit items-center gap-2 rounded-lg border border-primary/35 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                       className="site-action-link inline-flex min-h-11 w-fit items-center gap-2 rounded-lg border border-primary/35 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
                       قراءة الكتاب PDF <Download className="h-4 w-4" aria-hidden="true" />
                     </a>
                   )}
