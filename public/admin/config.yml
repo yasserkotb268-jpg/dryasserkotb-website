@@ -159,6 +159,7 @@ collections:
                   - { label: "إظهار النص والروابط — بعد الاعتماد", value: published }
               - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
               - { label: رابط صفحة القراءة (اختياري), name: url, widget: string, required: false }
+              - { label: نسخة PDF الأصلية (اختياري), name: originalFile, widget: file, required: false }
 
           - label: سلاسل المحاضرات (دبلومات وبرامج)
             name: lectureSeries
