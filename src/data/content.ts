@@ -60,15 +60,29 @@ export interface YK7Unit {
   team: string;
   supervisor: string;
 }
+export interface YK7PublicationEdition {
+  language: 'ar' | 'en';
+  title: string;
+  subtitle?: string;
+  summary: string;
+  audience?: string;
+  quote?: string;
+  cover: string;
+  file: string;
+  pages: number;
+  sizeLabel: string;
+}
 export interface YK7Publication {
   title: string;
   type: string;
   year: string;
+  slug?: string;
   project?: string;
   team: string;
   supervisor: string;
   note?: string;
   file?: string;
+  editions?: YK7PublicationEdition[];
 }
 export interface YK7 { intro: string; facebook?: string; documents: YK7Document[]; magazine?: YK7MagazineIssue[]; posters?: YK7Poster[]; units?: YK7Unit[]; publications?: YK7Publication[] }
 export interface Presentation { title: string; desc: string; file: string }

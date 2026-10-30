@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BookOpen, Download, Facebook, FileText, Images, Radar, ShieldCheck } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
@@ -6,6 +7,12 @@ import { assetPath } from '@/lib/asset';
 
 export default function YK7() {
   const ref = useReveal<HTMLElement>();
+  useEffect(() => {
+    const targetId = window.location.hash.slice(1);
+    if (targetId === 'yk7-publications' || yk7.publications?.some((publication) => publication.slug === targetId)) {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
+  }, []);
   return (
     <section id="yk7" ref={ref} className="relative py-24">
       <div className="pattern-star pointer-events-none absolute inset-0 opacity-40" />
@@ -34,6 +41,9 @@ export default function YK7() {
         <nav aria-label="أرشيفات المنصة" className="mb-10 flex flex-wrap justify-center gap-3" dir="rtl">
           <a href="#yk7-magazines" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
             أعداد مجلة YK7
+          </a>
+          <a href="#yk7-publications" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+            كتب وإصدارات المنصة
           </a>
           <a href="#qadaya-articles" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
             مقالات صحيفة قضايا
@@ -185,7 +195,7 @@ export default function YK7() {
             </div>
             <div className="space-y-4">
               {yk7.publications.map((publication) => (
-                <article key={publication.title} className="card-glow rounded-2xl border border-border bg-card p-6 md:p-7">
+                <article id={publication.slug} key={publication.title} className="card-glow scroll-mt-24 rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-7">
                   <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-bold text-primary">
                     <span className="rounded-full border border-primary/35 bg-primary/10 px-3 py-1">{publication.type}</span>
                     <span className="rounded-full border border-border px-3 py-1 text-muted-foreground">{publication.year}</span>
@@ -194,6 +204,52 @@ export default function YK7() {
                   {publication.note && <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{publication.note}</p>}
                   <p className="mt-4 text-sm leading-[1.9] text-foreground/85">{publication.team}</p>
                   <p className="text-sm leading-[1.9] text-foreground/85">{publication.supervisor}</p>
+                  {publication.editions && publication.editions.length > 0 && (
+                    <div className="mt-6 grid gap-6 lg:grid-cols-2">
+                      {publication.editions.map((edition) => {
+                        const isArabic = edition.language === 'ar';
+                        const fileUrl = assetPath('uploads', edition.file);
+                        return (
+                          <div key={edition.language} lang={edition.language} dir={isArabic ? 'rtl' : 'ltr'}
+                            className="min-w-0 overflow-hidden rounded-xl border border-border bg-background/60">
+                            <a href={fileUrl} target="_blank" rel="noopener noreferrer"
+                              aria-label={isArabic ? 'قراءة النسخة العربية الكاملة من كتاب الأمن السيبراني' : 'Read the complete English edition of Cybersecurity in Construction and Engineering'}
+                              className="flex items-center justify-center bg-black/70 p-4">
+                              <img src={assetPath('uploads', edition.cover)}
+                                alt={isArabic ? 'غلاف النسخة العربية من كتاب الأمن السيبراني في بيئة المقاولات والهندسة' : 'English cover of Cybersecurity in Construction and Engineering'}
+                                width={896} height={1120} loading="lazy" decoding="async"
+                                className="h-auto max-h-96 w-auto max-w-full object-contain" />
+                            </a>
+                            <div className="flex flex-col gap-3 p-4 sm:p-5">
+                              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+                                <span className="rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-primary">
+                                  {isArabic ? 'النسخة العربية الكاملة' : 'Complete English edition'}
+                                </span>
+                                <span className="text-muted-foreground">{edition.pages} {isArabic ? 'صفحة' : 'pages'} · <span dir="ltr">{edition.sizeLabel}</span></span>
+                              </div>
+                              <h6 className="text-lg font-bold leading-relaxed text-foreground">{edition.title}</h6>
+                              {edition.subtitle && <p className="text-sm font-semibold leading-relaxed text-primary">{edition.subtitle}</p>}
+                              <p className="text-sm leading-[1.9] text-foreground/85">{edition.summary}</p>
+                              {edition.audience && <p className="text-sm leading-[1.9] text-muted-foreground">{edition.audience}</p>}
+                              {edition.quote && <blockquote className="border-s-2 border-primary/60 ps-3 text-sm font-semibold leading-[1.9] text-foreground">{edition.quote}</blockquote>}
+                              <div className="mt-1 flex flex-wrap gap-3">
+                                <a href={fileUrl} target="_blank" rel="noopener noreferrer"
+                                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-primary/45 bg-primary/10 px-4 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                                  <BookOpen className="h-4 w-4 shrink-0" aria-hidden="true" />
+                                  {isArabic ? 'قراءة النسخة العربية' : 'Read English edition'}
+                                </a>
+                                <a href={fileUrl} download
+                                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary">
+                                  <Download className="h-4 w-4 shrink-0" aria-hidden="true" />
+                                  {isArabic ? 'تحميل PDF العربي' : 'Download English PDF'}
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                   {publication.file && (
                     <a href={assetPath('uploads', publication.file)} target="_blank" rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary">
