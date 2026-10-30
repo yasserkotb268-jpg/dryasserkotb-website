@@ -277,6 +277,12 @@
   ],
   "books": [
     {
+      "title": "الأمن السيبراني في بيئة المقاولات والهندسة",
+      "topic": "الأمن السيبراني في المشروعات الهندسية: حماية المعلومات، والحوكمة، ومرونة المشروع والأنظمة التشغيلية. إعداد وتحليل منصة YK7؛ فريق إعداد الكتاب: المهندس سهيل ياسر قطب؛ إشراف د. ياسر قطب.",
+      "status": "النسختان الكاملتان بالعربية والإنجليزية",
+      "summaryUrl": "#cybersecurity-book"
+    },
+    {
       "title": "الذكاء الاصطناعي وإدارة الجودة الشاملة في الصناعات الدوائية",
       "topic": "دراسة تطبيقية لدور الذكاء الاصطناعي في تعزيز إدارة الجودة الشاملة داخل قطاع الصناعات الدوائية، مستمدة من رسالة الدكتوراه.",
       "status": "ملخص علمي منشور",
@@ -1319,9 +1325,36 @@
         "type": "كتاب ضمن إصدارات منصة YK7",
         "year": "2026",
         "project": "وحدة الأمن السيبراني",
-        "team": "إعداد وتحليل: فريق عمل منصة الرصد الاستراتيجي | YK7؛ فريق إعداد الكتاب: المهندس سهيل ياسر قطب",
+        "team": "إعداد وتحليل: منصة الرصد الاستراتيجي | YK7؛ فريق إعداد الكتاب: المهندس سهيل ياسر قطب",
         "supervisor": "الإشراف العلمي والتحريري: د. ياسر قطب",
-        "note": "يتناول الأمن السيبراني في قطاع المقاولات والهندسة مع تطبيقات ومداخل مؤسسية."
+        "note": "مرجع علمي وتطبيقي يربط حماية المعلومات والبيئة الهندسية الرقمية بمرونة المشروع والأنظمة التشغيلية، مع النسختين الكاملتين بالعربية والإنجليزية.",
+        "slug": "cybersecurity-book",
+        "editions": [
+          {
+            "language": "ar",
+            "title": "الأمن السيبراني في بيئة المقاولات والهندسة",
+            "subtitle": "من حماية المعلومات إلى مرونة المشروع والأنظمة التشغيلية",
+            "summary": "يقدّم الكتاب إطارًا علميًا وتطبيقيًا لفهم المخاطر السيبرانية في المشروعات الهندسية. يتناول إدارة الأصول والهوية والوصول، وتكامل IT/OT، وأمن BIM/CDE والتوأم الرقمي، ومخاطر الموردين وسلسلة الإمداد، والحوكمة والاستجابة للحوادث والتعافي. ويضم مصطلحات وأطرًا مرجعية وقوائم فحص، مع التمييز بين المفاهيم المستقرة وأدوات YK7 الإجرائية.",
+            "audience": "مرجع موجّه إلى شركات المقاولات الكبرى، وشركات الاستشارات الهندسية، ومطوّري مشروعات البنية التحتية، ومهندسي المشروعات، وفرق تقنية المعلومات والأمن السيبراني، والقيادات المؤسسية والباحثين.",
+            "quote": "«الأمن السيبراني لا يبدأ من الأداة... بل من فهم المؤسسة.»",
+            "cover": "yk7-cybersecurity-ar-cover-2026.webp",
+            "file": "yk7-cybersecurity-ar-complete-2026.pdf",
+            "pages": 152,
+            "sizeLabel": "4.9 MB"
+          },
+          {
+            "language": "en",
+            "title": "Cybersecurity in Construction and Engineering",
+            "subtitle": "From Information Protection to Project Resilience and Operational Systems",
+            "summary": "A scientific and practical framework linking cybersecurity in engineering projects with safe execution, operational continuity, and decision quality. It covers asset and identity management, IT/OT, BIM/CDE, digital twins, supply-chain risks, governance, incident response, and recovery, with terminology, reference frameworks, and practical checklists. Established concepts are distinguished from YK7 procedural tools.",
+            "audience": "A reference for major construction contractors, engineering consultancies, infrastructure developers, project engineers, IT and cybersecurity teams, organizational leaders, and researchers.",
+            "quote": "Cybersecurity does not begin with the tool; it begins with understanding the organization.",
+            "cover": "yk7-cybersecurity-en-cover-2026.webp",
+            "file": "yk7-cybersecurity-en-complete-2026.pdf",
+            "pages": 150,
+            "sizeLabel": "4.1 MB"
+          }
+        ]
       }
     ]
   },

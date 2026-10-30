@@ -126,11 +126,35 @@ collections:
                   - { label: عنوان الإصدار, name: title, widget: string }
                   - { label: النوع, name: type, widget: string }
                   - { label: السنة, name: year, widget: string }
+                  - { label: معرّف رابط الإصدار, name: slug, widget: string, required: false }
                   - { label: الوحدة أو المشروع, name: project, widget: string, required: false }
                   - { label: فريق الإعداد, name: team, widget: text }
                   - { label: الإشراف, name: supervisor, widget: string }
                   - { label: ملخص, name: note, widget: text, required: false }
                   - { label: ملف PDF (اختياري), name: file, widget: file, required: false }
+
+                  - label: النسخ الكاملة بحسب اللغة
+                    name: editions
+                    widget: list
+                    required: false
+                    collapsed: true
+                    summary: '{{fields.title}}'
+                    fields:
+                      - label: اللغة
+                        name: language
+                        widget: select
+                        options:
+                          - { label: العربية, value: ar }
+                          - { label: English, value: en }
+                      - { label: عنوان النسخة, name: title, widget: string }
+                      - { label: العنوان الفرعي, name: subtitle, widget: string, required: false }
+                      - { label: الملخص, name: summary, widget: text }
+                      - { label: الجمهور المستهدف, name: audience, widget: text, required: false }
+                      - { label: اقتباس من الكتاب, name: quote, widget: text, required: false }
+                      - { label: غلاف النسخة, name: cover, widget: image }
+                      - { label: ملف النسخة الكاملة, name: file, widget: file }
+                      - { label: عدد الصفحات, name: pages, widget: number, value_type: int, min: 1 }
+                      - { label: حجم الملف المعروض, name: sizeLabel, widget: string }
 
           - label: كلمات وأقوال المؤلف
             name: creativeQuotes
