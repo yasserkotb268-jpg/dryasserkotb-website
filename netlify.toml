@@ -5,8 +5,5 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# React Router: serve the application for direct links and refreshes
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# SPA routing is restricted to the actual client-side route in public/_redirects.
+# Unknown URLs should retain an HTTP 404 response.
