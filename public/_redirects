@@ -40,4 +40,6 @@
 /posters/yk7-ai-pharma-book-3d.svg /posters/yk7-ai-pharma-book-3d.webp 301
 /posters/yk7-ai-pharma-quote.svg /posters/yk7-ai-pharma-quote.webp 301
 
-/* /index.html 200
+# Route only the React client-side page. Unknown URLs must return 404.
+/leadership-merit /index.html 200
+/leadership-merit/ /index.html 200
