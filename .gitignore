@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Never commit environment credentials (including under public/)
+.env
+.env.*
+!.env.example
