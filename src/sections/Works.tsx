@@ -6,6 +6,7 @@ import { books, frameworks, models, photos } from '@/data/content';
 import { assetPath } from '@/lib/asset';
 
 const frameworkIcons = [Network, Lightbulb, BookOpen, PenLine];
+const englishReviewBook = books.find((book) => book.summaryUrl === '/books/narcissistic-patterns-english.html');
 
 export default function Works() {
   const ref = useReveal<HTMLElement>();
@@ -38,6 +39,31 @@ export default function Works() {
             </a>
           </div>
         </div>
+
+        {englishReviewBook && (
+          <div className="reveal mb-10 flex flex-col items-center gap-5 overflow-hidden rounded-2xl border border-primary/30 bg-card p-5 text-right md:flex-row md:p-7" dir="rtl">
+            <img
+              src={englishReviewBook.cover}
+              alt="غلاف نسخة المراجعة الإنجليزية من كتاب كيف أتعامل مع النمط النرجسي"
+              loading="lazy"
+              width="1024"
+              height="1536"
+              className="h-48 w-auto shrink-0 rounded-lg bg-background object-contain md:h-56"
+            />
+            <div className="min-w-0 flex-1">
+              <p className="mb-2 text-sm font-semibold text-primary">كيف أتعامل مع النمط النرجسي — نسخة المراجعة الإنجليزية</p>
+              <h3 className="font-display text-xl font-bold leading-[1.65] text-foreground md:text-2xl" lang="en" dir="ltr">
+                How to Deal with Narcissistic Patterns
+              </h3>
+              <p className="my-3 text-sm leading-[2] text-muted-foreground">
+                ملخص بالإنجليزية مع الغلاف الأصلي وعينة قراءة من 22 صفحة، تضم الفصل الأول وورقة تطبيقية ومراجع الكتاب، مع الحفاظ على ترقيم الصفحات الأصلي.
+              </p>
+              <a href={englishReviewBook.summaryUrl} className="inline-flex items-center rounded-lg border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                قراءة الملخص والصفحات المختارة بالإنجليزية
+              </a>
+            </div>
+          </div>
+        )}
 
         <Tabs defaultValue="frameworks" dir="rtl" className="reveal">
           <TabsList className="mx-auto mb-10 flex w-fit gap-1 rounded-xl border border-border bg-card p-1.5">
@@ -121,9 +147,13 @@ export default function Works() {
                   key={b.title}
                   className="card-glow flex flex-col rounded-2xl border border-border bg-card p-6"
                 >
-                  <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/35 bg-primary/10 text-primary">
-                    <BookOpen className="h-5 w-5" />
-                  </span>
+                  {b.cover ? (
+                    <img src={b.cover} alt={`غلاف ${b.title}`} width="1024" height="1536" loading="lazy" className="mb-4 h-48 w-full rounded-lg object-contain" />
+                  ) : (
+                    <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/35 bg-primary/10 text-primary">
+                      <BookOpen className="h-5 w-5" />
+                    </span>
+                  )}
                   <h3 className="mb-2 font-bold leading-snug text-foreground">{b.title}</h3>
                   <p className="mb-4 flex-1 text-sm leading-[1.85] text-muted-foreground">{b.topic}</p>
                   <span className="mt-auto inline-flex w-fit rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
@@ -131,7 +161,7 @@ export default function Works() {
                   </span>
                   {b.summaryUrl && (
                     <a href={b.summaryUrl} className="mt-4 inline-flex w-fit items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary hover:bg-primary hover:text-primary-foreground">
-                      قراءة ملخص الكتاب
+                      {b.summaryLabel ?? 'قراءة ملخص الكتاب'}
                     </a>
                   )}
                 </div>

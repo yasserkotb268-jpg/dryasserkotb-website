@@ -261,6 +261,9 @@ collections:
               - { label: العنوان, name: title, widget: string }
               - { label: الموضوع, name: topic, widget: text }
               - { label: الحالة, name: status, widget: string, hint: 'صادر / قيد الإصدار / مراجعة نهائية...' }
+              - { label: رابط ملخص الكتاب, name: summaryUrl, widget: string, required: false }
+              - { label: نص رابط الملخص, name: summaryLabel, widget: string, required: false }
+              - { label: غلاف الكتاب, name: cover, widget: image, required: false }
 
           - label: الأطر والنماذج الفكرية
             name: frameworks
