@@ -6,7 +6,7 @@ import { books, frameworks, models, photos } from '@/data/content';
 import { assetPath } from '@/lib/asset';
 
 const frameworkIcons = [Network, Lightbulb, BookOpen, PenLine];
-const englishReviewBook = books.find((book) => book.summaryUrl === '/books/narcissistic-patterns-english.html');
+const patternsBook = books.find((book) => book.summaryUrl === '/books/narcissistic-patterns/');
 
 export default function Works() {
   const ref = useReveal<HTMLElement>();
@@ -40,10 +40,10 @@ export default function Works() {
           </div>
         </div>
 
-        {englishReviewBook && (
+        {patternsBook && (
           <div className="reveal mb-10 flex flex-col items-center gap-5 overflow-hidden rounded-2xl border border-primary/30 bg-card p-5 text-right md:flex-row md:p-7" dir="rtl">
             <img
-              src={englishReviewBook.cover}
+              src="/books/narcissistic-patterns/cover.jpg"
               alt="غلاف نسخة المراجعة الإنجليزية من كتاب كيف أتعامل مع النمط النرجسي"
               loading="lazy"
               width="1024"
@@ -56,9 +56,9 @@ export default function Works() {
                 How to Deal with Narcissistic Patterns
               </h3>
               <p className="my-3 text-sm leading-[2] text-muted-foreground">
-                ملخص بالإنجليزية مع الغلاف الأصلي وعينة قراءة من 22 صفحة، تضم الفصل الأول وورقة تطبيقية ومراجع الكتاب، مع الحفاظ على ترقيم الصفحات الأصلي.
+                ملخص بالإنجليزية وعينة قراءة من 22 صفحة تضم الفصل الأول وورقة تطبيقية ومراجع الكتاب، مع الحفاظ على ترقيم الصفحات الأصلي.
               </p>
-              <a href={englishReviewBook.summaryUrl} className="inline-flex items-center rounded-lg border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+              <a href="/books/narcissistic-patterns-english.html" className="inline-flex items-center rounded-lg border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
                 قراءة الملخص والصفحات المختارة بالإنجليزية
               </a>
             </div>
@@ -148,7 +148,7 @@ export default function Works() {
                   className="card-glow flex flex-col rounded-2xl border border-border bg-card p-6"
                 >
                   {b.cover ? (
-                    <img src={b.cover} alt={`غلاف ${b.title}`} width="1024" height="1536" loading="lazy" className="mb-4 h-48 w-full rounded-lg object-contain" />
+                    <img src={b.cover} alt={`غلاف ${b.title}`} loading="lazy" className="mb-4 h-48 w-full rounded-lg object-contain" />
                   ) : (
                     <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/35 bg-primary/10 text-primary">
                       <BookOpen className="h-5 w-5" />
