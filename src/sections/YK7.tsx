@@ -39,6 +39,9 @@ export default function YK7() {
         )}
 
         <nav aria-label="أرشيفات المنصة" className="mb-10 flex flex-wrap justify-center gap-3" dir="rtl">
+          <a href="/yk7-units/" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+            وحدات المنصة وخدماتها
+          </a>
           <a href="#yk7-magazines" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
             أعداد مجلة YK7
           </a>
