@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="عرض الصفحات الأصلية المختارة من الفصل الثاني والثلاثين من كتاب الشخصية النرجسية للدكتور ياسر سيد عبد السلام قطب داخل المتصفح دون الحاجة إلى قارئ PDF منفصل.">
+  <title>قراءة الصفحات الأصلية للفصل 32 | الشخصية النرجسية</title>
+  <style>
+  :root{color-scheme:dark;--bg:#0c121c;--ink:#f3f4f4;--muted:#c3cbd5;--accent:#e49b72}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.9 Arial,Helvetica,sans-serif}
+  .wrap{max-width:990px;margin:auto;padding:16px 18px}.top{border-bottom:1px solid #364656}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  h1{font-size:clamp(25px,4vw,40px);line-height:1.5;margin:22px 0 12px}p{margin:0 0 13px}.intro{color:var(--muted)}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.btn,button{font:700 15px/1.6 Arial,Helvetica,sans-serif;padding:12px 16px;border-radius:9px;border:1px solid var(--accent);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer}
+  .primary{background:var(--accent);color:#121a25}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;margin:10px 0 24px}
+  .page{background:#17212b;border:1px solid #334250;padding:12px;border-radius:11px;margin:0 auto 22px;max-width:850px}.page-label{color:var(--accent);font-weight:700;margin:0 0 10px}.scroll{overflow-x:auto;text-align:center;background:#fff;border-radius:3px}.scroll canvas{display:block;margin:auto;max-width:none}
+  #status{margin:18px 0;color:var(--muted)}.note{background:#182738;padding:14px 18px;border-right:3px solid var(--accent);color:var(--muted);border-radius:6px;margin-bottom:25px}
+  footer{text-align:center;font-size:13px;color:var(--muted);border-top:1px solid #364656;padding:22px}
+  </style>
+</head>
+<body>
+<div class="top"><div class="wrap"><a href="chapter-32.html">العودة إلى ملخص الفصل</a></div></div>
+<main class="wrap"><p style="color:var(--accent)">كتاب «الشخصية النرجسية: من تضخم الذات إلى ميزان الكرامة والحدود»</p>
+<h1>الفصل الثاني والثلاثون: كيف نحمي الكرامة داخل العلاقة القريبة؟</h1>
+<p class="intro">د. ياسر سيد عبد السلام قطب — صفحات أصلية مختارة من الفصل: 1 و2 و3 و8 (من أصل 9 صفحات). تُعرض الصفحات كاملة كما وردت في ملف PDF، من غير قصّ أو تعديل المحتوى.</p>
+<div class="actions"><a href="chapter-32-selected-pages.pdf" download class="btn">تنزيل الصفحات الأصلية PDF</a><a href="chapter-32.html#selected-pages" class="btn primary">القراءة النصية دون PDF</a></div>
+<div class="controls"><button type="button" id="smaller" aria-label="تصغير العرض">−</button><span id="zoomLabel">عرض ملائم للشاشة</span><button type="button" id="bigger" aria-label="تكبير العرض">+</button></div>
+<p id="status" role="status" aria-live="polite">تحميل الصفحات للعرض داخل المتصفح…</p>
+<div id="pages" aria-label="صفحات مختارة من الفصل الثاني والثلاثين"></div>
+<div class="note">إذا تعذر عرض الصفحات، اضغط «القراءة النصية دون PDF». ويمكن أيضًا فتح الصفحة في متصفح Chrome من قائمة فيسبوك لعرض الملف أو تنزيله.</div>
+</main><footer>© د. ياسر سيد عبد السلام قطب | منصة الرصد الاستراتيجي YK7</footer>
+<script type="module">
+const pages = document.getElementById('pages');
+const status = document.getElementById('status');
+const zoomLabel = document.getElementById('zoomLabel');
+let pdf=null, zoom=1, rendering=false;
+const originalNumbers=[1,2,3,8];
+const moduleURL='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs';
+const workerURL='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
+async function display(){
+ if(!pdf||rendering)return;
+ rendering=true;pages.replaceChildren();status.textContent='تهيئة الصفحات…';
+ try {
+  for(let i=1;i<=pdf.numPages;i++){
+    const page=await pdf.getPage(i),v=page.getViewport({scale:1});
+    const availableWidth=Math.min(pages.clientWidth-48,800);const scale=(availableWidth/v.width)*zoom;
+    const ratio=Math.min(window.devicePixelRatio||1,2.2);
+    const viewport=page.getViewport({scale:scale*ratio});
+    const card=document.createElement('section');card.className='page';
+    const label=document.createElement('p');label.className='page-label';
+    label.textContent='الصفحة الأصلية '+originalNumbers[i-1];
+    const outer=document.createElement('div');outer.className='scroll';
+    const canvas=document.createElement('canvas');canvas.width=Math.round(viewport.width);canvas.height=Math.round(viewport.height);
+    canvas.style.width=Math.round(viewport.width/ratio)+'px';canvas.style.height=Math.round(viewport.height/ratio)+'px';
+    outer.appendChild(canvas);card.append(label,outer);pages.appendChild(card);
+    await page.render({canvasContext:canvas.getContext('2d',{alpha:false}),viewport}).promise;
+    status.textContent='تم عرض '+i+' من '+pdf.numPages+' صفحات';
+  }
+  status.textContent='تم عرض الصفحات الأصلية الأربع داخل المتصفح.';
+ } catch (e){status.textContent='تعذر عرض إحدى الصفحات. استخدم رابط القراءة النصية أو افتح PDF في Chrome.';console.error(e)}
+ finally{rendering=false;}
+}
+document.getElementById('bigger').addEventListener('click',async()=>{zoom=Math.min(2,zoom+0.25);zoomLabel.textContent=Math.round(zoom*100)+'%';await display()});
+document.getElementById('smaller').addEventListener('click',async()=>{zoom=Math.max(0.75,zoom-0.25);zoomLabel.textContent=Math.round(zoom*100)+'%';await display()});
+try{const lib=await import(moduleURL);lib.GlobalWorkerOptions.workerSrc=workerURL;pdf=await lib.getDocument({url:'chapter-32-selected-pages.pdf'}).promise;await display()}
+catch(e){status.textContent='تعذر التحميل التلقائي في هذا المتصفح. اضغط «القراءة النصية دون PDF» أعلاه، أو افتح الصفحة في Chrome.';console.error(e)}
+</script></body></html>
