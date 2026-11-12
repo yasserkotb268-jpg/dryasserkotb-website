@@ -1,0 +1,65 @@
+name: Publish suggestion-and-fear readable PDF editions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - public/articles/suggestion-and-fear-psychology-yk7-2026.html
+      - public/research/suggestion-and-fear-scientific-review-yk7-2026.html
+      - .github/workflows/yk7-suggestion-fear-pdf.yml
+
+permissions:
+  contents: write
+
+jobs:
+  make-pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Arabic typography and PDF renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-hosny-amiri
+          python -m pip install --disable-pip-version-check weasyprint==68.0 pypdf==6.1.1
+      - name: Render complete RTL HTML pages to searchable PDFs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from weasyprint import HTML, CSS
+          from pypdf import PdfReader
+
+          paths = [
+              ("public/articles/suggestion-and-fear-psychology-yk7-2026.html",
+               "public/articles/suggestion-and-fear-psychology-yk7-2026.pdf",
+               "A4", "16pt"),
+              ("public/research/suggestion-and-fear-scientific-review-yk7-2026.html",
+               "public/research/suggestion-and-fear-scientific-review-yk7-2026.pdf",
+               "A5", "15.5pt")
+          ]
+          for src, dest, size, font_size in paths:
+              css = CSS(string=f"""
+                @page {{ size: {size}; margin: 17mm 15mm; }}
+                body {{ font-family: Amiri, serif !important; font-size: {font_size} !important; line-height:1.65 !important; direction: rtl !important; text-align:right !important; }}
+                h1,h2,h3,p,td,th {{ text-align:right !important; }}
+                .references,.references p {{ font-family: sans-serif !important; direction:ltr !important; text-align:left !important; font-size:11pt !important; }}
+                table {{ direction:rtl !important; }}
+                .links,.toc {{ display:none !important; }}
+              """)
+              HTML(filename=src, base_url=str(Path(".").resolve())).write_pdf(dest, stylesheets=[css])
+              result = PdfReader(dest)
+              assert len(result.pages) >= 1, dest
+              assert Path(dest).stat().st_size > 2000, dest
+              print(f"{dest}: {len(result.pages)} pages")
+          PY
+      - name: Commit only published PDF assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/articles/suggestion-and-fear-psychology-yk7-2026.pdf
+          git add public/research/suggestion-and-fear-scientific-review-yk7-2026.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "YK7: publish searchable Amiri PDFs for suggestion and fear"
+            git push
+          fi
