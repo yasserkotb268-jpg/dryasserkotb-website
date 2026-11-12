@@ -30,6 +30,18 @@ export default function Articles() {
                 className="card-glow reveal flex min-w-0 flex-col gap-4 rounded-xl border border-border bg-card p-5 sm:p-6"
                 style={{ transitionDelay: `${(i % 2) * 60}ms` }}
               >
+                {isPublished && a.image && readingUrl && (
+                  <a href={readingUrl} aria-label={`قراءة مقال ${a.title}`} className="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                    <img
+                      src={a.image}
+                      alt={`بوستر مقال ${a.title}`}
+                      width={1122}
+                      height={1402}
+                      loading="lazy"
+                      className="mx-auto h-auto max-h-80 max-w-full rounded-lg object-contain"
+                    />
+                  </a>
+                )}
                 <div className="w-full min-w-0 text-right">
                   <h3 className="mb-2 break-words font-display text-xl font-bold leading-relaxed text-foreground">
                     {a.title}
