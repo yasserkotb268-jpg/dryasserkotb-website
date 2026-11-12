@@ -61,5 +61,6 @@ jobs:
           git add public/research/suggestion-and-fear-scientific-review-yk7-2026.pdf
           if ! git diff --cached --quiet; then
             git commit -m "YK7: publish searchable Amiri PDFs for suggestion and fear"
+            git pull --rebase origin main
             git push
           fi
