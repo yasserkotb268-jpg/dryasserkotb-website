@@ -41,15 +41,28 @@ export default function Research() {
                 <h3 className="mb-2 font-bold leading-relaxed text-foreground md:text-lg">{r.title}</h3>
                 {r.venue && <p className="text-sm leading-relaxed text-muted-foreground">{r.venue}</p>}
               </div>
-              <a
-                href={assetPath('research', r.file)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-2 self-start rounded-lg border border-primary/45 bg-primary/10 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground sm:self-center"
-              >
-                {r.file.toLowerCase().endsWith('.html') ? <FileText className="h-4 w-4" /> : <Download className="h-4 w-4" />}
-                {r.file.toLowerCase().endsWith('.html') ? 'قراءة الموجز' : 'PDF'}
-              </a>
+              <div className="flex shrink-0 flex-wrap gap-2 self-start sm:self-center">
+                <a
+                  href={assetPath('research', r.file)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-primary/45 bg-primary/10 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                >
+                  {r.file.toLowerCase().endsWith('.html') ? <FileText className="h-4 w-4" /> : <Download className="h-4 w-4" />}
+                  {r.file.toLowerCase().endsWith('.html') ? (r.pdf ? 'قراءة الملف' : 'قراءة الموجز') : 'PDF'}
+                </a>
+                {r.pdf && (
+                  <a
+                    href={assetPath('research', r.pdf)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-primary/45 px-4 py-2.5 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                  >
+                    تحميل PDF
+                    <Download className="h-4 w-4" />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
