@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Adds .is-visible to elements with .reveal inside the returned ref
- * when they enter the viewport.
+ * Reveal static page elements once they approach the viewport.
+ * Content remains visible for reduced-motion users and without IntersectionObserver.
  */
 export function useReveal<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -10,9 +10,19 @@ export function useReveal<T extends HTMLElement>() {
   useEffect(() => {
     const root = ref.current;
     if (!root) return;
+
     const targets = root.classList.contains('reveal')
       ? [root]
-      : Array.from(root.querySelectorAll('.reveal'));
+      : Array.from(root.querySelectorAll<HTMLElement>('.reveal'));
+
+    const revealAll = () => targets.forEach((target) => target.classList.add('is-visible'));
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const prefersReducedMotion = motionPreference.matches;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      revealAll();
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,11 +33,25 @@ export function useReveal<T extends HTMLElement>() {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.08, rootMargin: '0px 0px 32px 0px' }
     );
 
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
+    targets.forEach((target) => observer.observe(target));
+
+    const onMotionPreferenceChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        observer.disconnect();
+        revealAll();
+      }
+    };
+    motionPreference.addEventListener('change', onMotionPreferenceChange);
+
+    return () => {
+      motionPreference.removeEventListener('change', onMotionPreferenceChange);
+      observer.disconnect();
+      // Ensure no section stays hidden during route or layout transitions.
+      revealAll();
+    };
   }, []);
 
   return ref;

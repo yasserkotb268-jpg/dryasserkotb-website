@@ -11,17 +11,34 @@ export default function Hero() {
     <section id="top" ref={ref} className="relative overflow-hidden pt-16">
       {/* خلفيات زخرفية */}
       <div className="pattern-grid pointer-events-none absolute inset-0" />
+      <div className="hero-ambient" aria-hidden="true" />
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
       <div className="pointer-events-none absolute -bottom-52 -right-40 h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-[120px]" />
       <div className="pointer-events-none absolute -bottom-52 -left-40 h-[420px] w-[420px] rounded-full bg-primary/10 blur-[120px]" />
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pb-20 pt-20 text-center md:pt-28">
+        <div className="reveal mb-7 w-full max-w-lg">
+          <div className="hero-wordmark relative flex items-center justify-center gap-3 rounded-2xl px-4 py-3 sm:gap-4" dir="rtl">
+            <img
+              src="/brand/yk7-logo-original.png"
+              alt="شعار منصة الرصد الاستراتيجيYK7"
+              width="1254"
+              height="1254"
+              decoding="async"
+              className="h-16 w-16 shrink-0 rounded-full object-contain sm:h-20 sm:w-20"
+            />
+            <div className="min-w-0 text-right">
+              <p className="font-display text-xl font-bold leading-relaxed text-white sm:text-2xl">منصة الرصد الاستراتيجي<bdi dir="ltr" className="text-[#ef4452]">YK7</bdi></p>
+              <p className="mt-1 text-xs leading-relaxed text-white/70" dir="ltr">Strategic Intelligence Platform</p>
+            </div>
+          </div>
+        </div>
         <div className="reveal mb-7 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-2 text-sm font-semibold text-primary">
           <Award className="h-4 w-4" />
           أكثر من 25 عامًا من الخبرة التطبيقية والبحثية
         </div>
 
-        <h1 className="reveal font-display text-4xl font-bold leading-[1.35] text-foreground md:text-6xl md:leading-[1.3]">
+        <h1 className="reveal hero-title font-display text-4xl font-bold leading-[1.35] text-foreground md:text-6xl md:leading-[1.3]">
           د. ياسر سيد عبد السلام <span className="gold-text">قطب</span>
         </h1>
         <p className="reveal mt-4 text-sm font-medium tracking-[0.2em] text-muted-foreground md:text-base" dir="ltr">
@@ -100,13 +117,13 @@ export default function Hero() {
         <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#about"
-            className="rounded-lg bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-110"
+            className="site-action-link rounded-lg bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-110"
           >
             اكتشف المسيرة المهنية
           </a>
           <a
             href="#contact"
-            className="rounded-lg border border-primary/50 bg-primary/5 px-7 py-3 text-sm font-bold text-primary transition-all hover:bg-primary/15"
+            className="site-action-link rounded-lg border border-primary/50 bg-primary/5 px-7 py-3 text-sm font-bold text-primary transition-all hover:bg-primary/15"
           >
             تواصل معي
           </a>

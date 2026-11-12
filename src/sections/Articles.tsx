@@ -21,6 +21,7 @@ export default function Articles() {
           {articles.map((a, i) => {
             const isPublished = a.publicationStatus === 'published';
             const pdfUrl = isPublished && a.file ? assetPath('articles', a.file) : undefined;
+            const originalPdfUrl = isPublished && a.originalFile ? assetPath('articles', a.originalFile) : undefined;
             const readingUrl = isPublished ? (a.url || pdfUrl) : undefined;
 
             return (
@@ -60,7 +61,18 @@ export default function Articles() {
                         aria-label={`تحميل نسخة PDF من مقال ${a.title}`}
                         className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-primary/40 px-3.5 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:flex-none"
                       >
-                        تحميل PDF
+                        {originalPdfUrl ? 'PDF للقراءة' : 'تحميل PDF'}
+                        <Download className="h-4 w-4" aria-hidden="true" />
+                      </a>
+                    )}
+                    {originalPdfUrl && (
+                      <a
+                        href={originalPdfUrl}
+                        download
+                        aria-label={`تحميل نسخة PDF الأصلية من مقال ${a.title}`}
+                        className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-primary/40 px-3.5 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:flex-none"
+                      >
+                        PDF الأصلي
                         <Download className="h-4 w-4" aria-hidden="true" />
                       </a>
                     )}
