@@ -38,7 +38,7 @@ export interface Book { title: string; topic: string; status: string; summaryUrl
 export interface Program { name: string; org: string }
 export interface Article { title: string; field: string; file?: string; url?: string; publicationStatus?: 'published' | 'title_only' }
 export interface Lecture { title: string; axis: string }
-export interface ResearchItem { title: string; type: string; venue?: string; year?: string; file: string }
+export interface ResearchItem { title: string; type: string; venue?: string; year?: string; file: string; pdf?: string }
 export interface SeriesLecture { num: string; title: string; file?: string }
 export interface LectureSeries {
   program: string;
