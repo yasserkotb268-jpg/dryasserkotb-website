@@ -111,6 +111,7 @@ collections:
                 summary: '{{fields.title}}'
                 fields:
                   - { label: اسم الوحدة, name: title, widget: string }
+                  - { label: رابط تفاصيل الوحدة وأعمالها, name: url, widget: string, required: false }
                   - { label: اسم ملف الملصق داخل posters, name: poster, widget: string }
                   - { label: المشرف على الوحدة, name: lead, widget: string }
                   - { label: المشروع, name: project, widget: string }

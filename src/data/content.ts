@@ -53,6 +53,7 @@ export interface YK7MagazineIssue { title: string; issue?: string; date?: string
 export interface YK7Poster { title: string; file: string; desc?: string; url?: string }
 export interface YK7Unit {
   title: string;
+  url?: string;
   poster: string;
   lead: string;
   project: string;
