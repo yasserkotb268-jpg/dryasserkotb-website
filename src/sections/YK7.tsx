@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BookOpen, Download, Facebook, FileText, Images, Radar, ShieldCheck } from 'lucide-react';
+import { BookOpen, BriefcaseBusiness, Download, Facebook, FileText, Images, Mail, Radar, ShieldCheck } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { useReveal } from '@/hooks/useReveal';
 import { yk7 } from '@/data/content';
@@ -55,6 +55,28 @@ export default function YK7() {
             الكلمات والبوسترات
           </a>
         </nav>
+
+        <article id="career-support-summary" className="mb-10 scroll-mt-24 rounded-2xl border border-primary/40 bg-card p-6 md:p-8" aria-labelledby="career-support-summary-title">
+          <div className="mb-4 flex items-center gap-3 text-primary">
+            <BriefcaseBusiness className="h-6 w-6 shrink-0" aria-hidden="true" />
+            <p className="text-sm font-bold">وحدة استشارات الأعمال | YK7</p>
+          </div>
+          <h3 id="career-support-summary-title" className="font-display text-2xl font-bold leading-relaxed text-foreground md:text-3xl">
+            الدعم المهني وتطوير المسار الوظيفي
+          </h3>
+          <p className="mt-4 max-w-3xl leading-[1.9] text-muted-foreground">
+            مراجعة السيرة الذاتية والملف المهني، وتحديد الفرص المناسبة، والاستعداد للمقابلات، وتنظيم التقديم والمتابعة وفق خطة واضحة. يُحدَّد إرسال الطلبات ومشاركة المرفقات بتفويض صريح من صاحبها، ويظل قرار التوظيف للجهة المستقبِلة.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="/yk7-units/#career-support" className="inline-flex min-h-11 items-center justify-center rounded-lg border border-primary/45 bg-primary/10 px-5 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+              تفاصيل الخدمة ونطاق التفويض
+            </a>
+            <a href="mailto:career.support@dryasserkotb.com" className="inline-flex min-h-11 max-w-full items-center gap-2 rounded-lg border border-border px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary">
+              <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <span className="break-all" dir="ltr">career.support@dryasserkotb.com</span>
+            </a>
+          </div>
+        </article>
 
         <div className="flex flex-col gap-5">
           {yk7.documents.map((doc, i) => (

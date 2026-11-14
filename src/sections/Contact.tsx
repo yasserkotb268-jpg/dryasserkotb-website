@@ -87,6 +87,18 @@ export default function Contact() {
             </div>
           </div>
 
+          <div className="mt-8 border-t border-border/60 pt-8">
+            <p className="font-bold leading-relaxed text-foreground">الدعم المهني وتطوير المسار الوظيفي</p>
+            <p className="mt-1 text-sm text-muted-foreground">وحدة استشارات الأعمال | YK7 — للتنسيق والمتابعة</p>
+            <a href="mailto:career.support@dryasserkotb.com" className="mt-3 inline-flex min-h-11 max-w-full items-center gap-2 text-sm font-semibold text-primary hover:underline sm:text-base">
+              <Mail className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span className="break-all" dir="ltr">career.support@dryasserkotb.com</span>
+            </a>
+            <p className="mt-2 text-sm">
+              <a href="/yk7-units/#career-support" className="text-muted-foreground underline underline-offset-4 hover:text-primary">الخدمات ونطاق التفويض في التقديم</a>
+            </p>
+          </div>
+
           <div className="mt-8 flex justify-center border-t border-border/60 pt-8">
             <a
               href="/dryasserkotb-website.zip"
