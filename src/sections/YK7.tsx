@@ -239,11 +239,16 @@ export default function YK7() {
                       {publication.editions.map((edition) => {
                         const isArabic = edition.language === 'ar';
                         const fileUrl = assetPath('uploads', edition.file);
+                        const isPaid = typeof publication.ebookPriceUSD === 'number' && publication.ebookPriceUSD > 0;
+                        const price = publication.ebookPriceUSD?.toFixed(2);
+                        const orderSubject = isArabic ? `طلب النسخة العربية الإلكترونية — ${publication.title}` : `English ebook order — ${edition.title}`;
+                        const orderBody = isArabic ? `أرغب في طلب النسخة العربية الإلكترونية من الكتاب بسعر ${price} دولار أمريكي.\nيرجى تزويدي بطريقة الدفع واستلام النسخة.\n\nالاسم:\n` : `I would like to order the English ebook for USD ${price}.\nPlease provide payment and delivery details.\n\nName:\n`;
+                        const orderUrl = `mailto:${publication.orderEmail ?? 'office@dryasserkotb.com'}?subject=${encodeURIComponent(orderSubject)}&body=${encodeURIComponent(orderBody)}`;
                         return (
                           <div key={edition.language} lang={edition.language} dir={isArabic ? 'rtl' : 'ltr'}
                             className="min-w-0 overflow-hidden rounded-xl border border-border bg-background/60">
                             <a href={fileUrl} target="_blank" rel="noopener noreferrer"
-                              aria-label={isArabic ? 'قراءة النسخة العربية الكاملة من كتاب الأمن السيبراني' : 'Read the complete English edition of Cybersecurity in Construction and Engineering'}
+                              aria-label={isPaid ? (isArabic ? 'معاينة مقتطف من النسخة العربية' : 'Preview an excerpt from the English ebook') : (isArabic ? 'قراءة النسخة العربية الكاملة من كتاب الأمن السيبراني' : 'Read the complete English edition of Cybersecurity in Construction and Engineering')}
                               className="flex items-center justify-center bg-black/70 p-4">
                               <img src={assetPath('uploads', edition.cover)}
                                 alt={isArabic ? 'غلاف النسخة العربية من كتاب الأمن السيبراني في بيئة المقاولات والهندسة' : 'English cover of Cybersecurity in Construction and Engineering'}
@@ -253,26 +258,38 @@ export default function YK7() {
                             <div className="flex flex-col gap-3 p-4 sm:p-5">
                               <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
                                 <span className="rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-primary">
-                                  {isArabic ? 'النسخة العربية الكاملة' : 'Complete English edition'}
+                                  {isPaid ? (isArabic ? 'النسخة العربية الإلكترونية' : 'English ebook') : (isArabic ? 'النسخة العربية الكاملة' : 'Complete English edition')}
                                 </span>
-                                <span className="text-muted-foreground">{edition.pages} {isArabic ? 'صفحة' : 'pages'} · <span dir="ltr">{edition.sizeLabel}</span></span>
+                                <span className="text-muted-foreground">{edition.pages} {isArabic ? 'صفحة للكتاب' : 'book pages'}{!isPaid && <> · <span dir="ltr">{edition.sizeLabel}</span></>}</span>
                               </div>
                               <h6 className="text-lg font-bold leading-relaxed text-foreground">{edition.title}</h6>
                               {edition.subtitle && <p className="text-sm font-semibold leading-relaxed text-primary">{edition.subtitle}</p>}
                               <p className="text-sm leading-[1.9] text-foreground/85">{edition.summary}</p>
                               {edition.audience && <p className="text-sm leading-[1.9] text-muted-foreground">{edition.audience}</p>}
                               {edition.quote && <blockquote className="border-s-2 border-primary/60 ps-3 text-sm font-semibold leading-[1.9] text-foreground">{edition.quote}</blockquote>}
+                              {isPaid && (
+                                <>
+                                  <p className="text-lg font-bold text-primary">{isArabic ? `السعر: ${price} دولار أمريكي للنسخة الإلكترونية` : `Price: USD ${price} per ebook`}</p>
+                                  <p className="text-sm leading-relaxed text-muted-foreground">{isArabic ? `المعاينة مقتطف من ${edition.previewPages} صفحات. لطلب النسخة الكاملة وتفاصيل الدفع والاستلام، تواصل عبر البريد.` : `The preview contains ${edition.previewPages} pages. Email to request the full ebook and payment and delivery details.`}</p>
+                                </>
+                              )}
                               <div className="mt-1 flex flex-wrap gap-3">
                                 <a href={fileUrl} target="_blank" rel="noopener noreferrer"
                                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-primary/45 bg-primary/10 px-4 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
                                   <BookOpen className="h-4 w-4 shrink-0" aria-hidden="true" />
-                                  {isArabic ? 'قراءة النسخة العربية' : 'Read English edition'}
+                                  {isPaid ? (isArabic ? `معاينة ${edition.previewPages} صفحات` : `Preview ${edition.previewPages} pages`) : (isArabic ? 'قراءة النسخة العربية' : 'Read English edition')}
                                 </a>
-                                <a href={fileUrl} download
-                                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary">
-                                  <Download className="h-4 w-4 shrink-0" aria-hidden="true" />
-                                  {isArabic ? 'تحميل PDF العربي' : 'Download English PDF'}
-                                </a>
+                                {isPaid ? (
+                                  <a href={orderUrl} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:brightness-110">
+                                    <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
+                                    {isArabic ? 'طلب النسخة الإلكترونية' : 'Request the ebook'}
+                                  </a>
+                                ) : (
+                                  <a href={fileUrl} download className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary">
+                                    <Download className="h-4 w-4 shrink-0" aria-hidden="true" />
+                                    {isArabic ? 'تحميل PDF العربي' : 'Download English PDF'}
+                                  </a>
+                                )}
                               </div>
                             </div>
                           </div>
