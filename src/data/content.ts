@@ -72,6 +72,7 @@ export interface YK7PublicationEdition {
   file: string;
   pages: number;
   sizeLabel: string;
+  previewPages?: number;
 }
 export interface YK7Publication {
   title: string;
@@ -82,6 +83,8 @@ export interface YK7Publication {
   team: string;
   supervisor: string;
   note?: string;
+  ebookPriceUSD?: number;
+  orderEmail?: string;
   file?: string;
   editions?: YK7PublicationEdition[];
 }
