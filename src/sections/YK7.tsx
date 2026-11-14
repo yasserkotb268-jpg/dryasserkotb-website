@@ -162,6 +162,11 @@ export default function YK7() {
                       <div><dt className="font-bold text-foreground">فريق العمل والإعداد</dt><dd className="mt-1 text-muted-foreground">{unit.team}</dd></div>
                       <div><dt className="font-bold text-foreground">الإشراف العام</dt><dd className="mt-1 text-muted-foreground">{unit.supervisor}</dd></div>
                     </dl>
+                    {unit.url && (
+                      <a href={unit.url} className="inline-flex min-h-11 items-center justify-center self-start rounded-lg border border-primary/45 bg-primary/10 px-5 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+                        تفاصيل الوحدة وأعمالها
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}
