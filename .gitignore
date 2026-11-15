@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Paid YK7 cybersecurity book: never commit complete editions to public assets.
+**/*cybersecurity*complete*.pdf
+**/*cybersecurity*full*.pdf
+**/*cybersecurity*paid*.pdf
