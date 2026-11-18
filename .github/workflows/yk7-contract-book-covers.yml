@@ -39,12 +39,15 @@ jobs:
           d.line((54,1365,1846,1365),fill=gold,width=3)
           d.line((950,137,950,1299),fill=(60,88,108),width=2)
           canvas.save("public/posters/two-books-publishing-contract-2026.png",optimize=True)
+          canvas.save("public/posters/two-books-publishing-contract-2026.jpg",format="JPEG",quality=94,subsampling=0,optimize=True)
+          for name in ["cover-law-ai-digital-2026","cover-maqasid-decision-2026"]:
+              Image.open(folder/(name+".png")).convert("RGB").save(folder/(name+".jpg"),format="JPEG",quality=94,subsampling=0,optimize=True)
           PY
       - name: Commit rendered PNG artwork
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/books/yk7-contract-2026/*.png public/posters/two-books-publishing-contract-2026.png
+          git add public/books/yk7-contract-2026/*.png public/books/yk7-contract-2026/*.jpg public/posters/two-books-publishing-contract-2026.png public/posters/two-books-publishing-contract-2026.jpg
           if ! git diff --cached --quiet; then
             git commit -m "YK7: render contracted book covers and publication artwork"
             git pull --rebase origin main
