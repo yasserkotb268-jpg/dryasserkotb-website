@@ -16,8 +16,8 @@
  <path d="M540 1115 Q470 930 250 720 M540 1115 Q610 930 830 720" fill="none" stroke="url(#road)" stroke-width="24" stroke-linecap="round" opacity=".95"/>
  <path d="M540 1115 Q470 930 250 720 M540 1115 Q610 930 830 720" fill="none" stroke="#fff1d5" stroke-width="2" stroke-dasharray="9 19" opacity=".8"/>
  <path d="M35 1252 Q260 1180 480 1242 T1045 1240" fill="none" stroke="#cca75b" stroke-width="3" opacity=".3"/>
- <path d="M110 405 H420 M660 405 H970" stroke="#e7d1b5" stroke-width="2" opacity=".65"/>
- <path d="M540 396 l10 10 -10 10 -10 -10z" fill="#d2a44d"/>
+ 
+ 
 <text x="540" y="1323" font-size="43" font-weight="bold" fill="#f6eadb" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">د. ياسر سيد عبد السلام قطب</text>
 <path d="M210 1374 H870" stroke="#d2a44d" stroke-width="2"/>
 <text x="540" y="1423" font-size="31" font-weight="bold" fill="#e7d4c1" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">منصة الرصد الاستراتيجي | YK7</text>
