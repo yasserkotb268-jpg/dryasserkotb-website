@@ -1,0 +1,44 @@
+name: Render YK7 study cover and quotations as PNG
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yk7-book-artwork-png.yml
+      - public/posters/yk7-between-written-chosen-*.svg
+
+permissions:
+  contents: write
+
+jobs:
+  render-artwork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Arabic font and SVG renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-hosny-amiri librsvg2-bin
+          fc-cache -f
+      - name: Render the three verified pieces
+        run: |
+          set -eu
+          for name in cover quote-choice quote-method; do
+            svg="public/posters/yk7-between-written-chosen-${name}.svg"
+            png="public/posters/yk7-between-written-chosen-${name}.png"
+            rsvg-convert --format png --output "$png" "$svg"
+            test -s "$png"
+            file "$png"
+          done
+      - name: Commit only new PNG artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/posters/yk7-between-written-chosen-cover.png public/posters/yk7-between-written-chosen-quote-choice.png public/posters/yk7-between-written-chosen-quote-method.png
+          if ! git diff --cached --quiet; then
+            git commit -m "YK7: publish study cover and quotation posters as PNG"
+            git pull --rebase origin main
+            git push origin main
+          fi
