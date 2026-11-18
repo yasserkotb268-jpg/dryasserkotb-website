@@ -19,6 +19,40 @@ export default function Works() {
           icon={BookOpen}
         />
 
+        {/* توثيق تعاقد نشر المؤلفين — ملفات تعريفية فقط دون إتاحة الكتب الكاملة */}
+        <section aria-labelledby="yk7-contracted-books" className="reveal mb-12 rounded-2xl border border-primary/40 bg-card p-5 md:p-8" dir="rtl">
+          <p className="mb-2 text-sm font-semibold text-primary">المؤلفات والتعاقدات العلمية | 3 نوفمبر 2026</p>
+          <h3 id="yk7-contracted-books" className="font-display text-2xl font-bold leading-relaxed text-foreground md:text-3xl">
+            كتابان ضمن عقد للنشر الإلكتروني
+          </h3>
+          <p className="my-3 max-w-4xl text-sm leading-[2] text-muted-foreground">
+            يشمل التعاقد مؤلفين للدكتور ياسر سيد عبد السلام قطب في القانون والذكاء الاصطناعي والمقاصد وجودة القرار.
+            ورد في بيانات الطرف الأول بالعقد اسم الهيئة العامة لشؤون المطابع الأميرية وبحر الأنظمة القانونية،
+            مع النشر من خلال المنصة الفقهية الرقمية. لم تُؤكّد إتاحة النسختين التجاريتين بعد.
+          </p>
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            <article className="flex flex-col items-center gap-4 rounded-xl border border-border bg-background/40 p-4 text-center sm:flex-row sm:text-right">
+              <img src="/books/yk7-contract-2026/cover-law-ai-digital-2026.svg" width="840" height="1188" loading="lazy" alt="الغلاف التعريفي لكتاب القانون والتنمية والذكاء الاصطناعي في عصر التحول الرقمي" className="h-48 w-auto shrink-0 rounded-md object-contain shadow-lg" />
+              <div className="flex-1">
+                <h4 className="font-display text-lg font-bold leading-relaxed">القانون والتنمية والذكاء الاصطناعي في عصر التحول الرقمي</h4>
+                <p className="my-2 text-sm leading-[1.9] text-muted-foreground">قراءة في الحوكمة والتنمية والتحول الرقمي وجودة القرار القانوني والتنموي.</p>
+                <a href="/books/law-development-ai-digital-2026/" className="text-sm font-bold text-primary underline underline-offset-4">قراءة النبذة العلمية ومحاور الكتاب</a>
+              </div>
+            </article>
+            <article className="flex flex-col items-center gap-4 rounded-xl border border-border bg-background/40 p-4 text-center sm:flex-row sm:text-right">
+              <img src="/books/yk7-contract-2026/cover-maqasid-decision-2026.svg" width="840" height="1188" loading="lazy" alt="الغلاف التعريفي لكتاب ميزان المقاصد وجودة القرار" className="h-48 w-auto shrink-0 rounded-md object-contain shadow-lg" />
+              <div className="flex-1">
+                <h4 className="font-display text-lg font-bold leading-relaxed">ميزان المقاصد وجودة القرار</h4>
+                <p className="my-2 text-sm leading-[1.9] text-muted-foreground">من البناء الأصولي للمصلحة والمآلات إلى إطار إجرائي معاصر لتقويم القرار.</p>
+                <a href="/books/maqasid-decision-quality-2026/" className="text-sm font-bold text-primary underline underline-offset-4">قراءة النبذة العلمية ومحاور الكتاب</a>
+              </div>
+            </article>
+          </div>
+          <a href="/news/two-books-publishing-contract-2026/" className="mt-5 inline-flex rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+            الاطلاع على خبر التعاقد للنشر الإلكتروني
+          </a>
+        </section>
+
         <div className="reveal mb-10 flex flex-col items-center gap-5 overflow-hidden rounded-2xl border border-primary/30 bg-card p-5 text-right md:flex-row md:p-7" dir="rtl">
           <img
             src={assetPath('posters', 'yk7-ai-pharma-book-3d.webp')}
