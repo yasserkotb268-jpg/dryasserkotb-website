@@ -1,0 +1,52 @@
+name: Render contracted YK7 book covers and social artwork
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yk7-contract-book-covers.yml
+      - public/books/yk7-contract-2026/*.svg
+permissions:
+  contents: write
+jobs:
+  render-covers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Arabic fonts, SVG renderer and PIL
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-hosny-amiri librsvg2-bin python3-pil
+          fc-cache -f
+      - name: Render SVG covers to PNG
+        run: |
+          set -eu
+          mkdir -p public/posters
+          rsvg-convert -w 840 -h 1188 --format png --output public/books/yk7-contract-2026/cover-law-ai-digital-2026.png public/books/yk7-contract-2026/cover-law-ai-digital-2026.svg
+          rsvg-convert -w 840 -h 1188 --format png --output public/books/yk7-contract-2026/cover-maqasid-decision-2026.png public/books/yk7-contract-2026/cover-maqasid-decision-2026.svg
+          python3 - <<'PY'
+          from PIL import Image, ImageDraw
+          from pathlib import Path
+          folder=Path("public/books/yk7-contract-2026")
+          canvas=Image.new("RGB",(1900,1430),(7,22,39))
+          for x,name in [(80,"cover-law-ai-digital-2026.png"),(970,"cover-maqasid-decision-2026.png")]:
+              cover=Image.open(folder/name).convert("RGB").resize((850,1202),Image.Resampling.LANCZOS)
+              canvas.paste(cover,(x,117))
+          d=ImageDraw.Draw(canvas)
+          gold=(205,168,105)
+          d.line((54,68,1846,68),fill=gold,width=3)
+          d.line((54,1365,1846,1365),fill=gold,width=3)
+          d.line((950,137,950,1299),fill=(60,88,108),width=2)
+          canvas.save("public/posters/two-books-publishing-contract-2026.png",optimize=True)
+          PY
+      - name: Commit rendered PNG artwork
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/books/yk7-contract-2026/*.png public/posters/two-books-publishing-contract-2026.png
+          if ! git diff --cached --quiet; then
+            git commit -m "YK7: render contracted book covers and publication artwork"
+            git pull --rebase origin main
+            git push origin main
+          fi
