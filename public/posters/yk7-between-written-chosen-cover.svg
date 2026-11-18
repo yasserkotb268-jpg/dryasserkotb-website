@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1528" viewBox="0 0 1080 1528" role="img" aria-label="غلاف بين ما كُتب لنا وما نختاره">
 <defs>
- <linearGradient id="bg" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#071422"/><stop offset=".55" stop-color="#17263c"/><stop offset="1" stop-color="#441722"/></linearGradient>
+ <linearGradient id="bg" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#071422"/><stop offset=".55" stop-color="#17263c"/><stop offset="1" stop-color="#112a43"/></linearGradient>
  <radialGradient id="glow"><stop stop-color="#eacb9a" stop-opacity=".7"/><stop offset="1" stop-color="#eacb9a" stop-opacity="0"/></radialGradient>
  <linearGradient id="road" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#d5b17d"/><stop offset="1" stop-color="#f7e7c8"/></linearGradient>
  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#fff" opacity=".08"/></pattern>
  </defs>
 <rect width="1080" height="1528" fill="url(#bg)"/><rect width="1080" height="1528" fill="url(#dots)"/>
-<rect x="42" y="44" width="996" height="1440" rx="16" fill="none" stroke="#c79e72" stroke-width="2" opacity=".55"/>
+<rect x="42" y="44" width="996" height="1440" rx="16" fill="none" stroke="#bd9246" stroke-width="2" opacity=".55"/>
 <text x="540" y="176" font-size="31" fill="#ddc8ac" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">دراسة فكرية</text>
-<text x="540" y="330" font-size="93" font-weight="bold" fill="#f6eddf" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">بين ما كُتب لنا</text>
-<text x="540" y="451" font-size="105" font-weight="bold" fill="#d45b68" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">وما نختاره</text>
+<text x="540" y="330" font-size="89" font-weight="bold" fill="#f6eddf" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">بين ما كُتب لنا</text>
+<text x="540" y="451" font-size="101" font-weight="bold" fill="#e8bf64" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">وما نختاره</text>
 <text x="540" y="570" font-size="37" fill="#f6eadb" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">الإيمان بالقدر ومسؤولية الإنسان</text>
 <text x="540" y="626" font-size="37" fill="#f6eadb" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">عن العمل والقرار والنتائج</text>
 <circle cx="540" cy="810" r="410" fill="url(#glow)" opacity=".46"/>
  <path d="M540 1115 Q470 930 250 720 M540 1115 Q610 930 830 720" fill="none" stroke="url(#road)" stroke-width="24" stroke-linecap="round" opacity=".95"/>
  <path d="M540 1115 Q470 930 250 720 M540 1115 Q610 930 830 720" fill="none" stroke="#fff1d5" stroke-width="2" stroke-dasharray="9 19" opacity=".8"/>
- <path d="M35 1252 Q260 1180 480 1242 T1045 1240" fill="none" stroke="#bd4152" stroke-width="3" opacity=".3"/>
+ <path d="M35 1252 Q260 1180 480 1242 T1045 1240" fill="none" stroke="#cca75b" stroke-width="3" opacity=".3"/>
  <path d="M110 405 H420 M660 405 H970" stroke="#e7d1b5" stroke-width="2" opacity=".65"/>
- <path d="M540 396 l10 10 -10 10 -10 -10z" fill="#b93e53"/>
+ <path d="M540 396 l10 10 -10 10 -10 -10z" fill="#d2a44d"/>
 <text x="540" y="1323" font-size="43" font-weight="bold" fill="#f6eadb" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">د. ياسر سيد عبد السلام قطب</text>
-<path d="M210 1374 H870" stroke="#9e4b5b" stroke-width="2"/>
+<path d="M210 1374 H870" stroke="#d2a44d" stroke-width="2"/>
 <text x="540" y="1423" font-size="31" font-weight="bold" fill="#e7d4c1" font-family="Amiri, 'Noto Naskh Arabic', 'Noto Kufi Arabic', Tahoma, Arial, sans-serif" direction="rtl" unicode-bidi="plaintext" text-anchor="middle">منصة الرصد الاستراتيجي | YK7</text>
 <text x="540" y="1462" font-size="25" fill="#d3c7c3" font-family="Arial,sans-serif" text-anchor="middle" letter-spacing="3">dryasserkotb.com</text>
 </svg>
