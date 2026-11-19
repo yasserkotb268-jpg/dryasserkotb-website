@@ -1,0 +1,35 @@
+name: Prepare YK7 3D book promo JPEG for TikTok
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yk7-3d-book-promo-jpeg.yml
+permissions:
+  contents: write
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download published original 3D image and convert to JPEG
+        run: |
+          set -euo pipefail
+          mkdir -p public/posters
+          curl --fail --location --retry 3 --silent --show-error 'https://static.metricool.com/planner/202611/7466415-file-1442105927943467273.png' -o /tmp/yk7-books-3d.png
+          python3 - <<'PY'
+          from PIL import Image
+          im=Image.open('/tmp/yk7-books-3d.png')
+          assert im.width >= 600 and im.height >= 600, (im.size)
+          im.convert('RGB').save('public/posters/yk7-two-books-3d-2026.jpg',quality=94,optimize=True)
+          PY
+          test -s public/posters/yk7-two-books-3d-2026.jpg
+      - name: Commit public promotional JPEG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/posters/yk7-two-books-3d-2026.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "YK7: prepare original 3D book artwork for TikTok"
+            git pull --rebase origin main
+            git push origin main
+          fi
