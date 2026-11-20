@@ -17,20 +17,23 @@
     .wrap{width:min(1030px,calc(100% - 38px));margin:auto}.top{border-top:6px solid var(--gold);padding:23px 0;background:#0b1825}.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
     .brand{font-weight:bold;font-size:18px}.small{font-size:15px;color:var(--muted)}
     .hero{background:radial-gradient(circle at 20% 15%,#184a44 0,transparent 45%),linear-gradient(125deg,var(--deep),var(--navy));border-bottom:2px solid var(--gold);padding:60px 0 65px}
-    .orgs{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:25px}.org{padding:8px 14px;border:1px solid #8e7c56;border-radius:8px;color:#f6dfae;font-size:16px}
+    .orgs{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:25px}.org{padding:10px 18px;border:1px solid #8e7c56;border-radius:10px;color:#f6dfae;font-size:16px;display:flex;align-items:center;gap:14px;background:#fff;color:#22352e;font-weight:bold}.org img{display:block;object-fit:contain;width:92px;height:92px;flex:none}
     h1{font-size:clamp(31px,5vw,51px);line-height:1.65;margin:0 0 13px;color:#ffe2a5}h2{font-size:clamp(24px,3vw,32px);color:#f1c674;line-height:1.55}h3{font-size:20px;margin:0 0 7px}.lead{font-size:21px;color:#eef1f0;max-width:850px}
     .status{padding:17px 20px;border-inline-start:4px solid var(--gold);background:#1e3539;margin:26px 0 0;font-size:17px}
     main section{padding:35px 0;border-bottom:1px solid #34434e}.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
     .person{border:1px solid #3b5654;border-radius:12px;background:#12262b;padding:20px}.person p{margin:0;color:#dcd7cd;font-size:15px}.person strong{display:block;font-size:20px;margin-top:7px;color:white}
     ul{padding-right:28px}li{margin:7px 0}a.button{display:inline-block;padding:12px 22px;margin-top:10px;text-decoration:none;background:var(--gold);color:#112026;font-weight:bold;border-radius:7px}
     footer{padding:38px 0;color:#d6dbe0;font-size:15px}.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
-    @media(max-width:730px){.people{grid-template-columns:1fr}body{font-size:17px}.hero{padding:35px 0 38px}.orgs{display:block}.org{display:inline-block;margin:0 0 7px}}
+    @media(max-width:730px){.people{grid-template-columns:1fr}body{font-size:17px}.hero{padding:35px 0 38px}.orgs{display:flex;flex-direction:column}.org{width:100%;padding:9px 13px}.org img{width:72px;height:72px}}
   </style>
 </head>
 <body>
   <header class="top"><div class="wrap"><div class="brand">منصة الرصد الاستراتيجي | YK7</div><a href="/#programs">العودة إلى البرامج العلمية</a></div></header>
   <div class="hero"><div class="wrap">
-    <div class="orgs"><span class="org">جامعة الأسطرلاب الدولية</span><span class="org">كلية العلوم الطبية الشاملة</span></div>
+    <div class="orgs">
+      <div class="org"><img src="iau-university-logo.webp" width="96" height="96" alt="الشعار الأصلي لجامعة الأسطرلاب الدولية" decoding="async"><span>جامعة الأسطرلاب الدولية</span></div>
+      <div class="org"><img src="medical-sciences-college-logo.webp" width="108" height="108" alt="الشعار الأصلي لكلية العلوم الطبية الشاملة" decoding="async"><span>كلية العلوم الطبية الشاملة</span></div>
+    </div>
     <p class="small">تعريف بالبرنامج المهني المنشور سابقًا</p>
     <h1>الدبلوم المهني في المنهجية الشاملة للطب التكاملي والعلوم الطبيعية</h1>
     <p class="lead">مسار معرفي ومهني يتناول العلاقة بين العلوم الطبية والطبيعية والصحة النفسية والعلاجات التكميلية، من منظور يحترم البحث العلمي والتقييم النقدي للأدلة وحدود الممارسة الآمنة.</p>
