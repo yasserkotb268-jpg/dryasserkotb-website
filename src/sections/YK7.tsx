@@ -24,6 +24,32 @@ export default function YK7() {
           description={yk7.intro}
         />
 
+
+        <article id="yk7-institutional-profile" className="reveal mb-10 scroll-mt-24 rounded-2xl border border-primary/40 bg-card p-6 md:p-8" dir="rtl" aria-labelledby="yk7-institutional-profile-title">
+          <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+            <div className="min-w-0 flex-1">
+              <p className="mb-2 text-sm font-bold text-primary">منصة الرصد الاستراتيجي YK7 | نوفمبر 2026</p>
+              <h3 id="yk7-institutional-profile-title" className="font-display text-2xl font-bold leading-relaxed text-foreground md:text-3xl">
+                الملف التعريفي المؤسسي للمنصة
+              </h3>
+              <p className="mt-3 max-w-3xl leading-[1.9] text-muted-foreground">
+                عرض من 22 شريحة يقدم فلسفة المنصة، ونماذجها الإجرائية، ومؤلفاتها وإصداراتها، ومجالات العمل والتعاون العلمي والمؤسسي.
+              </p>
+            </div>
+            <a
+              href="/uploads/yk7-institutional-profile-2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              type="application/pdf"
+              className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg border border-primary/45 bg-primary/10 px-5 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              aria-label="قراءة وتحميل الملف التعريفي المؤسسي لمنصة YK7 بصيغة PDF"
+            >
+              <Download className="h-5 w-5" aria-hidden="true" />
+              قراءة وتحميل PDF
+            </a>
+          </div>
+        </article>
+
         {yk7.facebook && (
           <div className="reveal mb-8 flex justify-center">
             <a
