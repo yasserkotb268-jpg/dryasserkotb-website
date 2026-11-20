@@ -17,7 +17,7 @@ export default function SectionHeading({ kicker, title, icon: Icon, description 
       <h2 className="font-display text-3xl font-bold leading-snug text-foreground md:text-4xl">
         {title}
       </h2>
-      <div className="gold-line mx-auto mt-5 h-px w-40" />
+      <div className="gold-line mx-auto mt-5 h-px w-40 origin-center" />
       {description && <p className="mt-5 leading-relaxed text-muted-foreground">{description}</p>}
     </div>
   );
