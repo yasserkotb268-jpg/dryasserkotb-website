@@ -1,0 +1,43 @@
+name: Build seven YK7 lecture reader editions
+on:
+  push:
+    branches: [yk7/integrative-lectures-amiri-redesign-20261121]
+    paths:
+      - '.github/workflows/build-integrative-lectures.yml'
+      - 'tools/rebuild_integrative_lectures.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Amiri font and rendering libraries
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-hosny-amiri libpango-1.0-0 libpangocairo-1.0-0 libharfbuzz0b
+          fc-cache -f
+          fc-match Amiri
+          python -m pip install --quiet pymupdf weasyprint
+      - name: Rebuild seven reader editions without modifying originals
+        run: python tools/rebuild_integrative_lectures.py
+      - name: Upload review PDFs and quality report as archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: yk7-integrative-lectures-amiri-review
+          path: review/lectures/
+          if-no-files-found: error
+      - name: Save review PDFs to this isolated branch
+        run: |
+          git config user.name "YK7 PDF Review"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add review/lectures/
+          if ! git diff --cached --quiet; then
+            git commit -m "Build seven Amiri RTL reader editions for editorial review"
+            git push
+          fi
