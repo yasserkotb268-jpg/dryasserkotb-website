@@ -1,0 +1,72 @@
+[
+  {
+    "number": "01",
+    "source": "public/lectures/integrative-medicine-lecture-01.pdf",
+    "output": "review/lectures/integrative-medicine-lecture-01-amiri-review.pdf",
+    "source_pages": 34,
+    "reader_pages": 46,
+    "extracted_characters": 20004,
+    "output_bytes": 171757,
+    "new_pdf_text_characters": 25724
+  },
+  {
+    "number": "03",
+    "source": "public/lectures/integrative-medicine-lecture-03.pdf",
+    "output": "review/lectures/integrative-medicine-lecture-03-amiri-review.pdf",
+    "source_pages": 32,
+    "reader_pages": 35,
+    "extracted_characters": 15077,
+    "output_bytes": 213091,
+    "new_pdf_text_characters": 19776
+  },
+  {
+    "number": "04",
+    "source": "public/lectures/integrative-medicine-lecture-04.pdf",
+    "output": "review/lectures/integrative-medicine-lecture-04-amiri-review.pdf",
+    "source_pages": 41,
+    "reader_pages": 51,
+    "extracted_characters": 17818,
+    "output_bytes": 622011,
+    "new_pdf_text_characters": 24313
+  },
+  {
+    "number": "05",
+    "source": "public/lectures/integrative-medicine-lecture-05.pdf",
+    "output": "review/lectures/integrative-medicine-lecture-05-amiri-review.pdf",
+    "source_pages": 31,
+    "reader_pages": 33,
+    "extracted_characters": 14971,
+    "output_bytes": 363650,
+    "new_pdf_text_characters": 19450
+  },
+  {
+    "number": "06",
+    "source": "public/lectures/integrative-medicine-lecture-06.pdf",
+    "output": "review/lectures/integrative-medicine-lecture-06-amiri-review.pdf",
+    "source_pages": 36,
+    "reader_pages": 48,
+    "extracted_characters": 18449,
+    "output_bytes": 378836,
+    "new_pdf_text_characters": 24517
+  },
+  {
+    "number": "07",
+    "source": "public/lectures/integrative-medicine-lecture-07.pdf",
+    "output": "review/lectures/integrative-medicine-lecture-07-amiri-review.pdf",
+    "source_pages": 72,
+    "reader_pages": 84,
+    "extracted_characters": 33584,
+    "output_bytes": 426646,
+    "new_pdf_text_characters": 44273
+  },
+  {
+    "number": "08",
+    "source": "public/lectures/integrative-medicine-lecture-08.pdf",
+    "output": "review/lectures/integrative-medicine-lecture-08-amiri-review.pdf",
+    "source_pages": 61,
+    "reader_pages": 71,
+    "extracted_characters": 29070,
+    "output_bytes": 423659,
+    "new_pdf_text_characters": 38244
+  }
+]
