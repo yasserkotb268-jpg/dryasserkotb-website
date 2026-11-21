@@ -13,7 +13,7 @@ export default function Lectures() {
           kicker="المحاضرات العلمية"
           title="سلاسل محاضرات البرامج والدبلومات"
           icon={GraduationCap}
-          description="شرائح المحاضرات كاملة بصيغة PDF — من البرامج العلمية التي يقدّمها د. ياسر قطب"
+          description="محاور البرامج العلمية والمحاضرات، ومواد معرفية مختارة من أعمال د. ياسر قطب"
         />
 
         {/* المحاضرة المرئية المميزة */}
@@ -56,7 +56,7 @@ export default function Lectures() {
                 <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{series.org}</p>
                 <div className="mt-3 flex flex-wrap items-center gap-2">
                   <span className="inline-block rounded-full border border-primary/35 bg-primary/10 px-3 py-0.5 text-xs font-bold text-primary">
-                    {series.lectures.length} محاضرة متاحة
+                    {series.lectures.length} محاضرة ضمن السلسلة
                   </span>
                   {'link' in series && series.link && (
                     <a
