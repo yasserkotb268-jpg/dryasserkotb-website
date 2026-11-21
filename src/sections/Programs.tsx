@@ -28,6 +28,14 @@ export default function Programs() {
               <div>
                 <h3 className="mb-2 font-bold leading-relaxed text-foreground md:text-lg">{p.name}</h3>
                 <p className="text-sm leading-[1.9] text-muted-foreground">{p.org}</p>
+                {p.name === 'الدبلوم المهني في المنهجية الشاملة للطب التكاملي والعلوم الطبيعية' && (
+                  <a
+                    href="/programs/integrative-medicine-diploma/"
+                    className="mt-3 inline-flex min-h-10 items-center rounded-lg border border-primary/45 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    تفاصيل الدبلوم المهني والاستفسار
+                  </a>
+                )}
               </div>
             </div>
           ))}
