@@ -1,0 +1,64 @@
+name: Audit seven integrative medicine lecture PDFs
+on:
+  push:
+    branches: [yk7/integrative-lectures-amiri-redesign-20261121]
+    paths:
+      - '.github/workflows/audit-integrative-lectures.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PDF inspection dependency
+        run: python -m pip install --quiet pymupdf
+      - name: Extract originals without changing PDFs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os, json, re
+          import fitz
+          root='public/lectures'
+          target='.yk7-lecture-audit'
+          os.makedirs(target,exist_ok=True)
+          report=[]
+          for num in ['01','03','04','05','06','07','08']:
+              path=f'{root}/integrative-medicine-lecture-{num}.pdf'
+              doc=fitz.open(path)
+              parts=[]
+              rows=[]
+              font_names={}
+              for page_number,page in enumerate(doc,1):
+                  extracted=page.get_text('text',sort=True)
+                  parts.append(f'\n\n========== PAGE {page_number} ==========\n'+extracted)
+                  for b in page.get_text('dict')['blocks']:
+                      if 'lines' not in b:continue
+                      for line in b['lines']:
+                          for span in line['spans']:
+                              font=span['font'];font_names[font]=font_names.get(font,0)+1
+                  rows.append({'page':page_number,'text_chars':len(extracted),'preview':extracted[:350].replace('\n',' / '),'images':len(page.get_images(full=False))})
+              joined=''.join(parts)
+              with open(f'{target}/integrative-medicine-lecture-{num}-source-text.txt','w',encoding='utf-8') as o:o.write(joined)
+              report.append({'number':num,'original':path,'page_count':len(doc),'total_text_characters':len(joined),
+                             'pages_with_little_text':sum(p['text_chars']<100 for p in rows),
+                             'font_counts':font_names,'first_pages':rows[:3],'all_pages':rows})
+              doc.close()
+          with open(f'{target}/audit.json','w',encoding='utf-8') as out:json.dump(report,out,ensure_ascii=False,indent=2)
+          print('Audited',len(report),'files and saved text without changing original PDFs')
+          for item in report:print(item['number'],item['page_count'],item['total_text_characters'],item['pages_with_little_text'])
+          PY
+      - name: Commit audit to the review-only branch
+        shell: bash
+        run: |
+          git config user.name "YK7 PDF Audit"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .yk7-lecture-audit/
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit text and page structure of seven integrative medicine lecture PDFs"
+            git push
+          fi
