@@ -9,7 +9,7 @@ export default function Positions() {
     <section id="positions" ref={ref} className="py-24">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         <SectionHeading
-          kicker="المناصب والمهام الحالية"
+          kicker="الخبرات المهنية والمناصب الحالية"
           title="حضور مؤسسي وعلمي متنوع"
           icon={Briefcase}
         />
