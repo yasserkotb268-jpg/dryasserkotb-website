@@ -1,12 +1,32 @@
-import sharp from 'sharp';
-import { mkdir } from 'node:fs/promises';
+import { access, copyFile, mkdir, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-// Static social-share cover generated during Netlify's existing build.
-// Uses the site's original photo; no replacement face or external service.
+// Generate the social preview during the site build, retaining the authentic portrait.
+// Sharp renders SVG text through fontconfig, so package the site's approved Arabic fonts.
 const root = process.cwd();
+const fontFamilies = [
+  { name: 'amiri', requiredFile: 'amiri-arabic-700-normal.woff2' },
+  { name: 'tajawal', requiredFile: 'tajawal-arabic-700-normal.woff2' },
+];
+const fontDirs = fontFamilies.map(({ name }) => join(root, 'node_modules', '@fontsource', name, 'files'));
+for (const { name, requiredFile } of fontFamilies) {
+  await access(join(root, 'node_modules', '@fontsource', name, 'files', requiredFile));
+}
+const fontConfigFile = join(tmpdir(), 'yk7-social-preview-fontconfig.xml');
+const escapeXml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+await writeFile(fontConfigFile, `<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <include ignore_missing="yes">/etc/fonts/fonts.conf</include>
+  ${fontDirs.map((d) => `<dir>${escapeXml(d)}</dir>`).join('\n  ')}
+  <cachedir>${escapeXml(join(tmpdir(), 'yk7-fontconfig-cache'))}</cachedir>
+</fontconfig>`);
+process.env.FONTCONFIG_FILE = fontConfigFile;
+const { default: sharp } = await import('sharp');
 const source = join(root, 'public', 'photos', 'yk7-official-portrait.jpg');
-const destination = join(root, 'public', 'social', 'vision-mission-preview.jpg');
+const destination = join(root, 'public', 'social', 'vision-mission-preview-amiri.jpg');
+const legacyDestination = join(root, 'public', 'social', 'vision-mission-preview.jpg');
 const scene = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">'
  + '<defs><linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2c3137"/><stop offset=".42" stop-color="#12161b"/><stop offset="1" stop-color="#0a0b0e"/></linearGradient><linearGradient id="stripe" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6f0c15"/><stop offset="1" stop-color="#f13743"/></linearGradient></defs>'
  + '<rect width="1200" height="630" fill="url(#base)"/>'
@@ -15,13 +35,13 @@ const scene = '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
  + '<path d="M1150 0 L1200 0L1200 180Z" fill="#70131b" opacity=".48"/>'
  + '<path d="M495 574H1162" stroke="#7c2129" stroke-width="2"/><path d="M700 106H1140" stroke="#bc303c" stroke-width="2"/>'
  + '<text x="1142" y="83" direction="ltr" text-anchor="end" font-family="DejaVu Sans,sans-serif" font-size="36" fill="#e74a52" font-weight="bold">YK7</text>'
- + '<text x="1140" y="222" direction="rtl" text-anchor="start" font-family="DejaVu Sans,sans-serif" font-size="58" fill="#ffffff" font-weight="bold">رؤيتي ورسالتي</text>'
- + '<text x="1140" y="325" direction="rtl" text-anchor="start" font-family="DejaVu Sans,sans-serif" font-size="70" fill="#e7434d" font-weight="bold">وأهدافي</text>'
+ + '<text x="1140" y="222" direction="rtl" text-anchor="start" font-family="Amiri,serif" font-size="58" fill="#ffffff" font-weight="bold">رؤيتي ورسالتي</text>'
+ + '<text x="1140" y="325" direction="rtl" text-anchor="start" font-family="Amiri,serif" font-size="70" fill="#e7434d" font-weight="bold">وأهدافي</text>'
  + '<path d="M725 349H1142" stroke="#c12b36" stroke-width="3"/>'
- + '<text x="1140" y="398" direction="rtl" text-anchor="start" font-family="DejaVu Sans,sans-serif" font-size="27" fill="#eeeeef" font-weight="bold">من المعرفة إلى الفهم المنضبط</text>'
- + '<text x="1140" y="447" direction="rtl" text-anchor="start" font-family="DejaVu Sans,sans-serif" font-size="22" fill="#e2e2e4">ومن جودة القرار إلى أثر قابل للتحقق</text>'
- + '<text x="1140" y="521" direction="rtl" text-anchor="start" font-family="DejaVu Sans,sans-serif" font-size="32" fill="#ffffff" font-weight="bold">د. ياسر قطب</text>'
- + '<text x="1140" y="556" direction="rtl" text-anchor="start" font-family="DejaVu Sans,sans-serif" font-size="16" fill="#d8d9dd">مؤسس منصة الرصد الاستراتيجي</text>'
+ + '<text x="1140" y="398" direction="rtl" text-anchor="start" font-family="Tajawal,sans-serif" font-size="27" fill="#eeeeef" font-weight="bold">من المعرفة إلى الفهم المنضبط</text>'
+ + '<text x="1140" y="447" direction="rtl" text-anchor="start" font-family="Tajawal,sans-serif" font-size="22" fill="#e2e2e4">ومن جودة القرار إلى أثر قابل للتحقق</text>'
+ + '<text x="1140" y="521" direction="rtl" text-anchor="start" font-family="Amiri,serif" font-size="32" fill="#ffffff" font-weight="bold">د. ياسر قطب</text>'
+ + '<text x="1140" y="556" direction="rtl" text-anchor="start" font-family="Tajawal,sans-serif" font-size="16" fill="#d8d9dd">مؤسس منصة الرصد الاستراتيجي</text>'
  + '<text x="1140" y="606" direction="ltr" text-anchor="end" font-family="DejaVu Sans,sans-serif" font-size="19" fill="#f05a63">dryasserkotb.com</text></svg>';
 
 const photo = await sharp(source)
@@ -38,3 +58,4 @@ await sharp(Buffer.from(scene))
   .flatten({background:'#151515'})
   .jpeg({quality:88,mozjpeg:true})
   .toFile(destination);
+await copyFile(destination, legacyDestination);
