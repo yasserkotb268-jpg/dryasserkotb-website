@@ -25,6 +25,18 @@ export default function Contact() {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-5">
               <a
+                href={`mailto:${contact.businessEmail}`}
+                className="group flex items-center gap-4 rounded-xl border border-border bg-background/60 p-4 transition-all hover:border-primary/50"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-xs text-muted-foreground">البريد المهني — تطوير الأعمال | قطر فارما</p>
+                  <p className="break-all font-semibold text-foreground" dir="ltr">{contact.businessEmail}</p>
+                </div>
+              </a>
+              <a
                 href={`mailto:${contact.email}`}
                 className="group flex items-center gap-4 rounded-xl border border-border bg-background/60 p-4 transition-all hover:border-primary/50"
               >
