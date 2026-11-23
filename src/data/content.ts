@@ -92,6 +92,7 @@ export interface YK7 { intro: string; facebook?: string; documents: YK7Document[
 export interface Presentation { title: string; desc: string; file: string }
 export interface ContactLink { name: string; url: string }
 export interface Contact {
+  businessEmail: string;
   email: string;
   phone: string;
   phoneDisplay: string;
