@@ -319,7 +319,8 @@
     {
       "title": "سلسلة تأملات استراتيجية في أوضاع الشرق الأوسط",
       "topic": "من قراءة النفوذ إلى صناعة التوازن — صدر منها: القوة الناعمة وصناعة الوعي (افتتاح الجزء الثاني)، الفراغ الإقليمي ومداخل التأثير الخارجي (العدد الرابع)، الاعتماد الأمني والاقتصادي.",
-      "status": "أعداد صادرة عن منصة YK7 — إصدار مستمر"
+      "status": "أعداد صادرة عن منصة YK7 — إصدار مستمر",
+      "cover": "/books/yk7-part3-strategic-decision-3d.webp"
     },
     {
       "title": "نسائم التنزيل في مناجاة الجليل",
@@ -845,6 +846,14 @@
   ],
   "articles": [
     {
+      "title": "الجغرافيا التي تصنع القرار: كيف تتحول المواقع والممرات إلى نفوذ استراتيجي؟",
+      "field": "صحيفة قضايا — تأملات استراتيجية في أوضاع الشرق الأوسط، الجزء الثالث، المقال السابع | النص منشور على موقع المؤلف ومعد للعدد 108",
+      "file": "geography-that-shapes-decision/article-07-updated.pdf",
+      "url": "/articles/geography-that-shapes-decision/",
+      "image": "/posters/q108-article07-main.webp",
+      "publicationStatus": "published"
+    },
+    {
       "title": "المقال الثاني: البعد الفكري في القيادة — من فهم الواقع إلى جودة القرار",
       "field": "سلسلة «القيادة بين الأمس والغد» | قيادة الدول والمؤسسات | نموذج YK7-PIL للقيادة المتكاملة | 14 نوفمبر 2026",
       "url": "/articles/intellectual-dimension-leadership-article-2-yk7-2026.html",
@@ -1300,6 +1309,30 @@
       }
     ],
     "posters": [
+      {
+        "title": "النفوذ والمسؤولية",
+        "file": "q108-article07-quote3.webp",
+        "desc": "اقتباس من المقال السابع: أمن الممرات والمصلحة العامة",
+        "url": "/articles/geography-that-shapes-decision/"
+      },
+      {
+        "title": "النفوذ المكاني حصيلة علاقات",
+        "file": "q108-article07-quote2.webp",
+        "desc": "اقتباس من المقال السابع: الموقع وشبكات التجارة",
+        "url": "/articles/geography-that-shapes-decision/"
+      },
+      {
+        "title": "الموقع لا يصدر قرارًا",
+        "file": "q108-article07-quote1.webp",
+        "desc": "اقتباس من المقال السابع: الفرق بين الموقع والقرار",
+        "url": "/articles/geography-that-shapes-decision/"
+      },
+      {
+        "title": "الجغرافيا التي تصنع القرار — المقال السابع",
+        "file": "q108-article07-main.webp",
+        "desc": "البوستر الرئيسي للمقال السابع، معد للعدد 108",
+        "url": "/articles/geography-that-shapes-decision/"
+      },
       {
         "title": "العدد 103 | القوة الاستراتيجية — بوستر تحليلي",
         "file": "qadaya-103-strategic-power-poster.webp",
