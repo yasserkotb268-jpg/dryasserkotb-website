@@ -55,7 +55,7 @@ export default function Works() {
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <article className="flex flex-col items-center gap-4 rounded-xl border border-border bg-background/40 p-4 text-center sm:flex-row sm:text-right">
-              <img src="/books/yk7-contract-2026/cover-law-ai-digital-2026.svg" width="840" height="1188" loading="lazy" alt="الغلاف التعريفي لكتاب القانون والتنمية الرشيدة والذكاء الاصطناعي في عصر التحول الرقمي" className="h-48 w-auto shrink-0 rounded-md object-contain shadow-lg" />
+              <img src="/books/law-development-ai-digital-2026/cover-original.webp" width="953" height="1348" loading="lazy" alt="الغلاف الأصلي لكتاب القانون والتنمية الرشيدة والذكاء الاصطناعي في عصر التحول الرقمي" className="h-48 w-auto shrink-0 rounded-md object-contain shadow-lg" />
               <div className="flex-1">
                 <h4 className="font-display text-lg font-bold leading-relaxed">القانون والتنمية الرشيدة والذكاء الاصطناعي في عصر التحول الرقمي</h4>
                 <p className="my-2 text-sm leading-[1.9] text-muted-foreground">قراءة في الحوكمة والتنمية والتحول الرقمي وجودة القرار القانوني والتنموي.</p>
