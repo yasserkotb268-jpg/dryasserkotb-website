@@ -19,6 +19,29 @@ export default function Works() {
           icon={BookOpen}
         />
 
+        <section aria-labelledby="bau-library-catalog" className="reveal mb-10 rounded-2xl border border-primary/40 bg-card p-5 md:p-8" dir="rtl">
+          <p className="mb-2 text-sm font-semibold text-primary">الفهرسة المكتبية | تأكيد السجل في <time dateTime="2026-11-27">27 نوفمبر 2026</time></p>
+          <h3 id="bau-library-catalog" className="font-display text-2xl font-bold leading-relaxed text-foreground md:text-3xl">
+            كتاب القانون والتنمية الرشيدة والذكاء الاصطناعي في فهرس مكتبات جامعة بيروت العربية
+          </h3>
+          <p className="my-4 max-w-4xl text-base leading-[2] text-muted-foreground">
+            أُدرج كتاب «القانون والتنمية الرشيدة والذكاء الاصطناعي في عصر التحول الرقمي» للدكتور ياسر سيد عبد السلام قطب
+            في الفهرس الإلكتروني لمكتبات جامعة بيروت العربية، بمعرّف السجل <bdi>132252</bdi>.
+            وزوّدت إدارة المكتبات المؤلف بالرابط المباشر للسجل للاطلاع والتوثيق.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a href="/news/beirut-arab-university-library-catalog-2026/" className="inline-flex min-h-11 items-center rounded-lg border border-primary/40 bg-primary/10 px-4 py-2 text-base font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+              قراءة خبر الفهرسة
+            </a>
+            <a href="/books/law-development-ai-digital-2026/#library-catalog" className="inline-flex min-h-11 items-center rounded-lg border border-border px-4 py-2 text-base font-bold text-foreground transition-colors hover:border-primary">
+              صفحة الكتاب والتوثيق المكتبي
+            </a>
+            <a href="https://librarycatalog.bau.edu.lb/cgi-bin/koha/opac-detail.pl?biblionumber=132252" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center px-2 py-2 text-base font-bold text-primary underline underline-offset-4">
+              عرض السجل في فهرس الجامعة
+            </a>
+          </div>
+        </section>
+
         {/* توثيق تعاقد نشر المؤلفين — ملفات تعريفية فقط دون إتاحة الكتب الكاملة */}
         <section aria-labelledby="yk7-contracted-books" className="reveal mb-12 rounded-2xl border border-primary/40 bg-card p-5 md:p-8" dir="rtl">
           <p className="mb-2 text-sm font-semibold text-primary">المؤلفات والتعاقدات العلمية | 3 نوفمبر 2026</p>
@@ -32,9 +55,9 @@ export default function Works() {
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <article className="flex flex-col items-center gap-4 rounded-xl border border-border bg-background/40 p-4 text-center sm:flex-row sm:text-right">
-              <img src="/books/yk7-contract-2026/cover-law-ai-digital-2026.svg" width="840" height="1188" loading="lazy" alt="الغلاف التعريفي لكتاب القانون والتنمية والذكاء الاصطناعي في عصر التحول الرقمي" className="h-48 w-auto shrink-0 rounded-md object-contain shadow-lg" />
+              <img src="/books/yk7-contract-2026/cover-law-ai-digital-2026.svg" width="840" height="1188" loading="lazy" alt="الغلاف التعريفي لكتاب القانون والتنمية الرشيدة والذكاء الاصطناعي في عصر التحول الرقمي" className="h-48 w-auto shrink-0 rounded-md object-contain shadow-lg" />
               <div className="flex-1">
-                <h4 className="font-display text-lg font-bold leading-relaxed">القانون والتنمية والذكاء الاصطناعي في عصر التحول الرقمي</h4>
+                <h4 className="font-display text-lg font-bold leading-relaxed">القانون والتنمية الرشيدة والذكاء الاصطناعي في عصر التحول الرقمي</h4>
                 <p className="my-2 text-sm leading-[1.9] text-muted-foreground">قراءة في الحوكمة والتنمية والتحول الرقمي وجودة القرار القانوني والتنموي.</p>
                 <a href="/books/law-development-ai-digital-2026/" className="text-sm font-bold text-primary underline underline-offset-4">قراءة النبذة العلمية ومحاور الكتاب</a>
               </div>
